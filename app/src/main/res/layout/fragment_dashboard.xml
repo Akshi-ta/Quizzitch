@@ -74,6 +74,8 @@
         android:id="@+id/imageButton5"
         android:layout_width="60dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="68dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageButton1"
         tools:src="@tools:sample/avatars" />
@@ -82,8 +84,10 @@
         android:id="@+id/imageButton6"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="145dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageButton2"
         tools:src="@tools:sample/avatars" />
 
     <ImageButton
