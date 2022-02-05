@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/layout/activity_dash.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/fragment_collab.xml" value="0.2423076923076923" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2423076923076923" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/fragment_profile_page.xml" value="0.11965811965811966" />
         <entry key="app/src/main/res/layout/signin.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/splashscreen.xml" value="0.2953125" />
