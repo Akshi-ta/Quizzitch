@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "246884145271",
+    "project_id": "quizzitch-b499a",
+    "storage_bucket": "quizzitch-b499a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246884145271:android:50dd5d6a3342ec484a8e72",
+        "android_client_info": {
+          "package_name": "com.example.quizzitch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246884145271-20ii629l8796h3f017al6jkese3lgt4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quizzitch",
+            "certificate_hash": "f13174fad264bc18f4372b2c446ba9af407a7296"
+          }
+        },
+        {
+          "client_id": "246884145271-e7eks4ti0v77bd9ppng980rr3jcnq5ag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp_5HMEKeuCEtA54U74PVn_01kKViY8OY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246884145271-e7eks4ti0v77bd9ppng980rr3jcnq5ag.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
