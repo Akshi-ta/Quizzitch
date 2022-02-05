@@ -25,6 +25,11 @@
     <fragment
         android:id="@+id/profilePage"
         android:name="com.example.quizzitch.ui.profile.ProfilePage"
-        android:label="fragment_profile_page"
+        android:label="Profile"
         tools:layout="@layout/fragment_profile_page" />
+    <fragment
+        android:id="@+id/collabFragment"
+        android:name="com.example.quizzitch.ui.collab.CollabFragment"
+        android:label="fragment_collab"
+        tools:layout="@layout/fragment_collab" />
 </navigation>

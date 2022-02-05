@@ -65,15 +65,14 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="212dp"
         android:text="Password"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="signinEditPassword"
+        app:layout_constraintBottom_toTopOf="@+id/signinEditPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.586" />
+        app:layout_constraintVertical_bias="0.932" />
 
     <EditText
         android:id="@+id/signinEditPassword"

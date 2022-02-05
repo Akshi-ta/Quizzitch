@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.quizzitch.ui.slideshow.splashscreen
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.AuthResult
@@ -25,51 +26,60 @@ class SignIn : AppCompatActivity(){
                 .setAction("Action",null).show()
         }
         val signinBt: Button = findViewById(R.id.button)
-        val entermail: EditText = findViewById(R.id.textView3)
-        val enterpass: EditText = findViewById(R.id.signinEditPassword)
+        val enterMail: EditText = findViewById(R.id.textView3)
+        val enterPass: EditText = findViewById(R.id.signinEditPassword)
 
-        signinBt.setOnClickListener{
-            when{
-                TextUtils.isEmpty(entermail.text.toString().trim{it <= ' '}) ->{
-                    Snackbar.make(findViewById(R.id.textView3),"Enter mail please", 2000)
-                        .setAction("action",null).show()
+        signinBt.setOnClickListener {
+            when {
+                TextUtils.isEmpty(enterMail.text.toString().trim { it <= ' ' }) -> {
+
+                    Snackbar.make(findViewById(R.id.signinEditPassword), "Enter mail please", 2000)
+                        .setAction("action", null).show()
                 }
-                else ->{
-                    val mail : String = entermail.text.toString()
-                    val password: String = enterpass.text.toString()
+                TextUtils.isEmpty(enterPass.text.toString().trim { it <= ' ' }) -> {
+//                    Toast.makeText(
+//                        this,
+//                        "Enter Password please",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+
+                    Snackbar.make(findViewById(R.id.signinEditPassword), "Enter Password please", 2000)
+                        .setAction("action", null).show()
+                }
+                else -> {
+                    val mail: String = enterMail.text.toString()
+                    val password: String = enterPass.text.toString()
                     FirebaseAuth.getInstance().signInWithEmailAndPassword(mail, password)
                         .addOnCompleteListener(
-                            OnCompleteListener<AuthResult> {task ->
+                            OnCompleteListener<AuthResult> { task ->
                                 if (task.isSuccessful) {
                                     val firebaseUser: FirebaseUser = task.result!!.user!!
-                                    Toast.makeText(this , "LOGGED IN" , Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(this, "LOGGED IN", Toast.LENGTH_SHORT).show()
 
 //                                    Snackbar.make(findViewById(R.id.textView5), "LOGGED IN", 2000)
 //                                        .setAction("action", null).show()
 
-                                    val intent = Intent(this , MainActivity::class.java)
+                                    val intent = Intent(this, MainActivity::class.java)
                                     intent.flags =
                                         Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                    intent.putExtra("User_id" , firebaseUser.uid)
-                                    intent.putExtra("email-id" , firebaseUser.email)
+                                    intent.putExtra("User_id", firebaseUser.uid)
+                                    intent.putExtra("email-id", firebaseUser.email)
                                     startActivity(intent)
                                     finish()
                                 } else {
+                                    //Toast.makeText(this, task.exception!!.toString(), Toast.LENGTH_SHORT).show()
+
                                     Snackbar.make(
-                                        findViewById(R.id.textView3),
+                                        findViewById(R.id.signinEditPassword),
                                         task.exception!!.toString(),
                                         Snackbar.LENGTH_LONG
                                     )
-                                        .setAction("action",null).show()
-
+                                        .setAction("action", null).show()
                                 }
 
                             }
                         )
-
-
-
-
+                }
             }
         }
 
@@ -81,5 +91,4 @@ class SignIn : AppCompatActivity(){
         }
 
     }
-}
 }
