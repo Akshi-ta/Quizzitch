@@ -22,4 +22,9 @@
         android:name="com.example.quizzitch.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/profilePage"
+        android:name="com.example.quizzitch.ui.profile.ProfilePage"
+        android:label="fragment_profile_page"
+        tools:layout="@layout/fragment_profile_page" />
 </navigation>

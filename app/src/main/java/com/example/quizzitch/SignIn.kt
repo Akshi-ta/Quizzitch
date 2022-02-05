@@ -1,5 +1,6 @@
 package com.example.quizzitch
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,13 @@ class SignIn : AppCompatActivity(){
                 .setAction("Action",null).show()
         }
         val signin: Button = findViewById(R.id.button)
+
+        val guest: Button = findViewById(R.id.button2)
+        guest.setOnClickListener{
+            val intent = Intent(this, Dash::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 }
