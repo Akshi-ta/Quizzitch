@@ -74,8 +74,8 @@
         android:id="@+id/imageButton5"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="145dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageButton1"
         tools:src="@tools:sample/avatars" />
 
     <ImageButton
