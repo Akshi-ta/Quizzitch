@@ -3,11 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HP/AndroidStudioProjects/quizzitch/app/src/main/res/layout/activity_dash.xml" value="0.11684782608695653" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/quizzitch/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/quizzitch/app/src/main/res/layout/fragment_dashboard.xml" value="0.11684782608695653" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/quizzitch/app/src/main/res/layout/signin.xml" value="0.22" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/quizzitch/app/src/main/res/layout/splashscreen.xml" value="0.1" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/activity_dash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/categories_buttons.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
       </map>
     </option>
   </component>
