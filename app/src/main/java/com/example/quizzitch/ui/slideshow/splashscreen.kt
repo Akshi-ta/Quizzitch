@@ -7,9 +7,7 @@ import android.os.PersistableBundle
 import android.telecom.Call
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import com.example.quizzitch.MainActivity
-import com.example.quizzitch.R
-import com.example.quizzitch.SignIn
+import com.example.quizzitch.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -34,14 +32,14 @@ class splashscreen  : AppCompatActivity(){
                 if (!it.contains("displayName"))
                 {
                     Handler().postDelayed({
-                        val intent = Intent(this,Call.Details:: class.java)
+                        val intent = Intent(this, SigninDetails:: class.java)
                         startActivity(intent)
                         finish()
                     }, a.toLong())
                 }else
                 {
                     Handler().postDelayed({
-                        val intent:Intent = Intent(this, MainActivity::class.java)
+                        val intent:Intent = Intent(this, Dash::class.java)
                         startActivity(intent)
                         finish()
                     }, a.toLong())

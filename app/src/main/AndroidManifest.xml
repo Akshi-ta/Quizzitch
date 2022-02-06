@@ -23,6 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignIn"/>
+        <activity android:name=".SigninDetails"/>
+        <activity android:name=".SignUp"/>
     </application>
 
 </manifest>

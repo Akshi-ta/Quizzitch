@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.quizzitch.ui.slideshow.splashscreen
@@ -59,7 +60,7 @@ class SignIn : AppCompatActivity(){
 //                                    Snackbar.make(findViewById(R.id.textView5), "LOGGED IN", 2000)
 //                                        .setAction("action", null).show()
 
-                                    val intent = Intent(this, MainActivity::class.java)
+                                    val intent = Intent(this, Dash::class.java)
                                     intent.flags =
                                         Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     intent.putExtra("User_id", firebaseUser.uid)
@@ -81,6 +82,12 @@ class SignIn : AppCompatActivity(){
                         )
                 }
             }
+        }
+        val signup: TextView = findViewById(R.id.textView6)
+        signup.setOnClickListener{
+            val intent = Intent(this, SignUp::class.java)
+            startActivity(intent)
+            finish()
         }
 
         val guest: Button = findViewById(R.id.button2)
