@@ -45,7 +45,7 @@ class ProfilePage : Fragment() {
 
         val store: FirebaseFirestore = FirebaseFirestore.getInstance()
         val mauth: FirebaseAuth = FirebaseAuth.getInstance()
-        val dpLocation = mauth.currentUser?.uid
+        val dpLocation = mauth.currentUser!!.uid
         val url = "images/$dpLocation/profile_pic"
         val max_bytes:Long = 1024*1024
         val imgRef = storageReference.child(url)
