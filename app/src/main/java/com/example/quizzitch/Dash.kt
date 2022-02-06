@@ -26,7 +26,7 @@ class Dash : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.profilePage
+                R.id.navigation_home, R.id.profilePage, R.id.collabFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

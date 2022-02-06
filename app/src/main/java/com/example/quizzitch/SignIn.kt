@@ -59,7 +59,7 @@ class SignIn : AppCompatActivity(){
 //                                    Snackbar.make(findViewById(R.id.textView5), "LOGGED IN", 2000)
 //                                        .setAction("action", null).show()
 
-                                    val intent = Intent(this, MainActivity::class.java)
+                                    val intent = Intent(this, Dash::class.java)
                                     intent.flags =
                                         Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     intent.putExtra("User_id", firebaseUser.uid)
