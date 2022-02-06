@@ -11,7 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
-class Details: AppCompatActivity() {
+class SigninDetails: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.details)
@@ -47,7 +47,7 @@ class Details: AppCompatActivity() {
                     db.collection("desc").document(mauth.uid.toString()).set(mp).addOnSuccessListener {
                         Toast.makeText(this, "Data Saved!", Toast.LENGTH_SHORT).show()
 
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, Dash::class.java)
                         startActivity(intent)
                         finish()
 

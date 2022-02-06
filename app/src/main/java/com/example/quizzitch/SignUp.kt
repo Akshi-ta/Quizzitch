@@ -2,7 +2,6 @@ package com.example.quizzitch
 
 import android.content.Intent
 import android.os.Bundle
-import android.telecom.Call
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
@@ -53,7 +52,7 @@ class SignUp: AppCompatActivity() {
                                         Toast.LENGTH_SHORT
                                     ).show()
 
-                                    val intent = Intent(this, Details::class.java)
+                                    val intent = Intent(this, SigninDetails::class.java)
                                     intent.flags =
                                         Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     intent.putExtra("User_id", firebaseUser.uid)
