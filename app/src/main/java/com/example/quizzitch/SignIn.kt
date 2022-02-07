@@ -8,13 +8,11 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.quizzitch.ui.slideshow.splashscreen
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.firestore.core.View
 
 class SignIn : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +21,7 @@ class SignIn : AppCompatActivity(){
 
         if (intent.getStringArrayExtra("bool").toString()=="true")
         {
-            Snackbar.make(findViewById(R.id.button),"You were logget out",1000)
+            Snackbar.make(findViewById(R.id.button),"You were logged out",1000)
                 .setAction("Action",null).show()
         }
         val signinBt: Button = findViewById(R.id.button)

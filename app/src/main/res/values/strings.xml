@@ -4,4 +4,24 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="history">HISTORY</string>
+    <string name="politics">POLITICS</string>
+    <string name="dance">DANCE</string>
+    <string name="bollywood">BOLLYWOOD</string>
+    <string name="sports">SPORTS</string>
+    <string name="culture">CULTURE</string>
+    <string name="science">SCIENCE</string>
+    <string name="computers">COMPUTERS</string>
+    <string name="mythology">MYTHOLOGY</string>
+    <string name="geography">GEOGRAPHY</string>
+    <string name="art">ART</string>
+    <string name="animals">ANIMALS</string>
+    <string name="comics">COMICS</string>
+    <string name="anime">ANIME</string>
+    <string name="gadgets">GADGETS</string>
+    <string name="coding">CODING</string>
+    <string name="cartoon">CARTOON</string>
+    <string name="gk">GK</string>
+    <string name="covid_19">COVID 19</string>
+    <string name="marvel">MARVEL</string>
 </resources>
