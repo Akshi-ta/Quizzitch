@@ -3,31 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HP/AndroidStudioProjects/quizzitch/app/src/main/res/layout/details.xml" value="0.1286231884057971" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/quizzitch/app/src/main/res/layout/signin.xml" value="0.22" />
-        <entry key="..\:/Users/HP/AndroidStudioProjects/quizzitch/app/src/main/res/layout/signup.xml" value="0.22" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout-v28/levelscreen.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/activity_dash.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/details.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_collab.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_profile_page.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/signin.xml" value="0.10555555555555556" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/signup.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/splashscreen.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/take_quiz.xml" value="0.25416666666666665" />
-        <entry key="app/src/main/res/layout/activity_dash.xml" value="0.2953125" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2953125" />
-        <entry key="app/src/main/res/layout/fragment_collab.xml" value="0.2423076923076923" />
-        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2423076923076923" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2423076923076923" />
-        <entry key="app/src/main/res/layout/fragment_profile_page.xml" value="0.11965811965811966" />
-        <entry key="app/src/main/res/layout/signin.xml" value="0.2953125" />
-        <entry key="app/src/main/res/layout/splashscreen.xml" value="0.2953125" />
-        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.2953125" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/activity_dash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/activity_main.xml" value="0.22010869565217392" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/categories_buttons.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_collab.xml" value="0.22010869565217392" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_home.xml" value="0.72" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/popup_menu.xml" value="0.22010869565217392" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/signin.xml" value="0.22010869565217392" />
+        <entry key="..\:/Users/ysris/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/splashscreen.xml" value="0.22010869565217392" />
       </map>
     </option>
   </component>
