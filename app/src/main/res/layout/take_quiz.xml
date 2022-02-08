@@ -4,19 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.QuizFragment">
 
     <TextView
         android:id="@+id/quiz"
         android:layout_width="288dp"
-        android:layout_height="178dp"
+        android:layout_height="89dp"
         android:text="@string/quiz"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintVertical_bias="0.129" />
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RadioButton
+            android:id="@+id/option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <RadioButton
+            android:id="@+id/option2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <RadioButton
+            android:id="@+id/option3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <RadioButton
+            android:id="@+id/option4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/option_4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/next"
@@ -25,11 +77,11 @@
         android:layout_marginTop="248dp"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.618"
+        app:layout_constraintHorizontal_bias="0.652"
         app:layout_constraintLeft_toRightOf="@id/guideline2"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/quiz"
-        app:layout_constraintVertical_bias="0.446" />
+        app:layout_constraintVertical_bias="0.615" />
 
     <Button
         android:id="@+id/previous"
