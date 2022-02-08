@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#352451"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="332dp"
+        android:layout_height="401dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/castle"
+        tools:layout_editor_absoluteY="29dp" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/SCRIPTBL"
+        android:text="FANTASY"
+        android:textColor="#F1DEDE"
+        android:textSize="48dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="62dp" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="117dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/SCRIPTBL"
+        android:text="choose your"
+        android:textColor="#F1DEDE"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="379dp" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/SCRIPTBL"
+        android:text="LEVEL!!"
+        android:textColor="#F1DEDE"
+        android:textSize="36dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="409dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#932E9C"
+        android:text="easy-peasy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="482dp" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:backgroundTint="#932E9C"
+        android:text="average"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="540dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="88dp"
+        android:backgroundTint="#932E9C"
+        android:text="hard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
