@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val tv :TextView = view.findViewById(R.id.quiz)
         tv.visibility = View.GONE
-        val pgbar: ProgressBar = view.findViewById(R.id.progressBar)
+        val pgbar: ProgressBar = view.findViewById(R.id.progressBar1)
         pgbar.visibility = View.VISIBLE
 
 
