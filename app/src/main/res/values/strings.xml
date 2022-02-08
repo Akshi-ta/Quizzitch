@@ -24,4 +24,10 @@
     <string name="gk">GK</string>
     <string name="covid_19">COVID 19</string>
     <string name="marvel">MARVEL</string>
+    <string name="next">Next</string>
+    <string name="quiz">Quiz</string>
+    <string name="previous">Previous</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="difficult">Difficult</string>
 </resources>
