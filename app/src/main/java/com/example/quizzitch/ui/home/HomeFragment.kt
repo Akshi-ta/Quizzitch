@@ -6,10 +6,7 @@ import android.os.StrictMode
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ProgressBar
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.quizzitch.R
@@ -42,13 +39,13 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val tv :TextView = view.findViewById(R.id.quiz)
+        val tv :TextView = view.findViewById(R.id.HISTORY)
         tv.visibility = View.GONE
-        val pgbar: ProgressBar = view.findViewById(R.id.progressBar)
-        pgbar.visibility = View.VISIBLE
+//        val pgbar: ProgressBar = view.findViewById(R.id.progressBar)
+//        pgbar.visibility = View.VISIBLE
 
 
-        val bt: Button = view.findViewById(R.id.imageView2)
+        val bt: ImageButton = view.findViewById(R.id.imageView2)
         bt.setOnClickListener {
             val url = URL("https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple")
             val connection: HttpURLConnection = url.openConnection() as HttpURLConnection
@@ -66,7 +63,7 @@ class HomeFragment : Fragment() {
             val ques = node.path("results")
             var i = 0
             tv.text = ques[i].path("question").asText()
-            pgbar.visibility = View.GONE
+            //pgbar.visibility = View.GONE
             tv.visibility = View.VISIBLE
 
             val next: Button = view.findViewById(R.id.next)

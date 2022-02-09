@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
     <item
-        android:id="@+id/collabFragment"
+        android:id="@+id/hostGameFragment"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Collab"/>
     <item

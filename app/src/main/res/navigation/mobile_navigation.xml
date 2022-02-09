@@ -32,14 +32,13 @@
         android:name="com.example.quizzitch.ui.collab.CollabFragment"
         android:label="fragment_collab"
         tools:layout="@layout/fragment_collab" />
-    <activity
-        android:id="@+id/mainActivity"
-        android:name="com.example.quizzitch.MainActivity"
-        android:label="levelscreen"
-        tools:layout="@layout/levelscreen" />
     <fragment
-        android:id="@+id/buzzerRoundFragment"
-        android:name="com.example.quizzitch.BuzzerRoundFragment"
-        android:label="fragment_buzzer_round"
-        tools:layout="@layout/fragment_buzzer_round" />
+        android:id="@+id/hostGameFragment"
+        android:name="com.example.quizzitch.ui.collab.HostGameFragment"
+        android:label="fragment_host_game"
+        tools:layout="@layout/fragment_host_game" >
+        <action
+            android:id="@+id/action_hostGameFragment_to_collabFragment"
+            app:destination="@id/collabFragment" />
+    </fragment>
 </navigation>

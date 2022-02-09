@@ -43,7 +43,6 @@ class CollabFragment : Fragment() {
             val policy = StrictMode.ThreadPolicy.Builder()
                 .permitAll().build()
             StrictMode.setThreadPolicy(policy)
-
         }
         val stream: InputStream = connection.inputStream
         val mapper: ObjectMapper = ObjectMapper()
@@ -81,4 +80,5 @@ class CollabFragment : Fragment() {
 
 
     }
+
 }
