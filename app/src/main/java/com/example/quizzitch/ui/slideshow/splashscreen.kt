@@ -1,10 +1,15 @@
 package com.example.quizzitch.ui.slideshow
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.os.PersistableBundle
 import android.telecom.Call
+import android.view.View
+import android.widget.MediaController
+import android.widget.Toast
+import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.quizzitch.*
@@ -12,6 +17,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class splashscreen  : AppCompatActivity(){
+    var videoView: VideoView? = null
+    var mediaController: MediaController? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splashscreen)
@@ -45,6 +54,19 @@ class splashscreen  : AppCompatActivity(){
                     }, a.toLong())
                 }
             }
+        }
+        videoView = findViewById<View>(R.id.videoView) as VideoView?
+        if (mediaController == null) {
+            mediaController = MediaController(this)
+            mediaController!!.setAnchorView(this.videoView)
+        }
+        videoView!!.setMediaController(mediaController)
+        videoView!!.setVideoURI(Uri.parse("android.resource://" + packageName +"/" + R.raw.ani
+        ))
+        videoView!!.requestFocus()
+        videoView!!.start()
+        videoView!!.setOnCompletionListener {
+            Toast.makeText(applicationContext,"Welcome to Quizzitch", Toast.LENGTH_LONG).show()
         }
 
     }
