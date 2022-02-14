@@ -15,6 +15,6 @@
     </style>
 
     <style name="pink_light_button" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:colorPrimary">@color/pink_light</item>
+        <item name="colorPrimary">@color/pink_light</item>
     </style>
 </resources>
