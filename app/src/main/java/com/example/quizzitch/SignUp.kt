@@ -18,11 +18,6 @@ class SignUp: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.signup)
 
-        val otpsystem: Button = findViewById(R.id.button9)
-        otpsystem.setOnClickListener{
-            val intent = Intent(this,SignIn::class.java)
-        }
-
         val back : ImageButton = findViewById(R.id.imageButton)
         back.setOnClickListener{
             val intent = Intent(this,SignIn::class.java)
