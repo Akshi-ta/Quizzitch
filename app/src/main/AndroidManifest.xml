@@ -19,18 +19,13 @@
         <activity
             android:name=".ui.slideshow.splashscreen"
             android:exported="true"/>
-        <activity
-            android:name=".ui.otpverification"
-            android:exported="false" />
-        <activity
-            android:name=".ui.entermobilenumber"
-            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+
         <activity android:name=".SignIn"/>
         <activity android:name=".SigninDetails"/>
         <activity android:name=".SignUp"/>
