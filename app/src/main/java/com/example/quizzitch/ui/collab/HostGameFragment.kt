@@ -193,10 +193,15 @@ class HostGameFragment : Fragment() {
                         store.collection("games").document(hostUid).update(up).addOnSuccessListener {
                             Toast.makeText(requireContext(), "Room Joined",Toast.LENGTH_LONG).show()
                             store.collection("games").document(uid).get().addOnSuccessListener {
-                                val updateMy: HashMap<String, Any> = it.data as HashMap<String, Any>
+                                var updateMy: HashMap<String, Any> = hashMapOf()
+                                if(it.data!=null)
+                                    updateMy= it.data as HashMap<String, Any>
                                 updateMy["anyGameActive"] = i
                                 liveUpdateJoin(hostUid, i, view)
-                                store.collection("games").document(uid).update(updateMy)
+                                if(it.data!=null)
+                                    store.collection("games").document(uid).update(updateMy)
+                                else
+                                    store.collection("games").document(uid).set(updateMy)
                             }
                         }
 
@@ -233,7 +238,7 @@ class HostGameFragment : Fragment() {
                 if(p.key!="no")
                 {
                     val user: HashMap<String, Any> = p.value as HashMap<String, Any>
-                    player+=user["name"].toString()
+                    player+=user["name"].toString() + "\n"
                 }
             }
             player2.text = player
@@ -243,6 +248,7 @@ class HostGameFragment : Fragment() {
         }
 
     }
+
     private fun masterJoin() {
 
     }
