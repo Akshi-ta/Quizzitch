@@ -95,31 +95,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.374" />
 
-            <TextView
-                android:id="@+id/textView34"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="Your Room Code is..."
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button5" />
-
-            <TextView
-                android:id="@+id/textView35"
-                android:layout_width="wrap_content"
-                android:layout_height="29dp"
-                android:layout_marginTop="12dp"
-                android:text="Click Generate Button first"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:gravity="center"
-                android:textColor="@color/black"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView34" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
@@ -157,7 +132,7 @@
             <TextView
                 android:id="@+id/player2"
                 android:layout_width="wrap_content"
-                android:layout_height="21dp"
+                android:layout_height="wrap_content"
                 android:text="Player 2"
                 android:layout_marginStart="20dp"
                 android:textColor="@color/black"
@@ -194,6 +169,7 @@
 <!--                app:layout_constraintVertical_bias="0.394" />-->
 
             <TextView
+                android:id="@+id/maxPlayers"
                 android:layout_width="128dp"
                 android:layout_height="24dp"
                 android:textStyle="bold"
@@ -208,29 +184,68 @@
 
             <EditText
                 android:id="@+id/enterRoomCode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="asdfadf"
+                android:layout_width="167dp"
+                android:layout_height="51dp"
+                android:text=""
+                android:inputType="number"
+                android:textSize="17dp"
+                android:paddingStart="20dp"
+                android:hint="Enter Your Room code"
+                android:background="@drawable/round_40"
+                app:layout_constraintHorizontal_bias="0.2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/button8"
+                app:layout_constraintTop_toTopOf="@+id/leaveBt"
                 app:layout_constraintVertical_bias="0.0"/>
 
             <Button
-                android:id="@+id/button8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/leaveBt"
+                android:layout_width="167dp"
+                android:layout_height="51dp"
                 android:background="@drawable/round_40"
                 android:text="Leave Room"
-                android:theme="@style/pink_light_button"
                 android:textAllCaps="false"
+                android:textSize="17dp"
+                android:theme="@style/pink_light_button"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView37"
+                app:layout_constraintTop_toBottomOf="@+id/player2"
                 app:layout_constraintVertical_bias="0.781" />
 
+            <Button
+                android:id="@+id/joinBt"
+                android:layout_width="133dp"
+                android:layout_height="55dp"
+                android:background="@drawable/round_40"
+                android:text="Join"
+                android:textAllCaps="false"
+                android:textSize="17dp"
+                android:theme="@style/pink_light_button"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/leaveBt"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/roomCode"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:layout_marginTop="12dp"
+                android:text="Room Code"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="22dp"
+                app:layout_constraintVertical_bias="0.3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/player2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
