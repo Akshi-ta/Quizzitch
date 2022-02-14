@@ -61,7 +61,7 @@ class splashscreen  : AppCompatActivity(){
             mediaController!!.setAnchorView(this.videoView)
         }
         videoView!!.setMediaController(mediaController)
-        videoView!!.setVideoURI(Uri.parse("android.resource://" + packageName +"/" + R.raw.ani
+        videoView!!.setVideoURI(Uri.parse("android.resource://" + packageName +"/" + R.raw.animati
         ))
         videoView!!.requestFocus()
         videoView!!.start()

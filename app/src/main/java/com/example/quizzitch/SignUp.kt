@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.quizzitch.ui.entermobilenumber
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
@@ -18,6 +19,11 @@ class SignUp: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.signup)
 
+        val otpsystem: Button = findViewById(R.id.button9)
+        otpsystem.setOnClickListener{
+            val intent = Intent(this,entermobilenumber::class.java)
+        }
+
         val back : ImageButton = findViewById(R.id.imageButton)
         back.setOnClickListener{
             val intent = Intent(this,SignIn::class.java)
@@ -25,9 +31,11 @@ class SignUp: AppCompatActivity() {
             finish()
         }
 
+
         val signupbt: Button = findViewById(R.id.button3)
         val enterMail : EditText = findViewById(R.id.textView8)
         val enterPass : EditText = findViewById(R.id.textView10)
+
 
         signupbt.setOnClickListener {
             when {

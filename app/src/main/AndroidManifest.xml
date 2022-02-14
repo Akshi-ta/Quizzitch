@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.quizzitch">
 
+
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -17,6 +18,12 @@
             android:label="@string/title_activity_dash" />
         <activity
             android:name=".ui.slideshow.splashscreen"
+            android:exported="true"/>
+        <activity
+            android:name=".ui.otpverification"
+            android:exported="false" />
+        <activity
+            android:name=".ui.entermobilenumber"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
