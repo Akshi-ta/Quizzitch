@@ -30,15 +30,15 @@
         android:textSize="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="97dp"
-        android:layout_height="47dp"
+        android:layout_height="40dp"
         android:text="Email"
         android:textColor="#F1DEDE"
         android:textSize="28dp"
@@ -51,22 +51,23 @@
 
     <EditText
         android:id="@+id/textView3"
-        android:layout_width="333dp"
-        android:layout_height="48dp"
+        android:layout_width="345dp"
+        android:layout_height="45dp"
         android:background="@drawable/roundoval"
-        android:hint="Enter your mail id"
+        android:hint="Enter Your Mail ID"
         android:paddingStart="10dp"
         android:textColorHint="#F1DEDE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.285" />
+        app:layout_constraintVertical_bias="0.284" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:text="Password"
         android:textColor="#F1DEDE"
         android:textSize="28dp"
@@ -79,15 +80,15 @@
 
     <EditText
         android:id="@+id/signinEditPassword"
-        android:layout_width="354dp"
-        android:layout_height="50dp"
+        android:layout_width="345dp"
+        android:layout_height="45dp"
         android:background="@drawable/roundoval"
-        android:hint="Enter your password"
+        android:hint="Enter Your Password"
         android:paddingStart="10dp"
         android:textColorHint="#F1DEDE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.481" />
@@ -107,11 +108,11 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="104dp"
+        android:layout_height="59dp"
         android:backgroundTint="#932E9C"
         android:text="Guest"
-
+        android:textSize="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
