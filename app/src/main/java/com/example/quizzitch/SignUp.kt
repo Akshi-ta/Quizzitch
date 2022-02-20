@@ -18,12 +18,6 @@ class SignUp: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.signup)
 
-        val back : ImageButton = findViewById(R.id.imageButton)
-        back.setOnClickListener{
-            val intent = Intent(this,SignIn::class.java)
-            startActivity(intent)
-            finish()
-        }
         val signupbt: Button = findViewById(R.id.button3)
         val enterMail : EditText = findViewById(R.id.textView8)
         val enterPass : EditText = findViewById(R.id.editPassword)
