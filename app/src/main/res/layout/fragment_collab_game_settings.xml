@@ -7,6 +7,7 @@
     tools:context=".ui.collab.CollabGameSettingsFragment"
     android:paddingBottom="60dp"
     android:paddingTop="20dp">
+
     <ScrollView
         android:layout_width="391dp"
         android:layout_height="wrap_content"
@@ -463,4 +464,5 @@
             </TableRow>
         </TableLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
