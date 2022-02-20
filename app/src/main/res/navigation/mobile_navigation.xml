@@ -38,7 +38,16 @@
         android:label="fragment_host_game"
         tools:layout="@layout/fragment_host_game" >
         <action
-            android:id="@+id/action_hostGameFragment_to_collabFragment"
+            android:id="@+id/action_hostGameFragment_to_collabGameSettingsFragment"
+            app:destination="@id/collabGameSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/collabGameSettingsFragment"
+        android:name="com.example.quizzitch.ui.collab.CollabGameSettingsFragment"
+        android:label="fragment_collab_game_settings"
+        tools:layout="@layout/fragment_collab_game_settings" >
+        <action
+            android:id="@+id/action_collabGameSettingsFragment_to_collabFragment"
             app:destination="@id/collabFragment" />
     </fragment>
 </navigation>

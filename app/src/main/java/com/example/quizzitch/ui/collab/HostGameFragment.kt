@@ -11,13 +11,16 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.common.hash.HashCode
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.Transaction
 
 class HostGameFragment : Fragment() {
     val mauth = FirebaseAuth.getInstance()
@@ -99,7 +102,15 @@ class HostGameFragment : Fragment() {
             basicJoin(view,2)
         }
 
-
+        val startGame: Button = view.findViewById(R.id.startGame)
+        startGame.setOnClickListener{
+            val hostMain: ConstraintLayout = view.findViewById(R.id.hostMain)
+            hostMain.visibility = View.GONE
+            val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.hostR, CollabGameSettingsFragment())
+            transaction.addToBackStack("settings")
+            transaction.commit()
+        }
 
     }
 
@@ -143,6 +154,36 @@ class HostGameFragment : Fragment() {
             joinBt.visibility = View.GONE
             leaveBt.visibility = View.VISIBLE
             roomCode.visibility = View.VISIBLE
+            store.collection("games").document(uid).get().addOnSuccessListener {
+                val i: String = it["anyGameActive"].toString()
+                var hostUid: String = ""
+                store.collection("games").get().addOnSuccessListener {
+                    for(docs in it)
+                    {
+                        val doc: HashMap<String, Any> = docs.data as HashMap<String, Any>
+                        if(doc[i]!=null)
+                        {
+                            val map: HashMap<String, Any> = (doc[i] as HashMap<String, Any>)["host"] as HashMap<String, Any>
+                            hostUid = map["uid"].toString()
+                        }
+                    }
+                    store.collection("games").document(hostUid).get().addOnSuccessListener {
+                        val m: HashMap<String, Any> = it[i] as HashMap<String, Any>
+                        val player1: TextView = view.findViewById(R.id.player1)
+                        val player2: TextView = view.findViewById(R.id.player2)
+                        player1.text = (m["host"] as HashMap<String, Any>)["name"].toString()
+                        var s = ""
+                        for(iterator in m["otherPlayers"] as HashMap<String, Any>)
+                        {
+                            if(iterator.key!="no")
+                            {
+                                s+=(iterator.value as HashMap<String, Any>)["name"].toString() + "\n"
+                            }
+                        }
+                        player2.text = s
+                    }
+                }
+            }
         }else if(switch==2)
         {
             val i: Int = enterRoomCode.text.toString().toInt()

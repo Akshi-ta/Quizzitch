@@ -6,344 +6,370 @@
     android:layout_height="match_parent"
     tools:context=".ui.collab.HostGameFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/hostR"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/hostMain">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/createRoomCard"
+            android:layout_width="367dp"
+            android:layout_height="455dp"
+            android:backgroundTint="#87ceeb"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/holderTab"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="246dp"
+                    android:layout_height="26dp"
+                    android:text="Select No. of Max Players: -"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.122"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.217" />
+
+                <EditText
+                    android:id="@+id/editTextMaxPlayers"
+                    android:layout_width="75dp"
+                    android:layout_height="41dp"
+                    android:ems="10"
+                    android:hint="2"
+                    android:inputType="number"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.945"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.205" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="92dp"
+                    android:backgroundTint="#FFC0CB"
+                    android:text="Generate"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="39dp"
+                    android:layout_marginTop="36dp"
+                    android:gravity="center"
+                    android:text="Place Your Bets"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.059"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+                <EditText
+                    android:id="@+id/editTextBets"
+                    android:layout_width="75dp"
+                    android:layout_height="41dp"
+                    android:ems="10"
+                    android:hint="10"
+                    android:inputType="number"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.455"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.374" />
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/createRoomCard"
-        android:layout_width="367dp"
-        android:layout_height="455dp"
-        android:backgroundTint="#87ceeb"
-        app:cardCornerRadius="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/holderTab"
-        app:layout_constraintVertical_bias="0.0">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView32"
-                android:layout_width="246dp"
-                android:layout_height="26dp"
-                android:text="Select No. of Max Players: -"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.122"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.217" />
-
-            <EditText
-                android:id="@+id/editTextMaxPlayers"
-                android:layout_width="75dp"
-                android:layout_height="41dp"
-                android:ems="10"
-                android:hint="2"
-                android:inputType="number"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.945"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.205" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="92dp"
-                android:backgroundTint="#FFC0CB"
-                android:text="Generate"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView32" />
-
-            <TextView
-                android:id="@+id/textView33"
-                android:layout_width="wrap_content"
-                android:layout_height="39dp"
-                android:layout_marginTop="36dp"
-                android:gravity="center"
-                android:text="Place Your Bets"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.059"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView32" />
-
-            <EditText
-                android:id="@+id/editTextBets"
-                android:layout_width="75dp"
-                android:layout_height="41dp"
-                android:ems="10"
-                android:hint="10"
-                android:inputType="number"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.455"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.374" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/joinRoomCard"
+            android:layout_width="367dp"
+            android:layout_height="455dp"
+            android:backgroundTint="#87ceeb"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/holderTab"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/player1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="21dp"
+                    android:text="Player 1"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.063"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.185" />
+
+                <TextView
+                    android:id="@+id/player2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Player 2"
+                    android:layout_marginStart="20dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.062"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.258" />
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/player3"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="21dp"-->
+                <!--                android:text="Player 3"-->
+                <!--                android:layout_marginStart="20dp"-->
+                <!--                android:textColor="@color/black"-->
+                <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                app:layout_constraintHorizontal_bias="0.062"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                app:layout_constraintTop_toTopOf="parent"-->
+                <!--                app:layout_constraintVertical_bias="0.327" />-->
+
+                <!--            <TextView-->
+                <!--                android:id="@+id/player4"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="21dp"-->
+                <!--                android:text="Player 4"-->
+                <!--                android:textColor="@color/black"-->
+                <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                android:layout_marginStart="20dp"-->
+                <!--                app:layout_constraintHorizontal_bias="0.062"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                app:layout_constraintTop_toTopOf="parent"-->
+                <!--                app:layout_constraintVertical_bias="0.394" />-->
+
+                <TextView
+                    android:id="@+id/maxPlayers"
+                    android:layout_width="128dp"
+                    android:layout_height="24dp"
+                    android:textStyle="bold"
+                    android:text="Max Players: - "
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.891"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.16" />
+
+                <EditText
+                    android:id="@+id/enterRoomCode"
+                    android:layout_width="167dp"
+                    android:layout_height="51dp"
+                    android:text=""
+                    android:inputType="number"
+                    android:textSize="17dp"
+                    android:paddingStart="20dp"
+                    android:hint="Enter Your Room code"
+                    android:background="@drawable/round_40"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/leaveBt"
+                    app:layout_constraintVertical_bias="0.0"/>
+
+                <Button
+                    android:id="@+id/startGame"
+                    android:layout_width="167dp"
+                    android:layout_height="51dp"
+                    android:text="Start Game"
+                    android:background="@drawable/round_40"
+                    android:theme="@style/pink_light_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/player2"
+                    app:layout_constraintVertical_bias="0.581" />
+
+                <Button
+                    android:id="@+id/leaveBt"
+                    android:layout_width="167dp"
+                    android:layout_height="51dp"
+                    android:background="@drawable/round_40"
+                    android:text="Leave Room"
+                    android:textAllCaps="false"
+                    android:textSize="17dp"
+                    android:theme="@style/pink_light_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/player2"
+                    app:layout_constraintVertical_bias="0.781" />
+
+                <Button
+                    android:id="@+id/joinBt"
+                    android:layout_width="133dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/round_40"
+                    android:text="Join"
+                    android:textAllCaps="false"
+                    android:textSize="17dp"
+                    android:theme="@style/pink_light_button"
+                    app:layout_constraintHorizontal_bias="0.85"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/leaveBt"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/roomCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="29dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Room Code"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    app:layout_constraintVertical_bias="0.3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/player2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/joinRoomCard"
-        android:layout_width="367dp"
-        android:layout_height="455dp"
-        android:backgroundTint="#87ceeb"
-        app:cardCornerRadius="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/holderTab"
-        app:layout_constraintVertical_bias="0.0">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/holderTab"
+            android:layout_width="367dp"
+            android:layout_height="55dp"
+            app:layout_constraintVertical_bias="0.14"
+            android:backgroundTint="#FFC0CB"
+            android:elevation="40dp"
+            app:cardCornerRadius="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/player1"
-                android:layout_width="wrap_content"
-                android:layout_height="21dp"
-                android:text="Player 1"
-                android:layout_marginStart="20dp"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.063"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.185" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="154dp"
+                    android:layout_height="44dp"
+                    android:backgroundTint="#87ceeb"
+                    android:elevation="40dp"
+                    app:cardCornerRadius="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.075"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.454">
 
-            <TextView
-                android:id="@+id/player2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Player 2"
-                android:layout_marginStart="20dp"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.062"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.258" />
-
-<!--            <TextView-->
-<!--                android:id="@+id/player3"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="21dp"-->
-<!--                android:text="Player 3"-->
-<!--                android:layout_marginStart="20dp"-->
-<!--                android:textColor="@color/black"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintHorizontal_bias="0.062"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintVertical_bias="0.327" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/player4"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="21dp"-->
-<!--                android:text="Player 4"-->
-<!--                android:textColor="@color/black"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                android:layout_marginStart="20dp"-->
-<!--                app:layout_constraintHorizontal_bias="0.062"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintVertical_bias="0.394" />-->
-
-            <TextView
-                android:id="@+id/maxPlayers"
-                android:layout_width="128dp"
-                android:layout_height="24dp"
-                android:textStyle="bold"
-                android:text="Max Players: - "
-                android:textColor="@color/red"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.891"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.16" />
-
-            <EditText
-                android:id="@+id/enterRoomCode"
-                android:layout_width="167dp"
-                android:layout_height="51dp"
-                android:text=""
-                android:inputType="number"
-                android:textSize="17dp"
-                android:paddingStart="20dp"
-                android:hint="Enter Your Room code"
-                android:background="@drawable/round_40"
-                app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/leaveBt"
-                app:layout_constraintVertical_bias="0.0"/>
-
-            <Button
-                android:id="@+id/leaveBt"
-                android:layout_width="167dp"
-                android:layout_height="51dp"
-                android:background="@drawable/round_40"
-                android:text="Leave Room"
-                android:textAllCaps="false"
-                android:textSize="17dp"
-                android:theme="@style/pink_light_button"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/player2"
-                app:layout_constraintVertical_bias="0.781" />
-
-            <Button
-                android:id="@+id/joinBt"
-                android:layout_width="133dp"
-                android:layout_height="55dp"
-                android:background="@drawable/round_40"
-                android:text="Join"
-                android:textAllCaps="false"
-                android:textSize="17dp"
-                android:theme="@style/pink_light_button"
-                app:layout_constraintHorizontal_bias="0.85"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/leaveBt"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/roomCode"
-                android:layout_width="wrap_content"
-                android:layout_height="29dp"
-                android:layout_marginTop="12dp"
-                android:text="Room Code"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:textSize="22dp"
-                app:layout_constraintVertical_bias="0.3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/player2" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/holderTab"
-        android:layout_width="367dp"
-        android:layout_height="55dp"
-        app:layout_constraintVertical_bias="0.14"
-        android:backgroundTint="#FFC0CB"
-        android:elevation="40dp"
-        app:cardCornerRadius="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="154dp"
-                android:layout_height="44dp"
-                android:backgroundTint="#87ceeb"
-                android:elevation="40dp"
-                app:cardCornerRadius="40dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.075"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.454">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView28"
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="Create Room"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
+                        android:layout_height="match_parent">
 
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:layout_editor_absoluteX="35dp"
-                        tools:layout_editor_absoluteY="10dp" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/textView28"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Create Room"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
-                android:layout_width="154dp"
-                android:layout_height="44dp"
-                android:backgroundTint="#87ceeb"
-                android:elevation="40dp"
-                app:cardCornerRadius="40dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.924"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.454">
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:layout_editor_absoluteX="35dp"
+                            tools:layout_editor_absoluteY="10dp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="154dp"
+                    android:layout_height="44dp"
+                    android:backgroundTint="#87ceeb"
+                    android:elevation="40dp"
+                    app:cardCornerRadius="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.924"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.454">
 
-                    <TextView
-                        android:id="@+id/textView29"
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="Join Room"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:layout_editor_absoluteX="35dp"
-                        tools:layout_editor_absoluteY="10dp" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView29"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Join Room"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:layout_editor_absoluteX="35dp"
+                            tools:layout_editor_absoluteY="10dp" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guide"

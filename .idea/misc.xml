@@ -21,6 +21,7 @@
         <entry key="app/src/main/res/layout/details.xml" value="0.11965811965811966" />
         <entry key="app/src/main/res/layout/fragment_buzzer_round.xml" value="0.11965811965811966" />
         <entry key="app/src/main/res/layout/fragment_collab.xml" value="0.2423076923076923" />
+        <entry key="app/src/main/res/layout/fragment_collab_game_settings.xml" value="0.23173828124999998" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/fragment_host_game.xml" value="0.375" />
