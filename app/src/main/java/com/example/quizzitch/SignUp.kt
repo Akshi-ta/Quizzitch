@@ -26,7 +26,7 @@ class SignUp: AppCompatActivity() {
         }
         val signupbt: Button = findViewById(R.id.button3)
         val enterMail : EditText = findViewById(R.id.textView8)
-        val enterPass : EditText = findViewById(R.id.textView10)
+        val enterPass : EditText = findViewById(R.id.editPassword)
         signupbt.setOnClickListener {
             when {
                 TextUtils.isEmpty(enterMail.text.toString().trim { it <= ' '}) -> {
