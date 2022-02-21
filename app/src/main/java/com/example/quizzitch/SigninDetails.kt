@@ -47,7 +47,7 @@ class SigninDetails: AppCompatActivity() {
                     db.collection("desc").document(mauth.uid.toString()).set(mp).addOnSuccessListener {
                         Toast.makeText(this, "Data Saved!", Toast.LENGTH_SHORT).show()
 
-                        val intent = Intent(this, Dash::class.java)
+                        val intent = Intent(this, GetStarted::class.java)
                         startActivity(intent)
                         finish()
 

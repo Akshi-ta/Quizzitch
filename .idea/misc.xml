@@ -19,6 +19,8 @@
         <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/signin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/splashscreen.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/round_40.xml" value="0.2245" />
+        <entry key="app/src/main/res/drawable/signin_card_up.xml" value="0.2245" />
+        <entry key="app/src/main/res/drawable/signup_card_down.xml" value="0.2245" />
         <entry key="app/src/main/res/layout/activity_dash.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/details.xml" value="0.11965811965811966" />
@@ -29,10 +31,10 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/fragment_host_game.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2423076923076923" />
-        <entry key="app/src/main/res/layout/fragment_profile_page.xml" value="0.11965811965811966" />
+        <entry key="app/src/main/res/layout/fragment_profile_page.xml" value="0.2796663594042134" />
         <entry key="app/src/main/res/layout/getstarted1.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/levelscreen.xml" value="0.2423076923076923" />
-        <entry key="app/src/main/res/layout/signin.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/signin.xml" value="0.22313232421875" />
         <entry key="app/src/main/res/layout/signup.xml" value="0.165" />
         <entry key="app/src/main/res/layout/splashscreen.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/take_quiz.xml" value="0.2423076923076923" />

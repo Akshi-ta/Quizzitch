@@ -58,7 +58,7 @@ class SignIn : AppCompatActivity(){
 //                                    Snackbar.make(findViewById(R.id.textView5), "LOGGED IN", 2000)
 //                                        .setAction("action", null).show()
 
-                                    val intent = Intent(this, Dash::class.java)
+                                    val intent = Intent(this, GetStarted::class.java)
                                     intent.flags =
                                         Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     intent.putExtra("User_id", firebaseUser.uid)
@@ -81,19 +81,13 @@ class SignIn : AppCompatActivity(){
                 }
             }
         }
-        val signup: TextView = findViewById(R.id.textView6)
+        val signup: TextView = findViewById(R.id.signup)
         signup.setOnClickListener{
             val intent = Intent(this, SignUp::class.java)
             startActivity(intent)
             finish()
         }
 
-        val guest: Button = findViewById(R.id.button2)
-        guest.setOnClickListener{
-            val intent = Intent(this, Dash::class.java)
-            startActivity(intent)
-            finish()
-        }
 
     }
 }

@@ -19,7 +19,6 @@ class CollabGameSettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(requireContext(), "this fragment is getting reached", Toast.LENGTH_LONG).show()
     }
 
 }
