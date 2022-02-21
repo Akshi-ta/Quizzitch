@@ -150,7 +150,7 @@ class HostGameFragment : Fragment() {
             leaveBt.visibility = View.GONE
             roomCode.visibility = View.GONE
         }else if(switch==1) {
-            //Toast.makeText(requireContext(), "1 was called", Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "1 was called", Toast.LENGTH_LONG).show()
             createTextView.isClickable = false
             createRoomCard.visibility = View.GONE
             joinRoomCard.visibility = View.VISIBLE
@@ -195,6 +195,7 @@ class HostGameFragment : Fragment() {
             }
         }else if(switch==2)
         {
+            Toast.makeText(requireContext(), "2 was called", Toast.LENGTH_LONG).show()
             val i: Int = enterRoomCode.text.toString().toInt()
             store.collection("games").get().addOnSuccessListener {
                 var hostUid: String =""
@@ -244,6 +245,13 @@ class HostGameFragment : Fragment() {
                             Toast.makeText(requireContext(), "Room Joined",Toast.LENGTH_LONG).show()
                             store.collection("games").document(uid).get().addOnSuccessListener {
                                 var updateMy: HashMap<String, Any> = hashMapOf()
+                                if(hostUid==uid)
+                                {
+                                    startGame.visibility =View.VISIBLE
+                                }
+                                //Toast.makeText(requireContext(), hostUid, Toast.LENGTH_LONG).show()
+
+                                roomCode.text = i.toString()
                                 if(it.data!=null)
                                     updateMy= it.data as HashMap<String, Any>
                                 updateMy["anyGameActive"] = i
@@ -253,11 +261,6 @@ class HostGameFragment : Fragment() {
                                 else
                                     store.collection("games").document(uid).set(updateMy)
                             }
-                            if(hostUid==uid)
-                            {
-                                startGame.visibility =View.VISIBLE
-                            }
-                            roomCode.text = i.toString()
                         }
 
                     }
@@ -277,6 +280,7 @@ class HostGameFragment : Fragment() {
         val enterRoomCode: EditText = view.findViewById(R.id.enterRoomCode)
         val leaveBt: Button = view.findViewById(R.id.leaveBt)
         val joinBt: Button = view.findViewById(R.id.joinBt)
+        val startGame: Button = view.findViewById(R.id.startGame)
 
         leaveBt.visibility = View.VISIBLE
         joinBt.visibility = View.GONE
@@ -296,6 +300,10 @@ class HostGameFragment : Fragment() {
                     player+=user["name"].toString() + "\n"
                 }
             }
+            if(hostUid==uid) {
+                startGame.visibility = View.VISIBLE
+            }
+
             player2.text = player
             roomCode.text = i.toString()
             val s:String = maxPlayers.text.toString()
