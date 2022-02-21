@@ -290,7 +290,6 @@
                         android:id="@+id/test_anim"
                         android:layout_width="331dp"
                         android:layout_height="214dp"
-
                         app:layout_constraintBottom_toTopOf="@+id/testyourknowledge"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -311,6 +310,21 @@
                         app:layout_constraintTop_toTopOf="@+id/testyourknowledge"
                         app:layout_constraintVertical_bias="1.0"
                         app:srcCompat="@drawable/bulb" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/test_anim2"
+                        android:layout_width="81dp"
+                        android:layout_height="84dp"
+                        android:layout_marginTop="96dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.976"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/practice"
+                        app:layout_constraintVertical_bias="1.0"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/swipe" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -368,6 +382,31 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="0.882" />
+
+                    <ImageView
+                        android:id="@+id/imageView23"
+                        android:layout_width="43dp"
+                        android:layout_height="52dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/rounds"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="@+id/rounds"
+                        app:layout_constraintTop_toTopOf="@+id/rounds"
+                        app:layout_constraintVertical_bias="1.0"
+                        app:srcCompat="@drawable/hands" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/test_anim3"
+                        android:layout_width="63dp"
+                        android:layout_height="54dp"
+                        android:layout_marginStart="308dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView23"
+                        app:layout_constraintVertical_bias="0.818"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/swipe" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -428,7 +467,7 @@
                         android:layout_marginBottom="76dp"
                         app:layout_constraintBottom_toTopOf="@+id/textView38"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.946"
+                        app:layout_constraintHorizontal_bias="0.99"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:layout_constraintVertical_bias="1.0"
