@@ -95,7 +95,7 @@ class HostGameFragment : Fragment() {
         }
 
         leaveBt.setOnClickListener{
-            leaveRoom()
+            leaveRoom(view)
         }
 
         joinBt.setOnClickListener{
@@ -119,6 +119,8 @@ class HostGameFragment : Fragment() {
         val joinTextView: TextView = view.findViewById(R.id.textView29)
         val createRoomCard: CardView = view.findViewById(R.id.createRoomCard)
         val joinRoomCard: CardView = view.findViewById(R.id.joinRoomCard)
+        val generateButton: Button = view.findViewById(R.id.button5)
+        generateButton.isClickable = true
         createTextView.isClickable = false
         joinTextView.isClickable = true
         createRoomCard.visibility = View.VISIBLE
@@ -127,6 +129,7 @@ class HostGameFragment : Fragment() {
 
     private fun basicJoin(view: View, switch: Int){
         val createTextView: TextView = view.findViewById(R.id.textView28)
+        val startGame: Button = view.findViewById(R.id.startGame)
         val joinTextView: TextView = view.findViewById(R.id.textView29)
         val createRoomCard: CardView = view.findViewById(R.id.createRoomCard)
         val joinRoomCard: CardView = view.findViewById(R.id.joinRoomCard)
@@ -142,6 +145,7 @@ class HostGameFragment : Fragment() {
         if(switch==0)
         {
             enterRoomCode.visibility = View.VISIBLE
+            startGame.visibility = View.GONE
             joinBt.visibility = View.VISIBLE
             leaveBt.visibility = View.GONE
             roomCode.visibility = View.GONE
@@ -181,6 +185,11 @@ class HostGameFragment : Fragment() {
                             }
                         }
                         player2.text = s
+                        if(hostUid==uid)
+                        {
+                            startGame.visibility = View.VISIBLE
+                        }
+                        roomCode.text = i
                     }
                 }
             }
@@ -244,6 +253,11 @@ class HostGameFragment : Fragment() {
                                 else
                                     store.collection("games").document(uid).set(updateMy)
                             }
+                            if(hostUid==uid)
+                            {
+                                startGame.visibility =View.VISIBLE
+                            }
+                            roomCode.text = i.toString()
                         }
 
                     }
@@ -298,9 +312,16 @@ class HostGameFragment : Fragment() {
 
     }
 
-    private fun leaveRoom(){
-        Toast.makeText(requireContext(), "Leave fun pending", Toast.LENGTH_LONG).show()
-
+    private fun leaveRoom(view: View){
+        //Toast.makeText(requireContext(), "Leave fun pending", Toast.LENGTH_LONG).show()
+        store.collection("games").document(uid).get().addOnSuccessListener {
+            val map: HashMap<String, Any> = it.data as HashMap<String, Any>
+            map["anyGameActive"] = -1
+            store.collection("games").document(uid).update(map).addOnSuccessListener {
+                Toast.makeText(requireContext(), "Room left", Toast.LENGTH_LONG).show()
+                basicCreate(view)
+            }
+        }
     }
 
     private fun createRoom(view: View, players: String,bets: String) {
@@ -333,7 +354,7 @@ class HostGameFragment : Fragment() {
                     newI["i"] = i+1
                     store.collection("gamesCount").document("i").update(newI)
                     Toast.makeText(requireContext(), "Room created", Toast.LENGTH_LONG).show()
-                    basicJoin(view,0)
+                    basicJoin(view,1)
                 }
             }
         }
