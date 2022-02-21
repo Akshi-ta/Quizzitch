@@ -303,6 +303,7 @@
                         android:layout_width="48dp"
                         android:layout_height="50dp"
                         android:rotation="20"
+                        android:background="#00000000"
                         app:layout_constraintBottom_toBottomOf="@+id/testyourknowledge"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.927"

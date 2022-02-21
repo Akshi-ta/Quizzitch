@@ -221,14 +221,14 @@ class HostGameFragment : Fragment() {
                 store.collection("games").document(hostUid).get().addOnSuccessListener {
                     val gameData: HashMap<String, Any> = it[i.toString()] as HashMap<String, Any>
                     val otherPlayers: HashMap<String, Any> = gameData["otherPlayers"] as HashMap<String, Any>
-                    if(otherPlayers["no"].toString().toInt()>=gameData["maxPlayers"].toString().toInt() && otherPlayers[uid]==null)
-                    {
-                        Toast.makeText(requireContext(), "Room is already full", Toast.LENGTH_LONG).show()
-                        return@addOnSuccessListener
-                    }
                     if((gameData["host"] as HashMap<String, Any>)["uid"].toString()==uid)
                     {
                         liveUpdateJoin(uid, i,view)
+                        return@addOnSuccessListener
+                    }
+                    if(otherPlayers["no"].toString().toInt()>=gameData["maxPlayers"].toString().toInt() && otherPlayers[uid]==null)
+                    {
+                        Toast.makeText(requireContext(), "Room is already full", Toast.LENGTH_LONG).show()
                         return@addOnSuccessListener
                     }
                     if(otherPlayers[uid]==null)
@@ -285,30 +285,36 @@ class HostGameFragment : Fragment() {
         leaveBt.visibility = View.VISIBLE
         joinBt.visibility = View.GONE
         enterRoomCode.visibility = View.GONE
-        store.collection("games").document(hostUid).get().addOnSuccessListener {
-            val gameData: HashMap<String, Any> = (it[i.toString()] as HashMap<String, Any>)
-            player1.text = (gameData["host"] as HashMap<String,Any>)["name"].toString()
+        store.collection("games").document(hostUid).addSnapshotListener {it, e->
 
-            val otherPlayers: HashMap<String, Any> = gameData["otherPlayers"] as HashMap<String, Any>
-            var player: String = ""
-            for(p in otherPlayers)
-            {
-                if(p.key!="no")
+            e?.let {
+                Toast.makeText(requireContext(), "Error Occured $e", Toast.LENGTH_LONG).show()
+            }
+            it?.let {
+                val gameData: HashMap<String, Any> = (it[i.toString()] as HashMap<String, Any>)
+                player1.text = (gameData["host"] as HashMap<String,Any>)["name"].toString()
+
+                val otherPlayers: HashMap<String, Any> = gameData["otherPlayers"] as HashMap<String, Any>
+                var player: String = ""
+                for(p in otherPlayers)
                 {
-                    val user: HashMap<String, Any> = p.value as HashMap<String, Any>
-                    player+=user["name"].toString() + "\n"
+                    if(p.key!="no")
+                    {
+                        val user: HashMap<String, Any> = p.value as HashMap<String, Any>
+                        player+=user["name"].toString() + "\n"
+                    }
                 }
-            }
-            if(hostUid==uid) {
-                startGame.visibility = View.VISIBLE
-            }
+                if(hostUid==uid) {
+                    startGame.visibility = View.VISIBLE
+                }
 
-            player2.text = player
-            roomCode.visibility = View.VISIBLE
-            roomCode.text = i.toString()
-            Toast.makeText(requireContext(), i.toString(), Toast.LENGTH_LONG).show()
-            val s:String = maxPlayers.text.toString()
-            maxPlayers.text = "Max Players: -" + gameData["maxPlayers"].toString()
+                player2.text = player
+                roomCode.visibility = View.VISIBLE
+                roomCode.text = i.toString()
+                Toast.makeText(requireContext(), i.toString(), Toast.LENGTH_LONG).show()
+                val s:String = maxPlayers.text.toString()
+                maxPlayers.text = "Max Players: -" + gameData["maxPlayers"].toString()
+            }
         }
 
     }
