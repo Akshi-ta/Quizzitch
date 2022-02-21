@@ -103,7 +103,7 @@
         android:layout_marginTop="136dp"
         android:background="@null"
         android:scaleType="fitCenter"
-        android:src="@drawable/img_3"
+        android:src="@drawable/pencil"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.32"
