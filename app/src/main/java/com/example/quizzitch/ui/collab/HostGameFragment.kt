@@ -285,7 +285,6 @@ class HostGameFragment : Fragment() {
         leaveBt.visibility = View.VISIBLE
         joinBt.visibility = View.GONE
         enterRoomCode.visibility = View.GONE
-
         store.collection("games").document(hostUid).get().addOnSuccessListener {
             val gameData: HashMap<String, Any> = (it[i.toString()] as HashMap<String, Any>)
             player1.text = (gameData["host"] as HashMap<String,Any>)["name"].toString()
@@ -305,7 +304,9 @@ class HostGameFragment : Fragment() {
             }
 
             player2.text = player
+            roomCode.visibility = View.VISIBLE
             roomCode.text = i.toString()
+            Toast.makeText(requireContext(), i.toString(), Toast.LENGTH_LONG).show()
             val s:String = maxPlayers.text.toString()
             maxPlayers.text = "Max Players: -" + gameData["maxPlayers"].toString()
         }
