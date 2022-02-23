@@ -112,8 +112,12 @@ class LevelScreen: Fragment() {
 
         val average: Button = view.findViewById(R.id.avg)
         average.setOnClickListener(){
-            val result = "result"
-            setFragmentResult("requestKey", bundleOf("data" to result))
+            val level = "avg"
+            bundle.putString("data", level)
+            bundle.putString("key", topic)
+            val fragment = QuizFragment()
+            fragment.arguments = bundle
+            fragmentManager?.beginTransaction()?.replace(R.id.levelR,QuizFragment())
                 Toast.makeText(activity, "Average is selected", Toast.LENGTH_SHORT).show()
             }
 //            when (choice){
@@ -183,8 +187,12 @@ class LevelScreen: Fragment() {
 
         val diff: Button = view.findViewById(R.id.hard)
         diff.setOnClickListener(){
-            val result = "result"
-            setFragmentResult("requestKey", bundleOf("data" to result))
+            val level = "diff"
+            bundle.putString("data", level)
+            bundle.putString("key", topic)
+            val fragment = QuizFragment()
+            fragment.arguments = bundle
+            fragmentManager?.beginTransaction()?.replace(R.id.levelR,QuizFragment())
                 Toast.makeText(activity, "Difficult is selected", Toast.LENGTH_SHORT).show()
             }
 //            when (choice){
