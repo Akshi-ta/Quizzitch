@@ -6,13 +6,14 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
     <item
-        android:id="@+id/hostGameFragment"
+        android:id="@+id/buzzerRoundFragment"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Collab"/>
     <item
         android:id="@+id/profilePage"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Profile"/>
+
 
 
 <!--    <item-->

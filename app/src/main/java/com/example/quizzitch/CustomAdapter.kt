@@ -22,7 +22,7 @@ class CustomAdaptor (private val User:ArrayList<User>):RecyclerView.Adapter<Cust
         holder.txtView3.text = currentItem.rank.toString()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val imgView = LayoutInflater.from(parent.context).inflate(R.layout.board_layout, parent,false)
         return ViewHolder(imgView)
     }

@@ -171,25 +171,31 @@ class HostGameFragment : Fragment() {
                             hostUid = map["uid"].toString()
                         }
                     }
-                    store.collection("games").document(hostUid).get().addOnSuccessListener {
-                        val m: HashMap<String, Any> = it[i] as HashMap<String, Any>
-                        val player1: TextView = view.findViewById(R.id.player1)
-                        val player2: TextView = view.findViewById(R.id.player2)
-                        player1.text = (m["host"] as HashMap<String, Any>)["name"].toString()
-                        var s = ""
-                        for(iterator in m["otherPlayers"] as HashMap<String, Any>)
-                        {
-                            if(iterator.key!="no")
+                    store.collection("games").document(hostUid).addSnapshotListener {it, e->
+                        e?.let {
+                            Toast.makeText(requireContext(), e.toString(), Toast.LENGTH_LONG).show()
+                        }
+
+                        it?.let {
+                            val m: HashMap<String, Any> = it[i] as HashMap<String, Any>
+                            val player1: TextView = view.findViewById(R.id.player1)
+                            val player2: TextView = view.findViewById(R.id.player2)
+                            player1.text = (m["host"] as HashMap<String, Any>)["name"].toString()
+                            var s = ""
+                            for(iterator in m["otherPlayers"] as HashMap<String, Any>)
                             {
-                                s+=(iterator.value as HashMap<String, Any>)["name"].toString() + "\n"
+                                if(iterator.key!="no")
+                                {
+                                    s+=(iterator.value as HashMap<String, Any>)["name"].toString() + "\n"
+                                }
                             }
+                            player2.text = s
+                            if(hostUid==uid)
+                            {
+                                startGame.visibility = View.VISIBLE
+                            }
+                            roomCode.text = i
                         }
-                        player2.text = s
-                        if(hostUid==uid)
-                        {
-                            startGame.visibility = View.VISIBLE
-                        }
-                        roomCode.text = i
                     }
                 }
             }
@@ -331,7 +337,11 @@ class HostGameFragment : Fragment() {
         //Toast.makeText(requireContext(), "Leave fun pending", Toast.LENGTH_LONG).show()
         store.collection("games").document(uid).get().addOnSuccessListener {
             val map: HashMap<String, Any> = it.data as HashMap<String, Any>
+            val i: String = map["anyGameActive"].toString()
             map["anyGameActive"] = -1
+            val game: HashMap<String, Any> = map[i] as HashMap<String, Any>
+            game[""]
+            map[i] = game
             store.collection("games").document(uid).update(map).addOnSuccessListener {
                 Toast.makeText(requireContext(), "Room left", Toast.LENGTH_LONG).show()
                 basicCreate(view)

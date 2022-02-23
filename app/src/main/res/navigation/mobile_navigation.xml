@@ -50,4 +50,23 @@
             android:id="@+id/action_collabGameSettingsFragment_to_collabFragment"
             app:destination="@id/collabFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/buzzerRoundFragment"
+        android:name="com.example.quizzitch.ui.collab.BuzzerRoundFragment"
+        android:label="fragment_buzzer_round"
+        tools:layout="@layout/fragment_buzzer_round" >
+        <action
+            android:id="@+id/action_buzzerRoundFragment_to_createRoomFragment"
+            app:destination="@id/createRoomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createRoomFragment"
+        android:name="com.example.quizzitch.ui.collab.CreateRoomFragment"
+        android:label="fragment_create_room"
+        tools:layout="@layout/fragment_create_room" />
+    <fragment
+        android:id="@+id/joinRoomFragment"
+        android:name="com.example.quizzitch.ui.collab.JoinRoomFragment"
+        android:label="fragment_join_room"
+        tools:layout="@layout/fragment_join_room" />
 </navigation>
