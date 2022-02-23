@@ -1,30 +1,48 @@
 package com.example.quizzitch.ui.home
 
-import android.os.Build
+import android.content.Intent
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
-import android.os.StrictMode
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.setFragmentResultListener
 import com.example.quizzitch.R
-import com.fasterxml.jackson.databind.JsonNode
-import com.fasterxml.jackson.databind.ObjectMapper
-import java.io.InputStream
-import java.net.HttpURLConnection
-import java.net.URL
+import kotlinx.android.synthetic.main.take_quiz.*
 
 class QuizFragment: Fragment() {
+
+    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+
+    private var score: Int = 0
+
+    private var currentPosition: Int = 1
+    private var questionList: ArrayList<QuestionData>? = null
+    private var selectedOption: Int = 0
+
+    var choice: String? = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        choice = arguments?.getString("topic")
+
+        setFragmentResultListener("requestKey") { key, bundle ->
+            // Any type can be passed via to the bundle
+            val result = bundle.getString("data")
+            // Do something with the result...
+        }
+
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.take_quiz, container, false)
-    }
 
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -33,82 +51,128 @@ class QuizFragment: Fragment() {
         val pgbar: ProgressBar = view.findViewById(R.id.progressBar1)
         pgbar.visibility = View.VISIBLE
 
-        val rd: RadioGroup = view.findViewById(R.id.radio)
-        rd.setOnClickListener {
-            fun onRadioButtonClicked(view: View) {
-                if (view is RadioButton) {
-                    // Is the button now checked?
-                    val checked = view.isChecked
+        questionList = setData.getQuestion()
 
-                    // Check which radio button was clicked
-                    when (view.getId()) {
-                        R.id.option1 ->
-                            if (checked) {
-                                // This is option 1
-                            }
-                        R.id.option2 ->
-                            if (checked) {
-                                // This is option 2
-                            }
-                        R.id.option3 ->
-                            if (checked) {
-                                // This is option 3
-                            }
-                        R.id.option4 ->
-                            if (checked) {
-                                // This is option 4
-                            }
+        setQuestion()
+
+
+        opt_1.setOnClickListener {
+
+            selectedOptionStyle(opt_1, 1)
+        }
+        opt_2.setOnClickListener {
+
+            selectedOptionStyle(opt_2, 2)
+        }
+        opt_3.setOnClickListener {
+
+            selectedOptionStyle(opt_3, 3)
+        }
+        opt_4.setOnClickListener {
+
+            selectedOptionStyle(opt_4, 4)
+        }
+
+        submit.setOnClickListener {
+            if (selectedOption != 0) {
+                val question = questionList!![currentPosition - 1]
+                if (selectedOption != question.correct_ans) {
+                    setColor(selectedOption, R.drawable.wrong_question_option)
+                }else{
+                    score++
+                }
+                setColor(question.correct_ans,R.drawable.correct_question_option)
+                if(currentPosition==questionList!!.size)
+                   submit.text= "FINISH"
+                else
+                    submit.text= "GO TO NEXT"
+            }else{
+                currentPosition++
+                when{
+                    currentPosition<=questionList!!.size->{
+                        setQuestion()
+                    }
+                    else->{
+                        transaction.replace(R.id.homeR, Result())
+                        transaction.addToBackStack("")
+                        transaction.commit()
+                      //  intent.putExtra(setData.score, score.toString())
+                      //  intent.putExtra("total size", questionList!!.size.toString())
                     }
                 }
             }
+            selectedOption=0
+        }
+    }
 
-            val bt: Button = view.findViewById(R.id.imageView2)
-            bt.setOnClickListener {
-                val url =
-                    URL("https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple")
-                val connection: HttpURLConnection = url.openConnection() as HttpURLConnection
-                connection.setRequestProperty("accept", "application/json");
-                val int = Build.VERSION.SDK_INT
-                if (int > 8) {
-                    val policy = StrictMode.ThreadPolicy.Builder()
-                        .permitAll().build()
-                    StrictMode.setThreadPolicy(policy)
-
+        fun setColor(opt: Int, color: Int) {
+            when (opt) {
+                1 -> {
+                  //  opt_1.background = ContextCompat.getDrawable(this, color)
                 }
-                val stream: InputStream = connection.inputStream
-                val mapper: ObjectMapper = ObjectMapper()
-                val node: JsonNode = mapper.readTree(stream)
-                val ques = node.path("results")
-                var i = 0
-                tv.text = ques[i].path("question").asText()
-                pgbar.visibility = View.GONE
-                tv.visibility = View.VISIBLE
-
-                val next: Button = view.findViewById(R.id.next)
-                next.setOnClickListener {
-                    if (i >= 9) {
-                        Toast.makeText(context, "It is the End!", Toast.LENGTH_SHORT).show()
-                    } else {
-                        i++
-                        tv.text = ques[i].path("question").asText()
-                    }
+                2 -> {
+                   // opt_2.background = ContextCompat.getDrawable(this, color)
                 }
-
-                val prev: Button = view.findViewById(R.id.previous)
-                prev.setOnClickListener {
-                    if (i <= 0) {
-                        Toast.makeText(context, "It is the starting question.", Toast.LENGTH_SHORT)
-                            .show()
-                    } else {
-                        i--
-                        tv.text = ques[i].path("question").asText()
-                    }
+                3 -> {
+                   // opt_3.background = ContextCompat.getDrawable(this, color)
                 }
-
+                4 -> {
+                   // opt_4.background = ContextCompat.getDrawable(this, color)
+                }
             }
-
         }
 
 
+
+
+    fun setQuestion() {
+        val question = questionList!![currentPosition - 1]
+
+        setOptionStyle()
+
+        timeBar.progress = currentPosition
+        timeBar.max = questionList!!.size
+        progress_text.text = "${currentPosition}" + "/" + "${questionList!!.size}"
+        quiz.text = question.question
+        opt_1.text = question.option_one
+        opt_2.text = question.option_tw0
+        opt_3.text = question.option_three
+        opt_4.text = question.option_four
     }
+
+    fun setOptionStyle() {
+
+        var optionList: ArrayList<TextView> = arrayListOf()
+        if (opt_1 != null) {
+            optionList.add(0, opt_1)
+        }
+        if (opt_2 != null) {
+            optionList.add(1, opt_2)
+        }
+        if (opt_3 != null) {
+            optionList.add(2, opt_3)
+        }
+        if (opt_4 != null) {
+            optionList.add(3, opt_4)
+        }
+
+        for (op in optionList) {
+            op.setTextColor(Color.parseColor("#555151"))
+           // op.background = ContextCompat.getDrawable(this, R.drawable.question_option)
+            op.typeface = Typeface.DEFAULT
+        }
+    }
+
+    fun selectedOptionStyle(view: TextView, opt: Int) {
+
+        setOptionStyle()
+        selectedOption = opt
+      //  view.background = ContextCompat.getDrawable(this, R.drawable.selected_question_option)
+        view.typeface = Typeface.DEFAULT_BOLD
+        view.setTextColor(Color.parseColor("#000000"))
+
+    }
+
 }
+
+

@@ -7,12 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
+import androidx.fragment.app.setFragmentResult
 import androidx.lifecycle.ViewModelProvider
 import com.example.quizzitch.R
 import com.example.quizzitch.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
+
+    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -36,7 +42,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val topic: String
-        val bundle = Bundle()
+        val bundle =  Bundle()
 
         val history: ImageButton = view.findViewById(R.id.imageView2)
         val politics: ImageButton = view.findViewById(R.id.imageView3)
@@ -60,11 +66,10 @@ class HomeFragment : Fragment() {
         val marvel: ImageButton = view.findViewById(R.id.imageView21)
 
             history.setOnClickListener() {
-               val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("history", "topic")
+                transaction.replace(R.id.homeR, LevelScreen())
+                transaction.addToBackStack("history")
+                transaction.commit()
                     Toast.makeText(activity, "History is selected", Toast.LENGTH_SHORT).show()
-            }
-                startActivity(intent)
             }
             politics.setOnClickListener() {
                 val intent = Intent(context, LevelScreen::class.java).apply {
