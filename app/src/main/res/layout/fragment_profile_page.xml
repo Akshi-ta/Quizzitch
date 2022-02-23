@@ -9,10 +9,10 @@
     tools:context=".ui.profile.ProfilePage">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="405dp"
-        android:layout_height="606dp"
+        android:layout_width="416dp"
+        android:layout_height="681dp"
+        android:layout_marginTop="125dp"
         app:cardCornerRadius="80dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -134,6 +134,7 @@
                 android:layout_height="57dp"
                 android:layout_marginBottom="9dp"
                 android:text="Save chnages"
+
                 app:layout_constraintBottom_toTopOf="@+id/button2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.502"
