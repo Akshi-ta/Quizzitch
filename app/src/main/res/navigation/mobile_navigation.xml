@@ -58,15 +58,31 @@
         <action
             android:id="@+id/action_buzzerRoundFragment_to_createRoomFragment"
             app:destination="@id/createRoomFragment" />
+        <action
+            android:id="@+id/action_buzzerRoundFragment_to_joinRoomFragment"
+            app:destination="@id/joinRoomFragment" />
     </fragment>
     <fragment
         android:id="@+id/createRoomFragment"
         android:name="com.example.quizzitch.ui.collab.CreateRoomFragment"
         android:label="fragment_create_room"
-        tools:layout="@layout/fragment_create_room" />
+        tools:layout="@layout/fragment_create_room" >
+        <action
+            android:id="@+id/action_createRoomFragment_to_playersFragment"
+            app:destination="@id/playersFragment" />
+    </fragment>
     <fragment
         android:id="@+id/joinRoomFragment"
         android:name="com.example.quizzitch.ui.collab.JoinRoomFragment"
         android:label="fragment_join_room"
-        tools:layout="@layout/fragment_join_room" />
+        tools:layout="@layout/fragment_join_room" >
+        <action
+            android:id="@+id/action_joinRoomFragment_to_playersFragment"
+            app:destination="@id/playersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playersFragment"
+        android:name="com.example.quizzitch.ui.collab.PlayersFragment"
+        android:label="fragment_players"
+        tools:layout="@layout/fragment_players" />
 </navigation>

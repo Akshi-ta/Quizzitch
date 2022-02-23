@@ -25,7 +25,8 @@ class BuzzerRoundFragment : Fragment() {
 
         val createRoomTV: TextView = view.findViewById(R.id.createRoomTV)
         createRoomTV.setOnClickListener{
-
+            val cons: ConstraintLayout = view.findViewById(R.id.spareBuzzer)
+            cons.visibility = View.GONE
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.replace(R.id.buzzer, CreateRoomFragment())
             transaction.addToBackStack("createRoom")
@@ -34,7 +35,8 @@ class BuzzerRoundFragment : Fragment() {
 
         val joinRoomTV: TextView = view.findViewById(R.id.joinRoomTV)
         joinRoomTV.setOnClickListener{
-
+            val cons: ConstraintLayout = view.findViewById(R.id.spareBuzzer)
+            cons.visibility = View.GONE
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 .replace(R.id.buzzer, JoinRoomFragment())
                 .addToBackStack("joinRoom")
