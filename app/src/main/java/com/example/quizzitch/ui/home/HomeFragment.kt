@@ -17,7 +17,7 @@ import com.example.quizzitch.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+//    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
 
 
     private var _binding: FragmentHomeBinding? = null
