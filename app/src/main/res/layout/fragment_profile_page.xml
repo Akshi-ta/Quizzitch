@@ -9,10 +9,10 @@
     tools:context=".ui.profile.ProfilePage">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="416dp"
-        android:layout_height="681dp"
+        android:layout_width="match_parent"
+        android:layout_height="781dp"
         android:layout_marginTop="125dp"
-        app:cardCornerRadius="80dp"
+        app:cardCornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
