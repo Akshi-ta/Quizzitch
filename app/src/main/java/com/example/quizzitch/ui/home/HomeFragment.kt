@@ -41,7 +41,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val topic: String
         val bundle =  Bundle()
 
         val history: ImageButton = view.findViewById(R.id.imageView2)
@@ -66,9 +65,14 @@ class HomeFragment : Fragment() {
         val marvel: ImageButton = view.findViewById(R.id.imageView21)
 
             history.setOnClickListener() {
-                transaction.replace(R.id.homeR, LevelScreen())
-                transaction.addToBackStack("history")
-                transaction.commit()
+                val topic = "history"
+               // transaction.replace(R.id.homeR, LevelScreen())
+               // transaction.addToBackStack("history")
+                bundle.putString("data", topic)
+                val fragment = LevelScreen()
+                fragment.arguments = bundle
+                fragmentManager?.beginTransaction()?.replace(R.id.homeR,LevelScreen())?.commit()
+               // transaction.commit()
                     Toast.makeText(activity, "History is selected", Toast.LENGTH_SHORT).show()
             }
             politics.setOnClickListener() {

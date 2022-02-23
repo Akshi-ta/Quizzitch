@@ -8,24 +8,24 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.setFragmentResultListener
 import com.example.quizzitch.R
 
 class LevelScreen: Fragment() {
-    var choice: String? = ""
+    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+    val bundle = Bundle()
+    private val args = this.arguments
+    private val inputData = args?.get("data")
+    val topic = inputData.toString()
+
+    //var choice: String? = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        choice = arguments?.getString("topic")
-
-        setFragmentResultListener("requestKey") { key, bundle ->
-            // Any type can be passed via to the bundle
-            val result = bundle.getString("key")
-            // Do something with the result...
-        }
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.levelscreen, container, false)
 
@@ -36,14 +36,17 @@ class LevelScreen: Fragment() {
 
         val easy: Button = view.findViewById(R.id.easy)
         easy.setOnClickListener(){
-            val result = "result"
-            setFragmentResult("requestKey", bundleOf("data" to result))
+                val level = "easy"
+            bundle.putString("data", level)
+            bundle.putString("key", topic)
+            val fragment = QuizFragment()
+            fragment.arguments = bundle
+            fragmentManager?.beginTransaction()?.replace(R.id.levelR,QuizFragment())
                 Toast.makeText(activity, "Easy is selected", Toast.LENGTH_SHORT).show()
             }
-//            when (choice){
-//                 "history" -> intent.apply {
-//                              putExtra("easy", "level")
-//                              }
+//            when (topic){
+//                 "history" ->
+//
 //                 "politics" -> intent.apply {
 //                     putExtra("easy", "politics")
 //                 }
