@@ -33,6 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:lottie_autoPlay="true"
+                app:lottie_loop="true"
                 app:lottie_rawRes="@raw/wait"/>
 
         </androidx.cardview.widget.CardView>
@@ -50,7 +51,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="278dp">
 
 
                 <TableLayout
@@ -191,8 +192,10 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/tableLayout"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/textView56"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
@@ -202,8 +205,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="start game "
-            android:backgroundTint="#E5E5E5"
+            android:text="start game"
+            android:textStyle="bold"
+            android:backgroundTint="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/button9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -219,8 +223,9 @@
             android:layout_marginTop="1dp"
             android:layout_marginBottom="62dp"
             android:text="leave game"
+            android:textStyle="bold"
             android:textColor="@color/black"
-            android:backgroundTint="#E5E5E5"
+            android:backgroundTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
