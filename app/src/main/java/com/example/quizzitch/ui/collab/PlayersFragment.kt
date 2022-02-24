@@ -45,8 +45,9 @@ class PlayersFragment : Fragment() {
         val hostUid: String? = requireArguments().getString("hostuid")
         if(hostUid!=uid)
         {
-            startBt.isClickable = false
+            startBt.visibility = View.GONE
         }
+        //Toast.makeText(requireContext(), hostUid, Toast.LENGTH_LONG).show()
         if(hostUid!=null)
         {
             store.collection("games").document(hostUid).addSnapshotListener{it, e->

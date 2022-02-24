@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
 import com.google.firebase.auth.FirebaseAuth
@@ -73,8 +74,11 @@ class JoinRoomFragment : Fragment() {
                     if(b)
                     {
                         Toast.makeText(requireContext(), "already joined", Toast.LENGTH_LONG).show()
+                        val cons: ConstraintLayout = view.findViewById(R.id.spareJoin)
+                        cons.visibility = View.GONE
                         val bundle = Bundle()
                         bundle.putString("roomcode", roomCode.text.toString())
+                        //Toast.makeText(requireContext(), hostUid, Toast.LENGTH_LONG).show()
                         bundle.putString("hostuid", hostUid)
                         val fragment: Fragment = PlayersFragment()
                         fragment.arguments = bundle
@@ -101,6 +105,8 @@ class JoinRoomFragment : Fragment() {
                         total[roomCode.text.toString()] = gameData
                         store.collection("games").document(hostUid).update(total).addOnSuccessListener {
                             Toast.makeText(requireContext(), "Room Joined", Toast.LENGTH_LONG).show()
+                            val cons: ConstraintLayout = view.findViewById(R.id.spareJoin)
+                            cons.visibility = View.GONE
                             val bundle = Bundle()
                             bundle.putString("roomcode", roomCode.text.toString())
                             bundle.putString("hostuid", hostUid)
