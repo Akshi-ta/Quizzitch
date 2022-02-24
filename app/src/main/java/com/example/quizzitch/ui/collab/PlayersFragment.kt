@@ -75,7 +75,6 @@ class PlayersFragment : Fragment() {
         }
 
         startBt.setOnClickListener{
-            Toast.makeText(requireContext(), "asdfasdfasfasfdf", Toast.LENGTH_LONG).show()
             val cons: ConstraintLayout = view.findViewById(R.id.sparePlayer)
             cons.visibility = View.GONE
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
