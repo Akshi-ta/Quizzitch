@@ -85,4 +85,9 @@
         android:name="com.example.quizzitch.ui.collab.PlayersFragment"
         android:label="fragment_players"
         tools:layout="@layout/fragment_players" />
+    <fragment
+        android:id="@+id/category1Fragment"
+        android:name="com.example.quizzitch.Category1Fragment"
+        android:label="fragment_category1"
+        tools:layout="@layout/fragment_category1" />
 </navigation>

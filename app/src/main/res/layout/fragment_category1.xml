@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Category1Fragment"
+    android:background="@drawable/bluegradient">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="114dp"
+        android:layout_marginHorizontal="60dp"
+        android:text="CHOOSE A CATEGORY"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="42dp"
+        android:layout_marginVertical="22dp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="385dp"
+        android:layout_height="574dp"
+        android:layout_marginVertical="145dp"
+        android:layout_marginHorizontal="13.5dp"
+        app:cardCornerRadius="40dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableRow
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imageButton"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginHorizontal="27dp"
+                            android:layout_marginVertical="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/history" />
+
+                        <TextView
+                            android:id="@+id/textView48"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="History"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/imageButton2"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginHorizontal="30dp"
+                            android:layout_marginVertical="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/court" />
+                        <TextView
+                            android:id="@+id/textView49"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Politics"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:layout_marginVertical="20dp"
+                            android:layout_marginHorizontal="27dp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/imageButton3"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="fitCenter"
+                            android:layout_marginVertical="20dp"
+                            android:layout_marginHorizontal="27dp"
+                            android:src="@drawable/dance" />
+                        <TextView
+                            android:id="@+id/textView50"
+                            android:layout_width="98dp"
+                            android:layout_height="47dp"
+                            android:text="Music n Dance"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:layout_marginVertical="20dp"
+                            android:layout_marginHorizontal="27dp"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </TableRow>
+                <TableRow
+                    android:gravity="center_horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                <ImageButton
+                    android:id="@+id/imageButton4"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="fitCenter"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="27dp"
+                    android:src="@drawable/bollywood" />
+                <TextView
+                    android:id="@+id/textView51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bollywood"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="27dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/imageButton5"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="fitCenter"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="27dp"
+                        android:src="@drawable/sports" />
+                    <TextView
+                        android:id="@+id/textView58"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sports"
+                        android:textAlignment="center"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="27dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/imageButton6"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="fitCenter"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="27dp"
+                        android:src="@drawable/unity" />
+                    <TextView
+                        android:id="@+id/textView59"
+                        android:layout_width="81dp"
+                        android:layout_height="29dp"
+                        android:text="Culture"
+                        android:textAlignment="center"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="27dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                </TableRow>
+                <TableRow
+                    android:gravity="center_horizontal">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageButton
+                        android:id="@+id/imageButton7"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="27dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/magnifyingglass" />
+                    <TextView
+                        android:id="@+id/textView60"
+                        android:layout_width="102dp"
+                        android:layout_height="50dp"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="27dp"
+                        android:text="Science n nature"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center">
+                <ImageButton
+                    android:id="@+id/imageButton8"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="27dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/settings" />
+                <TextView
+                    android:id="@+id/textView61"
+                    android:layout_width="116dp"
+                    android:layout_height="37dp"
+                    android:text="Technology"
+                    android:layout_marginVertical="20dp"
+                    android:layout_marginHorizontal="27dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageButton
+                        android:id="@+id/imageButton9"
+                        android:layout_width="70dp"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="27dp"
+                        android:layout_height="70dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/mythology" />
+                    <TextView
+                        android:id="@+id/textView62"
+                        android:layout_width="100dp"
+                        android:layout_height="27dp"
+                        android:text="Mythology"
+                        android:textAlignment="center"
+                        android:layout_marginVertical="20dp"
+                        android:layout_marginHorizontal="27dp"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                </TableRow>
+                <TableRow
+                    android:gravity="center_horizontal">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/imageButton10"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/worldmap" />
+                    </LinearLayout>
+                </TableRow>
+                    <ImageButton
+                    android:id="@+id/imageButton11"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/paintpalette" />
+
+                    <ImageButton
+                    android:id="@+id/imageButton12"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/koala" />
+
+
+
+            </TableLayout>
+
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+
+
+</FrameLayout>

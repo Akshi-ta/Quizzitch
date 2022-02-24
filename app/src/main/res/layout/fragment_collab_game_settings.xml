@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TableRow
-                android:gravity="center_horizontal">
+                android:orientation="vertical">
                 <LinearLayout
                     android:orientation="vertical"
                     android:gravity="center">
