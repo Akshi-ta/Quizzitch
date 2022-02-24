@@ -16,31 +16,38 @@
         <entry key="..\:/Users/HP/AndroidStudioProjects/quizzitch/app/src/main/res/layout/signin.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/quizzitch/app/src/main/res/layout/signup.xml" value="0.22" />
         <entry key="..\:/Users/HP/AndroidStudioProjects/quizzitch/app/src/main/res/layout/splashscreen.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_buzzer_round.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_category1.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_collab.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_collab_game_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_create_room.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_host_game.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_profile_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_join_room.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_players.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/fragment_profile_page.xml" value="0.2" />
         <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/levelscreen.xml" value="0.4" />
         <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/signin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/splashscreen.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/round_40.xml" value="0.2245" />
-        <entry key="app/src/main/res/layout/activity_choose_avatar.xml" value="0.11965811965811966" />
         <entry key="app/src/main/res/layout/activity_dash.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/activity_leader_board.xml" value="0.3146067415730337" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/board_layout.xml" value="0.6744753193651509" />
         <entry key="app/src/main/res/layout/details.xml" value="0.11965811965811966" />
         <entry key="app/src/main/res/layout/fragment_buzzer_round.xml" value="0.2423076923076923" />
-        <entry key="app/src/main/res/layout/fragment_category1.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/fragment_collab.xml" value="0.2423076923076923" />
-        <entry key="app/src/main/res/layout/fragment_collab_game_settings.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_collab_game_settings.xml" value="0.23173828124999998" />
         <entry key="app/src/main/res/layout/fragment_create_room.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/fragment_host_game.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_join_room.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.2423076923076923" />
-        <entry key="app/src/main/res/layout/fragment_players.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/fragment_profile_page.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/getstarted1.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/fragment_profile_page.xml" value="0.11965811965811966" />
+        <entry key="app/src/main/res/layout/getstarted1.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/levelscreen.xml" value="0.2423076923076923" />
         <entry key="app/src/main/res/layout/signin.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/signup.xml" value="0.165" />
