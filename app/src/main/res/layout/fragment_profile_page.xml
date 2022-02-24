@@ -25,19 +25,22 @@
                 android:id="@+id/textView"
                 android:layout_width="162dp"
                 android:layout_height="49dp"
+                android:layout_marginBottom="176dp"
                 android:text="username"
+                android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textView40"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.454"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
+                app:layout_constraintTop_toBottomOf="@+id/dp" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="222dp"
                 android:layout_height="27dp"
-                android:layout_marginTop="3dp"
                 android:layout_marginBottom="52dp"
                 android:text="Your Email Here"
                 android:textColor="@color/black"
@@ -46,7 +49,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.879"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView39" />
+                app:layout_constraintTop_toBottomOf="@+id/textView40"
+                app:layout_constraintVertical_bias="0.983" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -168,12 +172,13 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toTopOf="@+id/textView40"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.578"
+                app:layout_constraintHorizontal_bias="0.078"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView">
+
                 <TableRow
-                    android:layout_width="394dp"
-                    android:layout_height="46dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     tools:layout_editor_absoluteX="10dp"
                     tools:layout_editor_absoluteY="132dp">
 
@@ -210,7 +215,7 @@
 
                 </TableRow>
 
-            <TableRow
+                <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:layout_editor_absoluteX="6dp"
