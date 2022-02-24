@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
-import com.example.quizzitch.ui.slideshow.splashscreen
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -76,6 +77,18 @@ class CreateRoomFragment : Fragment() {
                         val m: HashMap<String, Any> = hashMapOf()
                         m["i"] = roomCode.toInt()+1
                         store.collection("gamesCount").document("i").update(m)
+
+                        val cons: ConstraintLayout = view.findViewById(R.id.spareCreate)
+                        cons.visibility = View.GONE
+                        val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                        val bundle = Bundle()
+                        bundle.putString("roomcode", roomCode)
+                        bundle.putString("hostuid", uid)
+                        val fragment: Fragment = PlayersFragment()
+                        fragment.arguments = bundle
+                        transaction.replace(R.id.createRoom, fragment)
+                        transaction.addToBackStack("players")
+                        transaction.commit()
                     }
                 }
             }

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -72,6 +73,15 @@ class JoinRoomFragment : Fragment() {
                     if(b)
                     {
                         Toast.makeText(requireContext(), "already joined", Toast.LENGTH_LONG).show()
+                        val bundle = Bundle()
+                        bundle.putString("roomcode", roomCode.text.toString())
+                        bundle.putString("hostuid", hostUid)
+                        val fragment: Fragment = PlayersFragment()
+                        fragment.arguments = bundle
+                        val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                        transaction.replace(R.id.join, fragment)
+                        transaction.addToBackStack("joins")
+                        transaction.commit()
                         return@addOnSuccessListener
                     }
                     if(maxPlayers.toInt()<=(gameData["otherPlayers"]as HashMap<String, Any>)["no"].toString().toInt())
@@ -91,6 +101,15 @@ class JoinRoomFragment : Fragment() {
                         total[roomCode.text.toString()] = gameData
                         store.collection("games").document(hostUid).update(total).addOnSuccessListener {
                             Toast.makeText(requireContext(), "Room Joined", Toast.LENGTH_LONG).show()
+                            val bundle = Bundle()
+                            bundle.putString("roomcode", roomCode.text.toString())
+                            bundle.putString("hostuid", hostUid)
+                            val fragment: Fragment = PlayersFragment()
+                            fragment.arguments = bundle
+                            val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                            transaction.replace(R.id.join, fragment)
+                            transaction.addToBackStack("joins")
+                            transaction.commit()
                         }
                     }
 
