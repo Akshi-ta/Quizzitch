@@ -83,7 +83,7 @@ class ProfilePage : Fragment() {
         }
 
 
-        val myButton: View = view.findViewById(R.id.imageButton3)
+        val myButton: View = view.findViewById(R.id.changeDp)
         myButton.setOnClickListener {
             SelectImage()
         }

@@ -18,6 +18,11 @@ import kotlinx.android.synthetic.main.take_quiz.*
 class QuizFragment: Fragment() {
 
     val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+    private val args = this.arguments
+    private val inputData1 = args?.get("data")
+    private val inputData2 = args?.get("key")
+    val level = inputData1.toString()
+    val topic = inputData2.toString()
 
     private var score: Int = 0
 
