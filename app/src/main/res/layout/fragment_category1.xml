@@ -39,13 +39,13 @@
                 android:orientation="vertical">
 
                 <TableRow
-                    android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_width="177dp"
+                    android:layout_height="148dp"
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="193dp"
+                        android:layout_height="134dp"
                         android:orientation="vertical">
 
                         <ImageButton
@@ -67,9 +67,10 @@
                             android:textSize="20sp"
                             android:textStyle="bold" />
                     </LinearLayout>
+
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
 
                         <ImageButton
                             android:id="@+id/imageButton2"
@@ -79,39 +80,42 @@
                             android:layout_marginVertical="20dp"
                             android:scaleType="fitCenter"
                             android:src="@drawable/court" />
+
                         <TextView
                             android:id="@+id/textView49"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="27dp"
+                            android:layout_marginVertical="20dp"
                             android:text="Politics"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:layout_marginVertical="20dp"
-                            android:layout_marginHorizontal="27dp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:orientation="vertical">
+
                         <ImageButton
                             android:id="@+id/imageButton3"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
-                            android:scaleType="fitCenter"
-                            android:layout_marginVertical="20dp"
                             android:layout_marginHorizontal="27dp"
+                            android:layout_marginVertical="20dp"
+                            android:scaleType="fitCenter"
                             android:src="@drawable/dance" />
+
                         <TextView
                             android:id="@+id/textView50"
                             android:layout_width="98dp"
                             android:layout_height="47dp"
+                            android:layout_marginHorizontal="27dp"
+                            android:layout_marginVertical="20dp"
                             android:text="Music n Dance"
                             android:textAlignment="center"
                             android:textColor="@color/black"
-                            android:layout_marginVertical="20dp"
-                            android:layout_marginHorizontal="27dp"
                             android:textSize="20sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -194,29 +198,33 @@
                 </TableRow>
                 <TableRow
                     android:gravity="center_horizontal">
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <ImageButton
-                        android:id="@+id/imageButton7"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_marginVertical="20dp"
-                        android:layout_marginHorizontal="27dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/magnifyingglass" />
-                    <TextView
-                        android:id="@+id/textView60"
-                        android:layout_width="102dp"
-                        android:layout_height="50dp"
-                        android:layout_marginVertical="20dp"
-                        android:layout_marginHorizontal="27dp"
-                        android:text="Science n nature"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="232dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/imageButton7"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginHorizontal="27dp"
+                            android:layout_marginVertical="20dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/magnifyingglass" />
+
+                        <TextView
+                            android:id="@+id/textView60"
+                            android:layout_width="102dp"
+                            android:layout_height="50dp"
+                            android:layout_marginHorizontal="27dp"
+                            android:layout_marginVertical="20dp"
+                            android:text="Science n nature"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 <LinearLayout
                     android:orientation="vertical"
                     android:gravity="center">

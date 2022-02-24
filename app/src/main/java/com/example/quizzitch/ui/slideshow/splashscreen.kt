@@ -55,19 +55,19 @@ class splashscreen  : AppCompatActivity(){
                 }
             }
         }
-        videoView = findViewById<View>(R.id.videoView) as VideoView?
-        if (mediaController == null) {
-            mediaController = MediaController(this)
-            mediaController!!.setAnchorView(this.videoView)
-        }
-        videoView!!.setMediaController(mediaController)
-        videoView!!.setVideoURI(Uri.parse("android.resource://" + packageName +"/" + R.raw.animati
-        ))
-        videoView!!.requestFocus()
-        videoView!!.start()
-        videoView!!.setOnCompletionListener {
-            Toast.makeText(applicationContext,"Welcome to Quizzitch", Toast.LENGTH_LONG).show()
-        }
+//        videoView = findViewById<View>(R.id.videoView) as VideoView?
+//        if (mediaController == null) {
+//            mediaController = MediaController(this)
+//            mediaController!!.setAnchorView(this.videoView)
+//        }
+//        videoView!!.setMediaController(mediaController)
+//        videoView!!.setVideoURI(Uri.parse("android.resource://" + packageName +"/" + R.raw.animati
+//        ))
+//        videoView!!.requestFocus()
+//        videoView!!.start()
+//        videoView!!.setOnCompletionListener {
+//            Toast.makeText(applicationContext,"Welcome to Quizzitch", Toast.LENGTH_LONG).show()
+//        }
 
     }
     }
