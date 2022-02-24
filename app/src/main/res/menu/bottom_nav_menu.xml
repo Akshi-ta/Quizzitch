@@ -10,6 +10,10 @@
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Collab"/>
     <item
+        android:id="@+id/leaderBoardActivity"
+        android:icon="@drawable/blue"
+        android:title="leaderboard"/>
+    <item
         android:id="@+id/profilePage"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Profile"/>

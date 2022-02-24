@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,297 +7,796 @@
     tools:context=".Category1Fragment"
     android:background="@drawable/bluegradient">
 
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/cardView8"-->
+<!--        android:layout_width="385dp"-->
+<!--        android:layout_height="574dp"-->
+<!--        app:cardCornerRadius="40dp"-->
+<!--        app:layout_constraintVertical_bias="0.6"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <TableLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TableRow-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <ImageButton-->
+<!--                            android:id="@+id/imageButton"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:scaleType="fitCenter"-->
+<!--                            android:src="@drawable/history" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView48"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="History"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <ImageButton-->
+<!--                            android:id="@+id/imageButton2"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_marginHorizontal="30dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:scaleType="fitCenter"-->
+<!--                            android:src="@drawable/court" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView49"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:text="Politics"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <ImageButton-->
+<!--                            android:id="@+id/imageButton3"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:scaleType="fitCenter"-->
+<!--                            android:src="@drawable/dance" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView50"-->
+<!--                            android:layout_width="98dp"-->
+<!--                            android:layout_height="47dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:text="Music n Dance"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+<!--                </TableRow>-->
+
+<!--                <TableRow android:gravity="center_horizontal">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <ImageButton-->
+<!--                            android:id="@+id/imageButton4"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:scaleType="fitCenter"-->
+<!--                            android:src="@drawable/bollywood" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView51"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:text="Bollywood"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <ImageButton-->
+<!--                            android:id="@+id/imageButton5"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:scaleType="fitCenter"-->
+<!--                            android:src="@drawable/sports" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView58"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:text="Sports"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <ImageButton-->
+<!--                            android:id="@+id/imageButton6"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:scaleType="fitCenter"-->
+<!--                            android:src="@drawable/unity" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView59"-->
+<!--                            android:layout_width="81dp"-->
+<!--                            android:layout_height="29dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:text="Culture"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+<!--                </TableRow>-->
+
+<!--                <TableRow android:gravity="center_horizontal">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <ImageButton-->
+<!--                            android:id="@+id/imageButton7"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:scaleType="fitCenter"-->
+<!--                            android:src="@drawable/magnifyingglass" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView60"-->
+<!--                            android:layout_width="102dp"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:text="Science n nature"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <ImageButton-->
+<!--                            android:id="@+id/imageButton8"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:scaleType="fitCenter"-->
+<!--                            android:src="@drawable/settings" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView61"-->
+<!--                            android:layout_width="116dp"-->
+<!--                            android:layout_height="37dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:text="Technology"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <ImageButton-->
+<!--                            android:id="@+id/imageButton9"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:scaleType="fitCenter"-->
+<!--                            android:src="@drawable/mythology" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/textView62"-->
+<!--                            android:layout_width="100dp"-->
+<!--                            android:layout_height="27dp"-->
+<!--                            android:layout_marginHorizontal="27dp"-->
+<!--                            android:layout_marginVertical="20dp"-->
+<!--                            android:text="Mythology"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:textColor="@color/black"-->
+<!--                            android:textSize="20sp"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+<!--                </TableRow>-->
+
+<!--                <TableRow android:gravity="center_horizontal">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:gravity="center"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <ImageButton-->
+<!--                            android:id="@+id/imageButton10"-->
+<!--                            android:layout_width="70dp"-->
+<!--                            android:layout_height="70dp"-->
+<!--                            android:scaleType="fitCenter"-->
+<!--                            android:src="@drawable/worldmap" />-->
+<!--                    </LinearLayout>-->
+<!--                </TableRow>-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/imageButton11"-->
+<!--                    android:layout_width="70dp"-->
+<!--                    android:layout_height="70dp"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/paintpalette" />-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/imageButton12"-->
+<!--                    android:layout_width="70dp"-->
+<!--                    android:layout_height="70dp"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/koala" />-->
+
+
+<!--            </TableLayout>-->
+
+<!--        </ScrollView>-->
+<!--    </androidx.cardview.widget.CardView>-->
+
+
     <TextView
+        android:id="@+id/textView48"
         android:layout_width="wrap_content"
-        android:layout_height="114dp"
-        android:layout_marginHorizontal="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="CHOOSE A CATEGORY"
-        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="42dp"
-        android:layout_marginVertical="22dp"
-        android:textStyle="bold" />
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06" />
 
     <androidx.cardview.widget.CardView
-        android:layout_width="385dp"
-        android:layout_height="574dp"
-        android:layout_marginVertical="145dp"
-        android:layout_marginHorizontal="13.5dp"
-        app:cardCornerRadius="40dp">
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView48" >
+
 
         <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="391dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
                 <TableRow
                     android:orientation="vertical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
+                    android:gravity="center_horizontal">
                     <LinearLayout
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:gravity="center">
 
                         <ImageButton
-                            android:id="@+id/imageButton"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_marginHorizontal="27dp"
-                            android:layout_marginVertical="20dp"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/history" />
-
+                            android:id="@+id/historyI"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/history"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
                         <TextView
-                            android:id="@+id/textView48"
+                            android:id="@+id/historyt"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="History"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:layout_height="23dp"
+                            android:text="@string/history"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
                     </LinearLayout>
+
                     <LinearLayout
                         android:orientation="vertical"
                         android:gravity="center">
-
                         <ImageButton
-                            android:id="@+id/imageButton2"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_marginHorizontal="30dp"
-                            android:layout_marginVertical="20dp"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/court" />
+                            android:id="@+id/politicsi"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/court"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
                         <TextView
-                            android:id="@+id/textView49"
+                            android:id="@+id/politicst"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Politics"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:textSize="20sp"
-                            android:layout_marginVertical="20dp"
-                            android:layout_marginHorizontal="27dp"
-                            android:textStyle="bold"/>
+                            android:layout_height="23dp"
+                            android:text="@string/politics"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:orientation="vertical"
                         android:gravity="center">
                         <ImageButton
-                            android:id="@+id/imageButton3"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:scaleType="fitCenter"
-                            android:layout_marginVertical="20dp"
-                            android:layout_marginHorizontal="27dp"
-                            android:src="@drawable/dance" />
+                            android:id="@+id/dancei"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/dance"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
                         <TextView
-                            android:id="@+id/textView50"
-                            android:layout_width="98dp"
-                            android:layout_height="47dp"
-                            android:text="Music n Dance"
-                            android:textAlignment="center"
-                            android:textColor="@color/black"
-                            android:layout_marginVertical="20dp"
-                            android:layout_marginHorizontal="27dp"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:id="@+id/dancet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/dance"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
                     </LinearLayout>
-                </TableRow>
-                <TableRow
-                    android:gravity="center_horizontal">
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                <ImageButton
-                    android:id="@+id/imageButton4"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:scaleType="fitCenter"
-                    android:layout_marginVertical="20dp"
-                    android:layout_marginHorizontal="27dp"
-                    android:src="@drawable/bollywood" />
-                <TextView
-                    android:id="@+id/textView51"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bollywood"
-                    android:layout_marginVertical="20dp"
-                    android:layout_marginHorizontal="27dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-                    </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <ImageButton
-                        android:id="@+id/imageButton5"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:scaleType="fitCenter"
-                        android:layout_marginVertical="20dp"
-                        android:layout_marginHorizontal="27dp"
-                        android:src="@drawable/sports" />
-                    <TextView
-                        android:id="@+id/textView58"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sports"
-                        android:textAlignment="center"
-                        android:layout_marginVertical="20dp"
-                        android:layout_marginHorizontal="27dp"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageButton
-                        android:id="@+id/imageButton6"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:scaleType="fitCenter"
-                        android:layout_marginVertical="20dp"
-                        android:layout_marginHorizontal="27dp"
-                        android:src="@drawable/unity" />
-                    <TextView
-                        android:id="@+id/textView59"
-                        android:layout_width="81dp"
-                        android:layout_height="29dp"
-                        android:text="Culture"
-                        android:textAlignment="center"
-                        android:layout_marginVertical="20dp"
-                        android:layout_marginHorizontal="27dp"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-                </TableRow>
-                <TableRow
-                    android:gravity="center_horizontal">
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <ImageButton
-                        android:id="@+id/imageButton7"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_marginVertical="20dp"
-                        android:layout_marginHorizontal="27dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/magnifyingglass" />
-                    <TextView
-                        android:id="@+id/textView60"
-                        android:layout_width="102dp"
-                        android:layout_height="50dp"
-                        android:layout_marginVertical="20dp"
-                        android:layout_marginHorizontal="27dp"
-                        android:text="Science n nature"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:gravity="center">
-                <ImageButton
-                    android:id="@+id/imageButton8"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:layout_marginVertical="20dp"
-                    android:layout_marginHorizontal="27dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/settings" />
-                <TextView
-                    android:id="@+id/textView61"
-                    android:layout_width="116dp"
-                    android:layout_height="37dp"
-                    android:text="Technology"
-                    android:layout_marginVertical="20dp"
-                    android:layout_marginHorizontal="27dp"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:gravity="center">
-                    <ImageButton
-                        android:id="@+id/imageButton9"
-                        android:layout_width="70dp"
-                        android:layout_marginVertical="20dp"
-                        android:layout_marginHorizontal="27dp"
-                        android:layout_height="70dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/mythology" />
-                    <TextView
-                        android:id="@+id/textView62"
-                        android:layout_width="100dp"
-                        android:layout_height="27dp"
-                        android:text="Mythology"
-                        android:textAlignment="center"
-                        android:layout_marginVertical="20dp"
-                        android:layout_marginHorizontal="27dp"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
                 </TableRow>
                 <TableRow
                     android:gravity="center_horizontal">
                     <LinearLayout
                         android:orientation="vertical"
                         android:gravity="center">
+
                         <ImageButton
-                            android:id="@+id/imageButton10"
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/worldmap" />
+                            android:id="@+id/bollyi"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/bollywood"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/bollyt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/bollywood"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/sporti"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/sports"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/sportit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/sports"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/culturei"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/unity"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/cultureit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/culture"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
                     </LinearLayout>
                 </TableRow>
-                    <ImageButton
-                    android:id="@+id/imageButton11"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/paintpalette" />
+                <TableRow
+                    android:gravity="center_horizontal">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
 
-                    <ImageButton
-                    android:id="@+id/imageButton12"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/koala" />
+                        <ImageButton
+                            android:id="@+id/sciencei"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/magnifyingglass"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/HISTORY"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/science"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/computersi"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/settings"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/computersit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/computers"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/mythologyi"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/mythology"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/mythologyit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/mythology"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+                </TableRow>
+                <TableRow
+                    android:gravity="center_horizontal">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/arti"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/paintpalette"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/artit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/art"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/geoi"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/worldmap"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/geoit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/geography"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/animalsi"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/koala"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/animalsit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/animals"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+                </TableRow>
+                <TableRow
+                    android:gravity="center_horizontal">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/comicsi"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/comic"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/comicsit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/comics"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/animei"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/otaku"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/animeit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/anime"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/gadgetsi"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/gadget"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/gadgetsit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/gadgets"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+                </TableRow>
+                <TableRow
+                    android:gravity="center_horizontal">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/codingi"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/binarycode"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/codingit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/coding"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/cartooni"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/mushrooms"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/cartoonit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/cartoon"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/gki"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/knowledge"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/gkit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/gk"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+                </TableRow>
+                <TableRow
+                    android:gravity="center_horizontal">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/covid19i"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/coronavirus"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/covid19it"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/covid_19"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:gravity="center">
+                        <ImageButton
+                            android:id="@+id/marveli"
+                            android:layout_width="120dp"
+                            android:layout_height="137dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/shield"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:id="@+id/marvelit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="23dp"
+                            android:text="@string/marvel"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                    </LinearLayout>
 
 
-
+                </TableRow>
             </TableLayout>
-
         </ScrollView>
+
     </androidx.cardview.widget.CardView>
 
 
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

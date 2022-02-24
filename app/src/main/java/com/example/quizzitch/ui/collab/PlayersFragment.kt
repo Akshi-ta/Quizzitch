@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -70,6 +72,16 @@ class PlayersFragment : Fragment() {
                     }
                 }
             }
+        }
+
+        startBt.setOnClickListener{
+            Toast.makeText(requireContext(), "asdfasdfasfasfdf", Toast.LENGTH_LONG).show()
+            val cons: ConstraintLayout = view.findViewById(R.id.sparePlayer)
+            cons.visibility = View.GONE
+            val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.player, Category1Fragment())
+            transaction.addToBackStack("category")
+            transaction.commit()
         }
     }
 }

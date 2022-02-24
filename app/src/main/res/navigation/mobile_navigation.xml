@@ -87,7 +87,12 @@
         tools:layout="@layout/fragment_players" />
     <fragment
         android:id="@+id/category1Fragment"
-        android:name="com.example.quizzitch.Category1Fragment"
+        android:name="com.example.quizzitch.ui.collab.Category1Fragment"
         android:label="fragment_category1"
         tools:layout="@layout/fragment_category1" />
+    <activity
+        android:id="@+id/leaderBoardActivity"
+        android:name="com.example.quizzitch.LeaderBoardActivity"
+        android:label="activity_leader_board"
+        tools:layout="@layout/activity_leader_board" />
 </navigation>
