@@ -76,25 +76,25 @@
                     <ImageView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/starLord"/>
+                        android:src="@drawable/starlord"/>
                     <ImageView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/ironMan"/>
+                        android:src="@drawable/ironman"/>
                     <ImageView
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/spiderMan" />
+                        android:src="@drawable/spiderman" />
 
                 <ImageView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/captainAmerica"/>
+                    android:src="@drawable/captainamerica"/>
 
                 <ImageView
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:src="@drawable/drStrange"/>
+                    android:src="@drawable/drstrange"/>
 
                 <ImageView
                     android:layout_height="wrap_content"
