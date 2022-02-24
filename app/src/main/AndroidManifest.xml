@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Quizzitch">
+
         <activity
-            android:name=".ui.profile.ChooseAvatar"
+            android:name=".LeaderBoardActivity"
             android:exported="false" />
         <activity
             android:name=".Dash"

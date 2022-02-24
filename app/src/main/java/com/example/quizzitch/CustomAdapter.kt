@@ -6,7 +6,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import org.w3c.dom.Text
+import com.google.firebase.firestore.auth.User
+
 
 class CustomAdaptor (private val User:ArrayList<User>):RecyclerView.Adapter<CustomAdaptor.ViewHolder>()
 {
