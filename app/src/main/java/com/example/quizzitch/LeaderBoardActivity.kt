@@ -2,42 +2,50 @@ package com.example.quizzitch
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
-import java.lang.StringBuilder
+import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.activity_leader_board.*
 
 class LeaderBoardActivity : AppCompatActivity() {
+    private lateinit var dbref: DatabaseReference
+    private lateinit var userRecyclerView: RecyclerView
+    private lateinit var userArrayList: ArrayList<User>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_leader_board)
-        private lateinit var database: DatabaseReference
-        database = Firebase.database.reference
 
+        userRecyclerView = findViewById(R.id.recycler_view)
+        userRecyclerView.layoutManager = LinearLayoutManager(this)
+        userRecyclerView.setHasFixedSize(true)
 
-
-
-        val user = UserList(User.getsize)
-
-        recycler_view.adapter = CustomAdaptor(User)
-        recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.setHasFixedSize(true)
-    }
-
-    private fun UserList(size:Int):List<User> {
-
-        val list= arrayListOf<User>()
-
-
+        userArrayList = arrayListOf<User>()
+        getuserdata()
 
     }
+    private fun getuserdata() {
+        dbref = FirebaseDatabase.getInstance().getReference("Users")
 
+        dbref.addValueEventListener(object : ValueEventListener{
 
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists()) {
+                    for (userSnapshot in snapshot.children) {
+
+                        val user = userSnapshot.getValue(User::class.java)
+                        userArrayList.add(user!!)
+                    }
+                    userRecyclerView.adapter = CustomAdaptor(userArrayList)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
 }
+
 
 

@@ -43,6 +43,8 @@ class SigninDetails: AppCompatActivity() {
                     mp["mail"] = intent.getStringExtra("email-id").toString()
                     mp["uid"] = mauth.uid.toString()
                     mp["anon"] = "false"
+                    mp["score"] = 0.toString()
+
                     val db = FirebaseFirestore.getInstance()
                     db.collection("desc").document(mauth.uid.toString()).set(mp).addOnSuccessListener {
                         Toast.makeText(this, "Data Saved!", Toast.LENGTH_SHORT).show()

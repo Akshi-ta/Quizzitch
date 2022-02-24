@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.firestore.auth.User
 
 
 class CustomAdaptor (private val User:ArrayList<User>):RecyclerView.Adapter<CustomAdaptor.ViewHolder>()
@@ -18,9 +17,8 @@ class CustomAdaptor (private val User:ArrayList<User>):RecyclerView.Adapter<Cust
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = User[position]
         holder.imgViewName.setImageResource(currentItem.avatar)
-        holder.txtView1.text = currentItem.name
+        holder.txtView1.text = currentItem.displayName
         holder.txtView2.text = currentItem.score.toString()
-        holder.txtView3.text = currentItem.rank.toString()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,7 +30,6 @@ class CustomAdaptor (private val User:ArrayList<User>):RecyclerView.Adapter<Cust
         val imgViewName : ImageView = itemView.findViewById(R.id.user_avatar)
         val txtView1 : TextView = itemView.findViewById(R.id.username)
         val txtView2 : TextView = itemView.findViewById(R.id.user_score)
-        val txtView3 : TextView = itemView.findViewById(R.id.user_rank)
 
     }
 }
