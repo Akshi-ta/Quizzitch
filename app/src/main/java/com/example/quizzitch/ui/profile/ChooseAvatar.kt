@@ -116,20 +116,20 @@ class ChooseAvatar : Fragment() {
 private fun operator(view: View, name: String) {
     selectedOption(view)
     val storageRef = FirebaseStorage.getInstance().reference.child("images/$name.jpeg")
-    avatarChoosen(name)
+    avatarChoosen(view, storageRef)
 
 }
 
 private fun selectedOption(view: View) {
-    view.background =
-        ContextCompat.getDrawable(requireContext(), R.drawable.selected_question_option)
+//    view.background =
+//        ContextCompat.getDrawable(requireContext(), R.drawable.selected_question_option)
 
 }
 
 private fun avatarChoosen(view: View, name: StorageReference) {
-    val chosen = R.drawable
+    val chosen = name
 }
 
-}
+
 
 

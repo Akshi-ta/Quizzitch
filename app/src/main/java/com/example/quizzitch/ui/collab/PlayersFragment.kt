@@ -77,8 +77,13 @@ class PlayersFragment : Fragment() {
         startBt.setOnClickListener{
             val cons: ConstraintLayout = view.findViewById(R.id.sparePlayer)
             cons.visibility = View.GONE
+            val fragment: Fragment = Category1Fragment()
+            val bundle = Bundle()
+            bundle.putString("roomcode", requireArguments().getString("roomcode"))
+            bundle.putString("hostuid", requireArguments().getString("hostuid"))
+            fragment.arguments = bundle
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.player, Category1Fragment())
+            transaction.replace(R.id.player, fragment)
             transaction.addToBackStack("category")
             transaction.commit()
         }

@@ -80,6 +80,7 @@ class JoinRoomFragment : Fragment() {
                         bundle.putString("roomcode", roomCode.text.toString())
                         //Toast.makeText(requireContext(), hostUid, Toast.LENGTH_LONG).show()
                         bundle.putString("hostuid", hostUid)
+                        bundle.putString("i", roomCode.text.toString())
                         val fragment: Fragment = PlayersFragment()
                         fragment.arguments = bundle
                         val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
