@@ -17,9 +17,6 @@ import com.example.quizzitch.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
-//    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-
-
     private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
@@ -65,15 +62,16 @@ class HomeFragment : Fragment() {
         val marvel: ImageButton = view.findViewById(R.id.imageView21)
 
             history.setOnClickListener() {
+                Toast.makeText(activity, "History is selected", Toast.LENGTH_SHORT).show()
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 val topic = "history"
-               // transaction.replace(R.id.homeR, LevelScreen())
-               // transaction.addToBackStack("history")
-                bundle.putString("data", topic)
-                val fragment = LevelScreen()
-                fragment.arguments = bundle
-                fragmentManager?.beginTransaction()?.replace(R.id.homeR,LevelScreen())?.commit()
-               // transaction.commit()
-                    Toast.makeText(activity, "History is selected", Toast.LENGTH_SHORT).show()
+                transaction.replace(R.id.homeR, LevelScreen())
+                transaction.addToBackStack("history")
+                //bundle.putString("data", topic)
+                //val fragment = LevelScreen()
+                //fragment.arguments = bundle
+                //fragmentManager?.beginTransaction()?.replace(R.id.homeR,LevelScreen())?.commit()
+                transaction.commit()
             }
             politics.setOnClickListener() {
                 val intent = Intent(context, LevelScreen::class.java).apply {
