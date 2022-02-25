@@ -31,7 +31,7 @@ class ChooseAvatar : Fragment() {
 //        binding = ActivityChooseAvatarBinding.inflate(LayoutInflater)
 //        setContentView(binding.root)
 
-        Toast.makeText(activity,
+        Toast.makeText(requireContext(),
             "Please select your favourite avatar and then click on done",
             Toast.LENGTH_LONG).show()
 
