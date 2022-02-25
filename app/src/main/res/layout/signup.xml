@@ -134,6 +134,36 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.567" />
 
+            <ImageView
+                android:id="@+id/imageView24"
+                android:layout_width="53dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginEnd="293dp"
+                android:layout_marginBottom="111dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editrepPassword"
+                app:srcCompat="@drawable/img" />
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/googleSignInBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="39dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="127dp"
+                android:layout_marginBottom="11dp"
+                android:onClick="@{() -> viewModel.onSignInClick()}"
+                app:layout_constraintBottom_toTopOf="@+id/button3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView24"
+                app:layout_constraintTop_toBottomOf="@+id/editrepPassword">
+
+            </com.google.android.gms.common.SignInButton>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
