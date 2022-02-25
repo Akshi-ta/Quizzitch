@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
 import com.example.quizzitch.SignIn
@@ -87,7 +88,7 @@ class ProfilePage : Fragment() {
 
         val myButton: View = view.findViewById(R.id.changeDp)
         myButton.setOnClickListener {
-            SelectImage()
+            selectImage()
         }
 
         val save: TextView = view.findViewById(R.id.saveChanges)
@@ -101,9 +102,12 @@ class ProfilePage : Fragment() {
     }
 
 
-    private fun SelectImage() {
+    private fun selectImage() {
+        val fragment: Fragment = ChooseAvatar()
+        val cons: ConstraintLayout = requireView().findViewById(R.id.profileR)
+        cons.visibility = View.GONE
         val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.avatarR, ChooseAvatar())
+        transaction.replace(R.id.profileR, fragment)
         transaction.addToBackStack("avatar")
         transaction.commit()
 //        val a: Intent = Intent(Intent.ACTION_GET_CONTENT).setType("image/*")
