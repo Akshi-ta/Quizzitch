@@ -157,12 +157,12 @@
                 <EditText
                     android:layout_width="130dp"
                     android:layout_height="40dp"
-                    android:layout_marginVertical="5dp"
+                    android:layout_marginVertical="7dp"
                     android:layout_marginHorizontal="5dp" />
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginVertical="5dp"
+                    android:layout_marginVertical="7dp"
                     android:layout_marginHorizontal="5dp"/>
 
 
@@ -187,12 +187,12 @@
                 <EditText
                     android:layout_width="130dp"
                     android:layout_height="40dp"
-                    android:layout_marginVertical="5dp"
+                    android:layout_marginVertical="7dp"
                     android:layout_marginHorizontal="5dp" />
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginVertical="5dp"
+                    android:layout_marginVertical="7dp"
                     android:layout_marginHorizontal="5dp"/>
             </TableRow>
 
@@ -215,12 +215,12 @@
                 <EditText
                     android:layout_width="130dp"
                     android:layout_height="40dp"
-                    android:layout_marginVertical="5dp"
+                    android:layout_marginVertical="7dp"
                     android:layout_marginHorizontal="5dp" />
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginVertical="5dp"
+                    android:layout_marginVertical="7dp"
                     android:layout_marginHorizontal="5dp"/>
             </TableRow>
 
@@ -243,12 +243,12 @@
                 <EditText
                     android:layout_width="130dp"
                     android:layout_height="40dp"
-                    android:layout_marginVertical="5dp"
+                    android:layout_marginVertical="7dp"
                     android:layout_marginHorizontal="5dp" />
                 <EditText
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_marginVertical="5dp"
+                    android:layout_marginVertical="7dp"
                     android:layout_marginHorizontal="5dp"/>
             </TableRow>
         </TableLayout>
