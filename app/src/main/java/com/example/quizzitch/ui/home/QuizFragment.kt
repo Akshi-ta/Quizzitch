@@ -171,7 +171,7 @@ class QuizFragment: Fragment() {
         }
     }
 
-    fun selectedOptionStyle(view: TextView, opt: Int) {
+    private fun selectedOptionStyle(view: TextView, opt: Int) {
 
         setOptionStyle()
         selectedOption = opt
