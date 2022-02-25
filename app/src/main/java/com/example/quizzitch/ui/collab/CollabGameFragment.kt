@@ -16,6 +16,7 @@ import com.example.quizzitch.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.collection.LLRBNode
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.fragment_collab_game.*
 
 class CollabGameFragment : Fragment() {
 
@@ -68,7 +69,21 @@ class CollabGameFragment : Fragment() {
 
         val submit: Button = view.findViewById(R.id.button10)
         submit.setOnClickListener {
-            Toast.makeText(requireContext(), answers.toString(), Toast.LENGTH_LONG).show()
+            store.collection("games").document(uid).get().addOnSuccessListener {
+                val map: HashMap<String, Any> = it.data as HashMap<String, Any>
+                val gameData: HashMap<String, Any> = map[roomcode] as HashMap<String, Any>
+                var responses: HashMap<String, Any> = hashMapOf()
+                if(gameData["responses"]!=null)
+                {
+                    responses = gameData["responses"] as HashMap<String, Any>
+                }
+                responses[uid] = answers
+                gameData["responses"] = responses
+                map[roomcode!!] = gameData
+                store.collection("games").document(uid).update(map).addOnSuccessListener {
+                    Toast.makeText(requireContext(), "response recorded", Toast.LENGTH_LONG).show()
+                }
+            }
         }
 
         options1.setOnClickListener {
@@ -77,7 +92,7 @@ class CollabGameFragment : Fragment() {
             options2.background = null
             options3.background = null
             options4.background = null
-            answers[iterator.toString()] = 0
+            answers[iterator.toString()] = options1.text
         }
         options2.setOnClickListener{
             options1.background = null
@@ -85,7 +100,7 @@ class CollabGameFragment : Fragment() {
             options2.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
             options3.background = null
             options4.background = null
-            answers[iterator.toString()] = 1
+            answers[iterator.toString()] =  options2.text
         }
         options3.setOnClickListener{
             options1.background = null
@@ -93,7 +108,7 @@ class CollabGameFragment : Fragment() {
             options3.background = ContextCompat.getDrawable(requireActivity(), R.drawable.bluegradient)
             options3.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
             options4.background = null
-            answers[iterator.toString()] = 2
+            answers[iterator.toString()] =  options1.text
         }
         options4.setOnClickListener{
             options1.background = null
@@ -101,7 +116,7 @@ class CollabGameFragment : Fragment() {
             options3.background = null
             options4.background = ContextCompat.getDrawable(requireActivity(), R.drawable.bluegradient)
             options4.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
-            answers[iterator.toString()] = 3
+            answers[iterator.toString()] =  options1.text
         }
 
     }

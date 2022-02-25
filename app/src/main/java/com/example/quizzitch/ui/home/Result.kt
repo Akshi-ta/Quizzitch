@@ -36,10 +36,10 @@ class Result : Fragment() {
       //  val totalQuestion=intent.getStringExtra("total size")
 
        // Score.text="${score} / ${totalQuestion}"
-        button.setOnClickListener {
-           // startActivity(Intent(this,HomeFragment::class.java))
-           // finish()
-        }
+//        button.setOnClickListener {
+//           // startActivity(Intent(this,HomeFragment::class.java))
+//           // finish()
+//        }
 
     }
 }

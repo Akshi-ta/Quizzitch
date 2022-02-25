@@ -86,14 +86,18 @@
         android:label="fragment_players"
         tools:layout="@layout/fragment_players" >
         <action
-            android:id="@+id/action_playersFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            android:id="@+id/action_playersFragment_to_category1Fragment"
+            app:destination="@id/category1Fragment" />
     </fragment>
     <fragment
         android:id="@+id/category1Fragment"
         android:name="com.example.quizzitch.ui.collab.Category1Fragment"
         android:label="fragment_category1"
-        tools:layout="@layout/fragment_category1" />
+        tools:layout="@layout/fragment_category1" >
+        <action
+            android:id="@+id/action_category1Fragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
     <activity
         android:id="@+id/leaderBoardActivity"
         android:name="com.example.quizzitch.LeaderBoardActivity"
@@ -112,5 +116,14 @@
         android:id="@+id/collabGameFragment"
         android:name="com.example.quizzitch.ui.collab.CollabGameFragment"
         android:label="fragment_collab_game"
-        tools:layout="@layout/fragment_collab_game" />
+        tools:layout="@layout/fragment_collab_game" >
+        <action
+            android:id="@+id/action_collabGameFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.example.quizzitch.ui.collab.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
 </navigation>
