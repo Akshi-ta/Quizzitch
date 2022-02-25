@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
         val fragment: Fragment = LevelScreen()
         val bundle =  Bundle()
 
-        history.setOnClickListener() {
+        history.setOnClickListener {
                 val topic = "history"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
@@ -73,9 +73,9 @@ class HomeFragment : Fragment() {
                 transaction.commit()
                     Toast.makeText(activity, "History is selected", Toast.LENGTH_SHORT).show()
             }
-            politics.setOnClickListener() {
+            politics.setOnClickListener {
                 val topic = "politics"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -85,9 +85,9 @@ class HomeFragment : Fragment() {
                 transaction.commit()
                     Toast.makeText(activity, "Politics is selected", Toast.LENGTH_SHORT).show()
             }
-            dance.setOnClickListener() {
+            dance.setOnClickListener {
                 val topic = "dance"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -97,9 +97,9 @@ class HomeFragment : Fragment() {
                 transaction.commit()
                     Toast.makeText(activity, "Dance is selected", Toast.LENGTH_SHORT).show()
             }
-            bollywood.setOnClickListener() {
+            bollywood.setOnClickListener {
                 val topic = "bollywood"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -110,9 +110,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Bollywood is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            sports.setOnClickListener() {
+            sports.setOnClickListener {
                 val topic = "sports"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -122,9 +122,9 @@ class HomeFragment : Fragment() {
                 transaction.commit()
                     Toast.makeText(activity, "Sports is selected", Toast.LENGTH_SHORT).show()
                 }
-            culture.setOnClickListener() {
+            culture.setOnClickListener {
                 val topic = "culture"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -135,9 +135,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Culture is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            science.setOnClickListener() {
+            science.setOnClickListener {
                 val topic = "science"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -148,9 +148,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Science is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            computers.setOnClickListener() {
+            computers.setOnClickListener {
                 val topic = "computers"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -161,9 +161,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Computers is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            mythology.setOnClickListener() {
+            mythology.setOnClickListener {
                 val topic = "mythology"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -174,9 +174,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "History is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            art.setOnClickListener() {
+            art.setOnClickListener {
                 val topic = "art"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -187,9 +187,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Art is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            geography.setOnClickListener() {
+            geography.setOnClickListener {
                 val topic = "geography"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -200,9 +200,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Geography is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            animals.setOnClickListener() {
+            animals.setOnClickListener {
                 val topic = "animals"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -213,9 +213,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Animals is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            comics.setOnClickListener() {
+            comics.setOnClickListener {
                 val topic = "comics"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -226,9 +226,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Comics is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            anime.setOnClickListener() {
+            anime.setOnClickListener {
                 val topic = "anime"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -239,9 +239,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Anime is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            gadgets.setOnClickListener() {
+            gadgets.setOnClickListener {
                 val topic = "gadgets"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -252,9 +252,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Gadgets is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            coding.setOnClickListener() {
+            coding.setOnClickListener {
                 val topic = "coding"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -265,9 +265,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Coding is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            cartoon.setOnClickListener() {
+            cartoon.setOnClickListener {
                 val topic = "cartoon"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -278,9 +278,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "Cartoon is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            gk.setOnClickListener() {
+            gk.setOnClickListener {
                 val topic = "gk"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -291,9 +291,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "GK is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            covid19.setOnClickListener() {
+            covid19.setOnClickListener {
                 val topic = "covid19"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
@@ -304,9 +304,9 @@ class HomeFragment : Fragment() {
                     Toast.makeText(activity, "COVID 19 is selected", Toast.LENGTH_SHORT).show()
                 }
 
-            marvel.setOnClickListener() {
+            marvel.setOnClickListener {
                 val topic = "marvel"
-                bundle.putString("data", topic.toString())
+                bundle.putString("data", topic)
                 fragment.arguments = bundle
                 val cons: ConstraintLayout = view.findViewById(R.id.homeR)
                 cons.visibility = View.GONE
