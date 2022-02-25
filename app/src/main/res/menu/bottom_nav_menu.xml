@@ -17,6 +17,11 @@
         android:id="@+id/profilePage"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Profile"/>
+    <item
+        android:id="@+id/pasteLinkFragment"
+        android:icon="@drawable/bluegradient"
+        android:title="Pastelink"/>
+
 
 
 

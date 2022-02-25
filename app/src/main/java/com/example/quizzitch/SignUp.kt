@@ -25,7 +25,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.signup.*
 
 class SignUp: AppCompatActivity() {
-    private lateinit var binding: ActivityDashBinding
+//    private lateinit var binding: ActivityDashBinding
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var firebaseAuth: FirebaseAuth
     private companion object{
@@ -35,8 +35,8 @@ class SignUp: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityDashBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+//        binding = ActivityDashBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
         setContentView(R.layout.signup)
         val googleSignInBtn: SignInButton = findViewById(R.id.googleSignInBtn)
         val account = GoogleSignIn.getLastSignedInAccount(this)

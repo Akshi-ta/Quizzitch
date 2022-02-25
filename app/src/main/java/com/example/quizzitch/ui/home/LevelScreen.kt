@@ -39,7 +39,7 @@ class LevelScreen: Fragment() {
             bundle.putString("key", topic)
             val fragment = QuizFragment()
             fragment.arguments = bundle
-            val cons:ConstraintLayout = view.findViewById(R.id.levelR)
+            val cons:ConstraintLayout = view.findViewById(R.id.levelr)
             cons.visibility =View.GONE
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.replace(R.id.levelR, fragment)
@@ -57,7 +57,7 @@ class LevelScreen: Fragment() {
             bundle.putString("key", topic)
             val fragment = QuizFragment()
             fragment.arguments = bundle
-            val cons:ConstraintLayout = view.findViewById(R.id.levelR)
+            val cons:ConstraintLayout = view.findViewById(R.id.levelr)
             cons.visibility =View.GONE
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.replace(R.id.levelR, fragment)
@@ -75,7 +75,7 @@ class LevelScreen: Fragment() {
             bundle.putString("key", topic)
             val fragment = QuizFragment()
             fragment.arguments = bundle
-            val cons:ConstraintLayout = view.findViewById(R.id.levelR)
+            val cons:ConstraintLayout = view.findViewById(R.id.levelr)
             cons.visibility =View.GONE
             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
             transaction.replace(R.id.levelR, fragment)
