@@ -44,9 +44,9 @@ class ProfilePage : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val dp: ImageView = view.findViewById(R.id.imageView5)
-
-        val store: FirebaseFirestore = FirebaseFirestore.getInstance()
         val mauth: FirebaseAuth = FirebaseAuth.getInstance()
+        val uid = mauth.currentUser!!.uid.toString()
+        val store: FirebaseFirestore = FirebaseFirestore.getInstance()
         val dpLocation = mauth.currentUser!!.uid
         val url = "images/$dpLocation/profile_pic"
         val max_bytes:Long = 1024*1024
@@ -57,19 +57,41 @@ class ProfilePage : Fragment() {
         }.addOnFailureListener{
             dp.setImageResource(R.drawable.profilenew)
         }
+        store.collection("desc").document(uid).get().addOnSuccessListener {
+            val map: HashMap<String,Any> = it.data as HashMap<String,Any>
+
+            if(it["gameplayed"] == null){
+                map["gameplayed"] = 0
+            }
+            val gameplayed: TextView = view.findViewById(R.id.textView45)
 
 
+            if(it["quizdone"]==null){
+                map["quizdone"] = 0
+            }
+            val quizdone: TextView= view.findViewById(R.id.textView46)
+            quizdone.text = map["quizdone"].toString()
 
+            if(it["gamewon"]==null){
+                map["gamewon"] = 0
+            }
+            val gamewon: TextView= view.findViewById(R.id.textView44)
+            gamewon.text = map["gamewon"].toString()
 
-        val uid = mauth.currentUser!!.uid.toString()
+            store.collection("desc").document(uid).update(map)
+
+        }
+
         if (mauth.currentUser != null) {
             store.collection("desc").document(uid).get()
                 .addOnSuccessListener {
                     val name: TextView = view.findViewById(R.id.textView)
                     val mail: TextView = view.findViewById(R.id.textView6)
+                    val displayName: TextView = view.findViewById(R.id.textView39)
                     val fullName: String =
                         it.get("first").toString() + " " + it.get("last").toString()
                     name.text = fullName
+                    displayName.text = it.get("displayName").toString()
                     mail.text = it.get("mail").toString()
                 }
         }
@@ -83,7 +105,6 @@ class ProfilePage : Fragment() {
             intent.putExtra("bool", "true")
             startActivity(intent)
         }
-
 
         val myButton: View = view.findViewById(R.id.changeDp)
         myButton.setOnClickListener {

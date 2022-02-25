@@ -95,4 +95,9 @@
         android:name="com.example.quizzitch.LeaderBoardActivity"
         android:label="activity_leader_board"
         tools:layout="@layout/activity_leader_board" />
+    <fragment
+        android:id="@+id/pasteLinkFragment"
+        android:name="com.example.quizzitch.PasteLinkFragment"
+        android:label="fragment_paste_link"
+        tools:layout="@layout/fragment_paste_link" />
 </navigation>

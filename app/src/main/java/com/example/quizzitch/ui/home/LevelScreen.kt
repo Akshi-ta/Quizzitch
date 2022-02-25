@@ -14,7 +14,7 @@ import androidx.fragment.app.setFragmentResultListener
 import com.example.quizzitch.R
 
 class LevelScreen: Fragment() {
-    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+//    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
     val bundle = Bundle()
     private val args = this.arguments
     private val inputData = args?.get("data")
