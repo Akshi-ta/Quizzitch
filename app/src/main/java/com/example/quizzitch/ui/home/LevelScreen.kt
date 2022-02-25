@@ -7,18 +7,15 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.setFragmentResult
-import androidx.fragment.app.setFragmentResultListener
 import com.example.quizzitch.R
 
 class LevelScreen: Fragment() {
 
     private val args = this.arguments
     private val inputData = args?.get("data")
-    val topic = inputData.toString()
+    private val topic = inputData.toString()
 
     //var choice: String? = ""
 
@@ -33,11 +30,10 @@ class LevelScreen: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
-        val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
         val bundle = Bundle()
 
         val easy: Button = view.findViewById(R.id.easy)
-        easy.setOnClickListener(){
+        easy.setOnClickListener {
                 val level = "easy"
             bundle.putString("data", level)
             bundle.putString("key", topic)
@@ -55,7 +51,7 @@ class LevelScreen: Fragment() {
 
 
         val average: Button = view.findViewById(R.id.avg)
-        average.setOnClickListener(){
+        average.setOnClickListener {
             val level = "avg"
             bundle.putString("data", level)
             bundle.putString("key", topic)
@@ -73,7 +69,7 @@ class LevelScreen: Fragment() {
 
 
         val diff: Button = view.findViewById(R.id.hard)
-        diff.setOnClickListener(){
+        diff.setOnClickListener {
             val level = "diff"
             bundle.putString("data", level)
             bundle.putString("key", topic)

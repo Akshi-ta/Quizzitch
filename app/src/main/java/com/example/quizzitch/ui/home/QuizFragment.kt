@@ -11,7 +11,6 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.setFragmentResultListener
 import com.example.quizzitch.R
 import kotlinx.android.synthetic.main.take_quiz.*
 

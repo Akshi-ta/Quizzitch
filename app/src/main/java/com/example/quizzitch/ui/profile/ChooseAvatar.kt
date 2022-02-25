@@ -1,7 +1,5 @@
 package com.example.quizzitch.ui.profile
 
-import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,8 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
 import com.example.quizzitch.databinding.ActivityChooseAvatarBinding
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.activity_choose_avatar.*
 
 class ChooseAvatar : Fragment() {
@@ -59,7 +57,7 @@ class ChooseAvatar : Fragment() {
         private fun operator(view: View, name: String) {
             selectedOption(view)
             val storageRef = FirebaseStorage.getInstance().reference.child("images/$name.jpeg")
-// error!            avatarChoosen(view, storageRef)
+            avatarChoosen(view, storageRef)
 
         }
 
@@ -68,7 +66,7 @@ class ChooseAvatar : Fragment() {
 
     }
 
-    fun avatarChoosen(view: View, name: String){
+    private fun avatarChoosen(view: View, name: StorageReference){
             done.setOnClickListener() {
             val fragment: Fragment = ProfilePage()
             val bundle = Bundle()
