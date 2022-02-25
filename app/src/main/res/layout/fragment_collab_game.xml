@@ -32,97 +32,140 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
-                <TextView
-                    android:id="@+id/textView58"
-                    android:layout_width="271dp"
-                    android:layout_height="wrap_content"
-                    android:text="Question Here"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="28dp"
-                    android:textStyle="bold"
+                <ScrollView
+                    android:layout_width="282dp"
+                    android:layout_height="118dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.533"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.065" />
+                    app:layout_constraintVertical_bias="0.065">
 
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textView58"
+                            android:layout_width="267dp"
+                            android:layout_height="wrap_content"
+                            android:text="Question Here\n\n\n\n\n"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="28dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </ScrollView>
+
+
+<!--                <RadioGroup-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center"-->
+<!--                    android:id="@+id/optionsGroup"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.431"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/textView58"-->
+<!--                    app:layout_constraintVertical_bias="0.707">-->
+
+
+                <ScrollView
+                    android:layout_width="282dp"
+                    android:layout_height="218dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.431"
+                    app:layout_constraintHorizontal_bias="1.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView58"
-                    app:layout_constraintVertical_bias="0.707">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.865">
 
-                    <RadioButton
-                        android:id="@+id/options1"
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="options 1"
-                        android:textAllCaps="false"
-                        android:textColor="@color/black"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
 
-                    <RadioButton
-                        android:id="@+id/options2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="options 2"
-                        android:textAllCaps="false"
-                        android:textColor="@color/black"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/options1"
+                            android:layout_width="234dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="options 1"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="25dp"
+                            android:textStyle="bold"/>
 
-                    <RadioButton
-                        android:id="@+id/options3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="options 3"
-                        android:textAllCaps="false"
-                        android:textColor="@color/black"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/options2"
+                            android:layout_width="234dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="options 2"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="25dp"
+                            android:textStyle="bold"/>
 
-                    <RadioButton
-                        android:id="@+id/options4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="options 4"
-                        android:textAllCaps="false"
-                        android:textColor="@color/black"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
-                </RadioGroup>
+                        <TextView
+                            android:id="@+id/options3"
+                            android:layout_width="234dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="options 3"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="25dp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/options4"
+                            android:layout_width="234dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="options 4"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="25dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.451"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/options3"
+                            app:layout_constraintVertical_bias="0.0" />
+                    </LinearLayout>
+
+
+                </ScrollView>
+
+                <!--                </RadioGroup>-->
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
-        <Button
-            android:layout_width="186dp"
-            android:layout_height="55dp"
-            android:id="@+id/previousButton"
-            android:text="@string/previous"
-            android:textStyle="bold"
-            android:backgroundTint="@color/white"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="28dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView9"
-            app:layout_constraintVertical_bias="0.41">
+<!--        <Button-->
+<!--            android:layout_width="186dp"-->
+<!--            android:layout_height="55dp"-->
+<!--            android:id="@+id/previousButton"-->
+<!--            android:text="@string/previous"-->
+<!--            android:textStyle="bold"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            android:textAllCaps="true"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="28dp"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.497"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/cardView9"-->
+<!--            app:layout_constraintVertical_bias="0.41"/>-->
 
 
-        </Button>
+
 
         <Button
             android:layout_width="182dp"
@@ -157,6 +200,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.21" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/nextButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView9" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
