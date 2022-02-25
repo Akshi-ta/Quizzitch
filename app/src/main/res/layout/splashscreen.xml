@@ -41,8 +41,8 @@
         android:layout_height="132dp"
         android:layout_marginStart="84dp"
         android:layout_marginEnd="84dp"
-        android:text="BE READY,
-        BE SMART,
+        android:text="BE READY
+        BE SMART
         BE NOTICED"
         android:textAlignment="center"
         android:textAllCaps="true"

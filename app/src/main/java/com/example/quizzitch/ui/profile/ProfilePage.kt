@@ -75,7 +75,7 @@ class ProfilePage : Fragment() {
         }
 
 
-        val logOut: Button = view.findViewById(R.id.button2)
+        val logOut: TextView = view.findViewById(R.id.logout)
         logOut.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
 
@@ -90,7 +90,7 @@ class ProfilePage : Fragment() {
             SelectImage()
         }
 
-        val save: Button = view.findViewById(R.id.button3)
+        val save: TextView = view.findViewById(R.id.saveChanges)
         save.setOnClickListener {
             if (isclick)
                 UploadImage()
