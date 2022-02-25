@@ -65,7 +65,7 @@ class HomeFragment : Fragment() {
                 val topic = "history"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -77,7 +77,7 @@ class HomeFragment : Fragment() {
                 val topic = "politics"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -89,7 +89,7 @@ class HomeFragment : Fragment() {
                 val topic = "dance"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -101,7 +101,7 @@ class HomeFragment : Fragment() {
                 val topic = "bollywood"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -114,7 +114,7 @@ class HomeFragment : Fragment() {
                 val topic = "sports"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -126,7 +126,7 @@ class HomeFragment : Fragment() {
                 val topic = "culture"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -139,7 +139,7 @@ class HomeFragment : Fragment() {
                 val topic = "science"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -152,7 +152,7 @@ class HomeFragment : Fragment() {
                 val topic = "computers"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -165,7 +165,7 @@ class HomeFragment : Fragment() {
                 val topic = "mythology"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -178,7 +178,7 @@ class HomeFragment : Fragment() {
                 val topic = "art"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -191,7 +191,7 @@ class HomeFragment : Fragment() {
                 val topic = "geography"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -204,7 +204,7 @@ class HomeFragment : Fragment() {
                 val topic = "animals"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -217,7 +217,7 @@ class HomeFragment : Fragment() {
                 val topic = "comics"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -230,7 +230,7 @@ class HomeFragment : Fragment() {
                 val topic = "anime"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -243,7 +243,7 @@ class HomeFragment : Fragment() {
                 val topic = "gadgets"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -256,7 +256,7 @@ class HomeFragment : Fragment() {
                 val topic = "coding"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -269,7 +269,7 @@ class HomeFragment : Fragment() {
                 val topic = "cartoon"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -282,7 +282,7 @@ class HomeFragment : Fragment() {
                 val topic = "gk"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -295,7 +295,7 @@ class HomeFragment : Fragment() {
                 val topic = "covid19"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
@@ -308,7 +308,7 @@ class HomeFragment : Fragment() {
                 val topic = "marvel"
                 bundle.putString("data", topic)
                 fragment.arguments = bundle
-                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                val cons: ConstraintLayout = view.findViewById(R.id.homer)
                 cons.visibility = View.GONE
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.homeR, fragment)
