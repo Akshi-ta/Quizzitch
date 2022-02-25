@@ -1,23 +1,19 @@
 package com.example.quizzitch.ui.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.Toast
-import androidx.core.os.bundleOf
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.setFragmentResult
 import androidx.lifecycle.ViewModelProvider
 import com.example.quizzitch.R
 import com.example.quizzitch.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
-
-//    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
 
 
     private var _binding: FragmentHomeBinding? = null
@@ -41,8 +37,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val bundle =  Bundle()
-
         val history: ImageButton = view.findViewById(R.id.imageView2)
         val politics: ImageButton = view.findViewById(R.id.imageView3)
         val dance: ImageButton = view.findViewById(R.id.imageView4)
@@ -64,151 +58,265 @@ class HomeFragment : Fragment() {
         val covid19: ImageButton = view.findViewById(R.id.imageView20)
         val marvel: ImageButton = view.findViewById(R.id.imageView21)
 
-            history.setOnClickListener() {
+        val fragment: Fragment = LevelScreen()
+        val bundle =  Bundle()
+
+        history.setOnClickListener() {
                 val topic = "history"
-               // transaction.replace(R.id.homeR, LevelScreen())
-               // transaction.addToBackStack("history")
                 bundle.putString("data", topic)
-                val fragment = LevelScreen()
                 fragment.arguments = bundle
-                fragmentManager?.beginTransaction()?.replace(R.id.homeR,LevelScreen())?.commit()
-               // transaction.commit()
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "History is selected", Toast.LENGTH_SHORT).show()
             }
             politics.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("politics", "topic")
+                val topic = "politics"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Politics is selected", Toast.LENGTH_SHORT).show()
-                }
-                startActivity(intent)
             }
             dance.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("dance", "topic")
+                val topic = "dance"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Dance is selected", Toast.LENGTH_SHORT).show()
-                }
-                startActivity(intent)
             }
             bollywood.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("bollywood", "topic")
+                val topic = "bollywood"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Bollywood is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             sports.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("sports", "topic")
+                val topic = "sports"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Sports is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
             culture.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("culture", "topic")
+                val topic = "culture"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Culture is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             science.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("science", "topic")
+                val topic = "science"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Science is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             computers.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("computers", "topic")
+                val topic = "computers"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Computers is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             mythology.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("mythology", "topic")
+                val topic = "mythology"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "History is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             art.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("art", "topic")
+                val topic = "art"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Art is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             geography.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("geography", "topic")
+                val topic = "geography"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Geography is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             animals.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("animals", "topic")
+                val topic = "animals"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Animals is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             comics.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("comics", "topic")
+                val topic = "comics"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Comics is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             anime.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("anime", "topic")
+                val topic = "anime"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Anime is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             gadgets.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("gadgets", "topic")
+                val topic = "gadgets"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Gadgets is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             coding.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("coding", "topic")
+                val topic = "coding"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Coding is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             cartoon.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("cartoon", "topic")
+                val topic = "cartoon"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Cartoon is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             gk.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("gk", "topic")
+                val topic = "gk"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "GK is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
 
             covid19.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("covid19", "topic")
+                val topic = "covid19"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "COVID 19 is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
             marvel.setOnClickListener() {
-                val intent = Intent(context, LevelScreen::class.java).apply {
-                    putExtra("marvel", "topic")
+                val topic = "marvel"
+                bundle.putString("data", topic.toString())
+                fragment.arguments = bundle
+                val cons: ConstraintLayout = view.findViewById(R.id.homeR)
+                cons.visibility = View.GONE
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.homeR, fragment)
+                transaction.addToBackStack("category")
+                transaction.commit()
                     Toast.makeText(activity, "Marvel is selected", Toast.LENGTH_SHORT).show()
                 }
-                startActivity(intent)
-            }
+
 
         }
         override fun onDestroyView() {
