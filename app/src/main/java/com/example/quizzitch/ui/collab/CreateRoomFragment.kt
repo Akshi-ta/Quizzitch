@@ -84,6 +84,7 @@ class CreateRoomFragment : Fragment() {
                         val bundle = Bundle()
                         bundle.putString("roomcode", roomCode)
                         bundle.putString("hostuid", uid)
+                        bundle.putString("i", roomCode)
                         val fragment: Fragment = PlayersFragment()
                         fragment.arguments = bundle
                         transaction.replace(R.id.createRoom, fragment)
@@ -92,6 +93,9 @@ class CreateRoomFragment : Fragment() {
                     }
                 }
             }
+
+
+
 
         }
     }

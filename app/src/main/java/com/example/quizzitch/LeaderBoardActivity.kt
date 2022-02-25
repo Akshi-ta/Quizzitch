@@ -44,12 +44,14 @@ class LeaderBoardActivity : AppCompatActivity() {
                     } catch (nfe: NumberFormatException) {
                         Log.e("NFE Error", "Wrong format")
                     }
-                    Log.d("avychanna", "${document.id} => ${document.data}")
+                    Log.d("leaderboard", "${document.id} => ${document.data}")
                 }
             }
 
 
     }
+
+
 }
 
 

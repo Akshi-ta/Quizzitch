@@ -84,7 +84,11 @@
         android:id="@+id/playersFragment"
         android:name="com.example.quizzitch.ui.collab.PlayersFragment"
         android:label="fragment_players"
-        tools:layout="@layout/fragment_players" />
+        tools:layout="@layout/fragment_players" >
+        <action
+            android:id="@+id/action_playersFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/category1Fragment"
         android:name="com.example.quizzitch.ui.collab.Category1Fragment"
@@ -96,8 +100,17 @@
         android:label="activity_leader_board"
         tools:layout="@layout/activity_leader_board" />
     <fragment
-        android:id="@+id/pasteLinkFragment"
-        android:name="com.example.quizzitch.PasteLinkFragment"
-        android:label="fragment_paste_link"
-        tools:layout="@layout/fragment_paste_link" />
+        android:id="@+id/settingsFragment"
+        android:name="com.example.quizzitch.ui.collab.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_collabGameFragment"
+            app:destination="@id/collabGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/collabGameFragment"
+        android:name="com.example.quizzitch.ui.collab.CollabGameFragment"
+        android:label="fragment_collab_game"
+        tools:layout="@layout/fragment_collab_game" />
 </navigation>

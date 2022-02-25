@@ -9,13 +9,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 
-class CustomAdaptor(private val userInp: ArrayList<User>) :
+class CustomAdaptor(userInp: ArrayList<User>) :
     RecyclerView.Adapter<CustomAdaptor.ViewHolder>() {
+    private val TAG = "CustomAdaptor"
     private val userArr: ArrayList<User> = userInp
 
     override fun getItemCount(): Int {
         return userArr.size
     }
+
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem = userArr[position]
@@ -31,9 +33,17 @@ class CustomAdaptor(private val userInp: ArrayList<User>) :
     }
 
     fun addUser(user: User) {
+        for (i in 0 until userArr.size) {
+            val v = userArr[i]
+            if (v.score < user.score) {
+                userArr.add(i, user)
+                notifyItemInserted(i)
+                return
+            }
+        }
         userArr.add(user)
-        Log.d("avychanna", "Adding user " + user.displayName)
         notifyItemInserted(userArr.size - 1)
+        Log.d(TAG, "Adding user " + user.displayName)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

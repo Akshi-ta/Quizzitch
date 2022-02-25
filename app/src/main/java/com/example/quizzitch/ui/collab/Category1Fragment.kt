@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
 
 class Category1Fragment : Fragment() {
@@ -42,29 +44,40 @@ class Category1Fragment : Fragment() {
         val covid: ImageButton = view.findViewById(R.id.covid19i)
         val marvel: ImageButton = view.findViewById(R.id.marveli)
 
-        historyI.setOnClickListener { operator() } //23
-        politicsi.setOnClickListener { operator() } //24
-        dancei.setOnClickListener { operator() } //
-        bollyi.setOnClickListener { operator() }
-        sportsi.setOnClickListener { operator() }
-        culturei.setOnClickListener { operator() }
-        sciencei.setOnClickListener { operator() }
-        computersi.setOnClickListener { operator() }
-        mythologyi.setOnClickListener { operator() }
-        art.setOnClickListener { operator() }
-        geo.setOnClickListener { operator() }
-        animals.setOnClickListener { operator() }
-        comic.setOnClickListener { operator() }
-        anime.setOnClickListener { operator() }
-        gadgets.setOnClickListener { operator() }
-        coding.setOnClickListener { operator() }
-        cartoon.setOnClickListener { operator() }
-        gk.setOnClickListener { operator() }  //10
-        covid.setOnClickListener { operator() }
-        marvel.setOnClickListener { operator() }
+        historyI.setOnClickListener { operator(view, 23) } //23
+        politicsi.setOnClickListener { operator(view, 24) } //24
+        dancei.setOnClickListener { operator(view, 13) } //
+        bollyi.setOnClickListener { operator(view, 11) }
+        sportsi.setOnClickListener { operator(view, 21) }
+        culturei.setOnClickListener { operator(view, 10) }
+        sciencei.setOnClickListener { operator(view, 17) }
+        computersi.setOnClickListener { operator(view, 18) }
+        mythologyi.setOnClickListener { operator(view, 20) }
+        art.setOnClickListener { operator(view, 25) }
+        geo.setOnClickListener { operator(view, 22) }
+        animals.setOnClickListener { operator(view, 27) }
+        comic.setOnClickListener { operator(view, 29) }
+        anime.setOnClickListener { operator(view, 31) }
+        gadgets.setOnClickListener { operator(view, 30) }
+        coding.setOnClickListener { operator(view, 28) }
+        cartoon.setOnClickListener { operator(view, 32) }
+        gk.setOnClickListener { operator(view, 9) }  //10
+        covid.setOnClickListener { operator(view, 19) }
+        marvel.setOnClickListener { operator(view, 15) }
     }
 
-    fun operator() {
-
+    fun operator(view: View,code:Int) {
+        val fragment: Fragment = SettingsFragment()
+        val bundle = Bundle()
+        bundle.putString("category", code.toString())
+        bundle.putString("roomcode", requireArguments().getString("roomcode"))
+        bundle.putString("hostuid", requireArguments().getString("hostuid"))
+        fragment.arguments = bundle
+        val cons: ConstraintLayout = view.findViewById(R.id.sparecatergory)
+        cons.visibility = View.GONE
+        val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.category, fragment)
+        transaction.addToBackStack("settings")
+        transaction.commit()
     }
 }
