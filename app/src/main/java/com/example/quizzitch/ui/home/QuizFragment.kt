@@ -1,6 +1,5 @@
 package com.example.quizzitch.ui.home
 
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -8,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -17,7 +17,6 @@ import kotlinx.android.synthetic.main.take_quiz.*
 
 class QuizFragment: Fragment() {
 
-    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
     private val args = this.arguments
     private val inputData1 = args?.get("data")
     private val inputData2 = args?.get("key")
@@ -38,11 +37,11 @@ class QuizFragment: Fragment() {
     ): View? {
         choice = arguments?.getString("topic")
 
-        setFragmentResultListener("requestKey") { key, bundle ->
-            // Any type can be passed via to the bundle
-            val result = bundle.getString("data")
-            // Do something with the result...
-        }
+//        setFragmentResultListener("requestKey") { key, bundle ->
+//            // Any type can be passed via to the bundle
+//            val result = bundle.getString("data")
+//            // Do something with the result...
+//        }
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.take_quiz, container, false)
@@ -55,6 +54,7 @@ class QuizFragment: Fragment() {
         tv.visibility = View.GONE
         val pgbar: ProgressBar = view.findViewById(R.id.progressBar1)
         pgbar.visibility = View.VISIBLE
+        val bundle = Bundle()
 
         questionList = setData.getQuestion()
 
@@ -98,11 +98,15 @@ class QuizFragment: Fragment() {
                         setQuestion()
                     }
                     else->{
-                        transaction.replace(R.id.homeR, Result())
-                        transaction.addToBackStack("")
+                        val fragment: Fragment = Result()
+                        bundle.putString("data", topic)
+                        fragment.arguments = bundle
+                        val cons: ConstraintLayout = view.findViewById(R.id.quizR)
+                        cons.visibility = View.GONE
+                        val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                        transaction.replace(R.id.quizR, fragment)
+                        transaction.addToBackStack("result")
                         transaction.commit()
-                      //  intent.putExtra(setData.score, score.toString())
-                      //  intent.putExtra("total size", questionList!!.size.toString())
                     }
                 }
             }
@@ -113,16 +117,16 @@ class QuizFragment: Fragment() {
         fun setColor(opt: Int, color: Int) {
             when (opt) {
                 1 -> {
-                  //  opt_1.background = ContextCompat.getDrawable(this, color)
+                    opt_1.background = ContextCompat.getDrawable(requireContext(), color)
                 }
                 2 -> {
-                   // opt_2.background = ContextCompat.getDrawable(this, color)
+                    opt_2.background = ContextCompat.getDrawable(requireContext(), color)
                 }
                 3 -> {
-                   // opt_3.background = ContextCompat.getDrawable(this, color)
+                    opt_3.background = ContextCompat.getDrawable(requireContext(), color)
                 }
                 4 -> {
-                   // opt_4.background = ContextCompat.getDrawable(this, color)
+                    opt_4.background = ContextCompat.getDrawable(requireContext(), color)
                 }
             }
         }
@@ -163,7 +167,7 @@ class QuizFragment: Fragment() {
 
         for (op in optionList) {
             op.setTextColor(Color.parseColor("#555151"))
-           // op.background = ContextCompat.getDrawable(this, R.drawable.question_option)
+            op.background = ContextCompat.getDrawable(requireContext(), R.drawable.question_option)
             op.typeface = Typeface.DEFAULT
         }
     }
@@ -172,7 +176,7 @@ class QuizFragment: Fragment() {
 
         setOptionStyle()
         selectedOption = opt
-      //  view.background = ContextCompat.getDrawable(this, R.drawable.selected_question_option)
+        view.background = ContextCompat.getDrawable(requireContext(), R.drawable.selected_question_option)
         view.typeface = Typeface.DEFAULT_BOLD
         view.setTextColor(Color.parseColor("#000000"))
 

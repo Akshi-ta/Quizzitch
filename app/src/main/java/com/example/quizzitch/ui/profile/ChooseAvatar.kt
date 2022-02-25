@@ -1,11 +1,14 @@
 package com.example.quizzitch.ui.profile
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
@@ -53,13 +56,19 @@ class ChooseAvatar : Fragment() {
         hulk.setOnClickListener { operator(view, "hulk") }
     }
 
-        fun operator(view: View, name: String) {
+        private fun operator(view: View, name: String) {
+            selectedOption(view)
             val storageRef = FirebaseStorage.getInstance().reference.child("images/$name.jpeg")
 // error!            avatarChoosen(view, storageRef)
 
         }
 
-        fun avatarChoosen(view: View, name: String){
+        private fun selectedOption(view: View) {
+        view.background = ContextCompat.getDrawable(requireContext(), R.drawable.selected_question_option)
+
+    }
+
+    fun avatarChoosen(view: View, name: String){
             done.setOnClickListener() {
             val fragment: Fragment = ProfilePage()
             val bundle = Bundle()
