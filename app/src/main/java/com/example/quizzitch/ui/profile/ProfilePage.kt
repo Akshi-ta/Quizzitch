@@ -29,7 +29,7 @@ class ProfilePage : Fragment() {
     private var isclick: Boolean = false
     private var storage: FirebaseStorage = FirebaseStorage.getInstance()
     private var storageReference = storage.getReference()
-  //  private var _binding: FragmentProfilePageBinding? = null
+  //error  private var _binding: FragmentProfilePageBinding? = null
     private lateinit var profilePageFragmentViewModel: ProfilePageFragmentViewModel
 
     override fun onCreateView(
@@ -116,7 +116,7 @@ class ProfilePage : Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 100 && resultCode == Activity.RESULT_OK) {
             imageUri = data?.data!!
-        //    _binding?.imageView5?.setImageURI(imageUri)
+        //error    _binding?.imageView5?.setImageURI(imageUri)
 
         }
 
