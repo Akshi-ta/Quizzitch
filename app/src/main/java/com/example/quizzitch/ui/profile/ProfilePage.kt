@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
 import com.example.quizzitch.SignIn
 import com.example.quizzitch.databinding.FragmentProfilePageBinding
@@ -28,7 +29,7 @@ class ProfilePage : Fragment() {
     private var isclick: Boolean = false
     private var storage: FirebaseStorage = FirebaseStorage.getInstance()
     private var storageReference = storage.getReference()
-    private var _binding: FragmentProfilePageBinding? = null
+  //error  private var _binding: FragmentProfilePageBinding? = null
     private lateinit var profilePageFragmentViewModel: ProfilePageFragmentViewModel
 
     override fun onCreateView(
@@ -41,6 +42,7 @@ class ProfilePage : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val dp: ImageView = view.findViewById(R.id.imageView5)
 
         val store: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -100,17 +102,21 @@ class ProfilePage : Fragment() {
 
 
     private fun SelectImage() {
-        val a: Intent = Intent(Intent.ACTION_GET_CONTENT).setType("image/*")
-        val chooser: Intent = Intent.createChooser(a, "Select image from here")
-        startActivityForResult(chooser, 100)
-        isclick = true
+        val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.avatarR, ChooseAvatar())
+        transaction.addToBackStack("avatar")
+        transaction.commit()
+//        val a: Intent = Intent(Intent.ACTION_GET_CONTENT).setType("image/*")
+//        val chooser: Intent = Intent.createChooser(a, "Select image from here")
+//        startActivityForResult(chooser, 100)
+//        isclick = true
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 100 && resultCode == Activity.RESULT_OK) {
             imageUri = data?.data!!
-            _binding?.imageView5?.setImageURI(imageUri)
+        //error    _binding?.imageView5?.setImageURI(imageUri)
 
         }
 

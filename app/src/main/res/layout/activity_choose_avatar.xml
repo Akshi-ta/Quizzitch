@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:id="@+id/avatarR">
 
 
     <androidx.cardview.widget.CardView
@@ -28,6 +29,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
                     android:text="CHOOSE YOUR AVATAR"
                     android:textAlignment="center"
                     android:textColor="@color/black"
@@ -35,78 +37,110 @@
                     android:textStyle="bold" />
 
     <ImageView
+        android:id="@+id/blackWidow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:src="@drawable/blackwidow"/>
 
     <ImageView
+        android:id="@+id/hawkeye"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
+        android:clickable="true"
         android:src="@drawable/hawkeye"/>
 
                     <ImageView
+                        android:id="@+id/blackPanther"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:clickable="true"
                         android:src="@drawable/blackpanther"/>
 
                     <ImageView
+                        android:id="@+id/falcon"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:clickable="true"
                         android:src="@drawable/falcon" />
                     <ImageView
+                        android:id="@+id/bucky"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:clickable="true"
                         android:src="@drawable/bucky"/>
                     <ImageView
+                        android:id="@+id/captainMarvel"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:clickable="true"
                         android:src="@drawable/captainmarvel"/>
                     <ImageView
+                        android:id="@+id/scarletWitch"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:clickable="true"
                         android:src="@drawable/scarletwitch"/>
                     <ImageView
+                        android:id="@+id/thor"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:src="@drawable/thor"/>
                     <ImageView
+                        android:id="@+id/thanos"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:clickable="true"
                         android:src="@drawable/thanos"/>
                     <ImageView
+                        android:id="@+id/starLord"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:clickable="true"
                         android:src="@drawable/starlord"/>
                     <ImageView
+                        android:id="@+id/ironMan"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:clickable="true"
                         android:src="@drawable/ironman"/>
                     <ImageView
+                        android:id="@+id/spiderMan"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
+                        android:clickable="true"
                         android:src="@drawable/spiderman" />
 
                 <ImageView
+                    android:id="@+id/captainAmerica"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:clickable="true"
                     android:src="@drawable/captainamerica"/>
 
                 <ImageView
+                    android:id="@+id/drStrange"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:clickable="true"
                     android:src="@drawable/drstrange"/>
 
                 <ImageView
+                    android:id="@+id/deadpool"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:clickable="true"
                     android:src="@drawable/deadpool"/>
 
                 <ImageView
+                    android:id="@+id/wolverine"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
+                    android:clickable="true"
                     android:src="@drawable/wolverine"/>
 
                 <ImageView
+                    android:id="@+id/hulk"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:src="@drawable/hulk"/>
@@ -114,7 +148,22 @@
 
             </TableLayout>
         </ScrollView>
+
     </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#000080"
+            android:layout_marginBottom="60dp"
+            android:text="DONE"
+            android:textAlignment="center"
+            tools:layout_editor_absoluteX="162dp"
+            tools:layout_editor_absoluteY="643dp"
+            app:layout_constraintLeft_toLeftOf="@id/avatarR"
+            app:layout_constraintRight_toRightOf="@id/avatarR"
+            app:layout_constraintBottom_toBottomOf="@id/avatarR"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

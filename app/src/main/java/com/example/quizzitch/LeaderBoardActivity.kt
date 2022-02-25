@@ -1,16 +1,17 @@
 package com.example.quizzitch
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.activity_leader_board.*
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class LeaderBoardActivity : AppCompatActivity() {
-    private lateinit var dbref: DatabaseReference
     private lateinit var userRecyclerView: RecyclerView
     private lateinit var userArrayList: ArrayList<User>
+    private lateinit var adapter: CustomAdaptor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,30 +21,34 @@ class LeaderBoardActivity : AppCompatActivity() {
         userRecyclerView.layoutManager = LinearLayoutManager(this)
         userRecyclerView.setHasFixedSize(true)
 
-        userArrayList = arrayListOf<User>()
+        userArrayList = arrayListOf()
+        adapter = CustomAdaptor(userArrayList)
+        userRecyclerView.adapter = adapter
         getuserdata()
 
     }
+
     private fun getuserdata() {
-        dbref = FirebaseDatabase.getInstance().getReference("Users")
-
-        dbref.addValueEventListener(object : ValueEventListener{
-
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()) {
-                    for (userSnapshot in snapshot.children) {
-
-                        val user = userSnapshot.getValue(User::class.java)
-                        userArrayList.add(user!!)
+        Firebase.firestore.collection("desc")
+            .get()
+            .addOnSuccessListener { result ->
+                for (document in result) {
+                    val data = document.data
+                    try {
+                        val user = User(
+                            1,
+                            data["displayName"].toString(),
+                            data["score"].toString().toInt()
+                        )
+                        adapter.addUser(user)
+                    } catch (nfe: NumberFormatException) {
+                        Log.e("NFE Error", "Wrong format")
                     }
-                    userRecyclerView.adapter = CustomAdaptor(userArrayList)
+                    Log.d("avychanna", "${document.id} => ${document.data}")
                 }
             }
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        })
+
     }
 }
 
