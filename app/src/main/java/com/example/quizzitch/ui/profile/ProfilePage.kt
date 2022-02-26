@@ -49,15 +49,15 @@ class ProfilePage : Fragment() {
         val uid = mauth.currentUser!!.uid.toString()
         val store: FirebaseFirestore = FirebaseFirestore.getInstance()
         val dpLocation = mauth.currentUser!!.uid
-        val url = "images/$dpLocation/profile_pic"
+        //val url = "images/$dpLocation/profile_pic"
         val max_bytes:Long = 1024*1024
-        val imgRef = storageReference.child(url)
-        imgRef.getBytes(max_bytes).addOnSuccessListener {
-            val bitmap = BitmapFactory.decodeByteArray(it,0,it.size)
-            dp.setImageBitmap(bitmap)
-        }.addOnFailureListener{
-            dp.setImageResource(R.drawable.profilenew)
-        }
+        //val imgRef = storageReference.child(url)
+//        imgRef.getBytes(max_bytes).addOnSuccessListener {
+//            val bitmap = BitmapFactory.decodeByteArray(it,0,it.size)
+//            dp.setImageBitmap(bitmap)
+//        }.addOnFailureListener{
+//            dp.setImageResource(R.drawable.profilenew)
+//        }
         store.collection("desc").document(uid).get().addOnSuccessListener {
             val map: HashMap<String,Any> = it.data as HashMap<String,Any>
 
