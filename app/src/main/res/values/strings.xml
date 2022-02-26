@@ -43,4 +43,8 @@
     <string name="option_4">Option 4</string>
     <string name="submit">submit</string>
     <string name="choose_your_category">CHOOSE YOUR CATEGORY</string>
+    <string name="this_is_option_1">This is option 1</string>
+    <string name="this_is_option_2">This is option 2</string>
+    <string name="this_is_option_3">This is option 3</string>
+    <string name="this_is_option_4">This is option 4</string>
 </resources>
