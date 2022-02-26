@@ -50,9 +50,9 @@ class QuizFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val tv: TextView = view.findViewById(R.id.quiz)
-        tv.visibility = View.GONE
+        tv.visibility = View.VISIBLE
         val pgbar: ProgressBar = view.findViewById(R.id.progressBar1)
-        pgbar.visibility = View.VISIBLE
+        pgbar.visibility = View.GONE
         val bundle = Bundle()
 
         questionList = setData.getQuestion()
