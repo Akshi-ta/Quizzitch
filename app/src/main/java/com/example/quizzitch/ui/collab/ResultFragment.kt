@@ -53,6 +53,7 @@ class ResultFragment : Fragment() {
                     store.collection("desc").document(i.key).get().addOnSuccessListener {
                         (players["player"+iterator.toString()+"name"]as TextView).text = it["displayName"].toString()
                         iterator++
+
                     }
                 }
             }
