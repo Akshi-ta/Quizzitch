@@ -2,6 +2,7 @@ package com.example.quizzitch.ui.collab
 
 import android.content.ContentValues.TAG
 import android.graphics.Color
+import android.graphics.Color.blue
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -51,10 +52,14 @@ class CollabGameFragment : Fragment() {
         prot(view, iterator)
         nextBt.setOnClickListener{
             //answers[iterator.toString()] =  options.checkedRadioButtonId.toString()
-            options1.background = null
-            options2.background = null
-            options3.background = null
-            options4.background = null
+//            options1.background = null
+//            options2.background = null
+//            options3.background = null
+//            options4.background = null
+            options1.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options2.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options3.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options4.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
             iterator++
             prot(view, iterator)
             if(prot(view, iterator)==1)
@@ -102,35 +107,47 @@ class CollabGameFragment : Fragment() {
         }
 
         options1.setOnClickListener {
-            options1.background = ContextCompat.getDrawable(requireContext(), R.drawable.bluegradient)
-            options1.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
-            options2.background = null
-            options3.background = null
-            options4.background = null
+            //options1.background = ContextCompat.getDrawable(requireContext(), R.drawable.bluegradient)
+            options1.setTextColor(Color.BLUE)
+            options2.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options3.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options4.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+//            options2.background = null
+//            options3.background = null
+//            options4.background = null
             answers[iterator.toString()] = options1.text
         }
         options2.setOnClickListener{
-            options1.background = null
-            options2.background = ContextCompat.getDrawable(requireActivity(), R.drawable.bluegradient)
-            options2.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
-            options3.background = null
-            options4.background = null
+//            options1.background = null
+//            options2.background = ContextCompat.getDrawable(requireActivity(), R.drawable.bluegradient)
+            options1.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options2.setTextColor(Color.BLUE)
+            options3.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options4.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+//            options3.background = null
+//            options4.background = null
             answers[iterator.toString()] =  options2.text
         }
         options3.setOnClickListener{
-            options1.background = null
-            options2.background = null
-            options3.background = ContextCompat.getDrawable(requireActivity(), R.drawable.bluegradient)
-            options3.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
-            options4.background = null
+//            options1.background = null
+//            options2.background = null
+//            options3.background = ContextCompat.getDrawable(requireActivity(), R.drawable.bluegradient)
+            options1.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options2.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options3.setTextColor(Color.BLUE)
+            options4.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            //options4.background = null
             answers[iterator.toString()] =  options3.text
         }
         options4.setOnClickListener{
-            options1.background = null
-            options2.background = null
-            options3.background = null
-            options4.background = ContextCompat.getDrawable(requireActivity(), R.drawable.bluegradient)
-            options4.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+//            options1.background = null
+//            options2.background = null
+//            options3.background = null
+//            options4.background = ContextCompat.getDrawable(requireActivity(), R.drawable.bluegradient)
+            options1.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options2.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options3.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
+            options4.setTextColor(Color.BLUE)
             answers[iterator.toString()] =  options4.text
         }
 
