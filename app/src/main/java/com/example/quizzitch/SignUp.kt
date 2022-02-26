@@ -111,7 +111,7 @@ class SignUp: AppCompatActivity() {
     private fun checkUser() {
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser!= null){
-            startActivity(Intent(this@SignUp,GetStarted::class.java))
+            startActivity(Intent(this@SignUp,SigninDetails::class.java))
             finish()
         }
 
