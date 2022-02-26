@@ -14,15 +14,41 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/homer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
 
-    <ImageButton
+        <TextView
+            android:id="@+id/category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            android:text="@string/choose_your_category"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ScrollView
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@id/category"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
         android:id="@+id/imageView2"
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -490,6 +516,9 @@
         app:layout_constraintStart_toEndOf="@+id/textView26"
         app:layout_constraintTop_toBottomOf="@+id/imageView21"
         app:layout_constraintVertical_bias="0.093" />
+
+        </ScrollView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
