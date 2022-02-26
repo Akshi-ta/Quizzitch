@@ -125,7 +125,7 @@ class ProfilePage : Fragment() {
 
     private fun selectImage() {
         val fragment: Fragment = ChooseAvatar()
-        val cons: ConstraintLayout = requireView().findViewById(R.id.profileR)
+        val cons: ConstraintLayout = requireView().findViewById(R.id.profiler)
         cons.visibility = View.GONE
         val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
         transaction.replace(R.id.profileR, fragment)
