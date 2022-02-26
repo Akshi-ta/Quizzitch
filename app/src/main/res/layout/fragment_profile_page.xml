@@ -149,6 +149,7 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/textView5"
                 app:layout_constraintEnd_toStartOf="@+id/textView6"
+                app:layout_constraintHorizontal_bias="0.47"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -204,7 +205,7 @@
                         android:layout_width="126dp"
                         android:layout_height="49dp"
                         android:layout_marginStart="11dp"
-                        android:text="NO OF QUIZES DONE"
+                        android:text="NO. OF QUIZES DONE"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="16sp"
@@ -270,6 +271,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </TableLayout>
+
+            <GridView
+                android:layout_width="108dp"
+                android:layout_height="191dp"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="416dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
