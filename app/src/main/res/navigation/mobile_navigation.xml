@@ -131,4 +131,9 @@
         android:name="com.example.quizzitch.Result1Fragment"
         android:label="fragment_result1"
         tools:layout="@layout/fragment_result1" />
+    <fragment
+        android:id="@+id/pasteLinkFragment"
+        android:name="com.example.quizzitch.PasteLinkFragment"
+        android:label="fragment_paste_link"
+        tools:layout="@layout/fragment_paste_link" />
 </navigation>
