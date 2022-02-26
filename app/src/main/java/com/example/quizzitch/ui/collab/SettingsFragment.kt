@@ -99,13 +99,13 @@ class SettingsFragment : Fragment() {
                         oneQues["incorrect_answers"] = arr
                         questions[i.toString()] = oneQues
                     }
-                    questions["started"] = "1"
                     questions["totalQ"] = ques
                     questions["diff"] = diff
                     questions["category"] = requireArguments().getString("category")!!
                     val map: HashMap<String, Any> = it.data as HashMap<String, Any>
                     val t: HashMap<String, Any> = map[requireArguments().getString("roomcode")] as HashMap<String, Any>
                     t["questions"] = questions
+                    t["started"] = "1"
                     map[requireArguments().getString("roomcode")!!] = t
                     store.collection("games").document(uid).update(map)
 
