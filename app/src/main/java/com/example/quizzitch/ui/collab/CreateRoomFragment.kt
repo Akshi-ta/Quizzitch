@@ -48,9 +48,10 @@ class CreateRoomFragment : Fragment() {
                 {
                     val map: HashMap<String, Any> = hashMapOf()
                     map["anyGameActive"] = -1
-                    store.collection("games").document(uid).update(map).addOnSuccessListener {
+                    store.collection("games").document(uid).set(map).addOnSuccessListener {
                         Toast.makeText(requireContext(), "Was empty before", Toast.LENGTH_LONG).show()
                     }
+                    Toast.makeText(requireContext(), "Was empty before", Toast.LENGTH_LONG).show()
                 }
             }
 
