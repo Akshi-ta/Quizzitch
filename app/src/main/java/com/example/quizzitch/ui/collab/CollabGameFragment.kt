@@ -1,7 +1,9 @@
 package com.example.quizzitch.ui.collab
 
+import android.content.ContentValues.TAG
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.TextureView
@@ -14,6 +16,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
+import com.example.quizzitch.Result1Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.collection.LLRBNode
 import com.google.firebase.firestore.FirebaseFirestore
@@ -69,7 +72,7 @@ class CollabGameFragment : Fragment() {
 
         val submit: Button = view.findViewById(R.id.button10)
         submit.setOnClickListener {
-            store.collection("games").document(uid).get().addOnSuccessListener {
+            store.collection("games").document(requireArguments().getString("hostuid")!!).get().addOnSuccessListener {
                 val map: HashMap<String, Any> = it.data as HashMap<String, Any>
                 val gameData: HashMap<String, Any> = map[roomcode] as HashMap<String, Any>
                 var responses: HashMap<String, Any> = hashMapOf()
@@ -91,7 +94,7 @@ class CollabGameFragment : Fragment() {
                     bundle.putString("hostuid", requireArguments().getString("hostuid"))
                     fragment.arguments = bundle
                     val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.result, fragment)
+                    transaction.replace(R.id.game, fragment)
                     transaction.addToBackStack("result")
                     transaction.commit()
                 }
@@ -153,11 +156,11 @@ class CollabGameFragment : Fragment() {
         val options2: TextView = view.findViewById(R.id.options2)
         val options3: TextView = view.findViewById(R.id.options3)
         val options4: TextView = view.findViewById(R.id.options4)
-        store.collection("games").document(uid).get()
+        store.collection("games").document(requireArguments().getString("hostuid")!!).get()
             .addOnCompleteListener{
                 val map: HashMap<String, Any> = it.result.data as HashMap<String, Any>
-                //Toast.makeText(requireContext(), iterator.toString(), Toast.LENGTH_LONG).show()
-                val questionsData: HashMap<String, Any> = (map[roomcode]as HashMap<String, Any>)["questions"] as HashMap<String, Any>
+
+                val questionsData: HashMap<String, Any> = (map["44"]as HashMap<String, Any>)["questions"] as HashMap<String, Any>
                 questionTV.text = (iterator+1).toString() + ". " + (questionsData[iterator.toString()] as HashMap<String, Any>)["ques"].toString()
                 val incorrect: ArrayList<String> = (questionsData[iterator.toString()] as HashMap<String, Any>)["incorrect_answers"]as ArrayList<String>
                 options1.text =  incorrect[0]

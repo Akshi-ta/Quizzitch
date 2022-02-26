@@ -51,8 +51,9 @@ class ResultFragment : Fragment() {
                 for(i in responses)
                 {
                     store.collection("desc").document(i.key).get().addOnSuccessListener {
-                        (players["player"+i.toString()+"name"]as TextView).text = it["displayName"].toString()
+                        (players["player"+iterator.toString()+"name"]as TextView).text = it["displayName"].toString()
                         iterator++
+
                     }
                 }
             }

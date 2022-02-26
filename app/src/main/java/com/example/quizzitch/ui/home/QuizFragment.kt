@@ -12,7 +12,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
-import com.google.android.material.badge.BadgeUtils
 
 class QuizFragment: Fragment() {
 
@@ -20,7 +19,7 @@ class QuizFragment: Fragment() {
     private val inputData1 = args?.get("data")
     private val inputData2 = args?.get("key")
     val level = inputData1.toString()
-    val topic = inputData2.toString()
+    private val topic = inputData2.toString()
 
     private var score: Int = 0
 
@@ -59,25 +58,25 @@ class QuizFragment: Fragment() {
 
         setQuestion(view)
 
-        val opt_1: Button = view.findViewById(R.id.opt_1)
-        val opt_2: Button = view.findViewById(R.id.opt_2)
-        val opt_3: Button = view.findViewById(R.id.opt_3)
-        val opt_4: Button = view.findViewById(R.id.opt_4)
-        opt_1.setOnClickListener {
+        val opt1: Button = view.findViewById(R.id.opt_1)
+        val opt2: Button = view.findViewById(R.id.opt_2)
+        val opt3: Button = view.findViewById(R.id.opt_3)
+        val opt4: Button = view.findViewById(R.id.opt_4)
+        opt1.setOnClickListener {
 
-            selectedOptionStyle(opt_1, 1)
+            selectedOptionStyle(opt1, 1)
         }
-        opt_2.setOnClickListener {
+        opt2.setOnClickListener {
 
-            selectedOptionStyle(opt_2, 2)
+            selectedOptionStyle(opt2, 2)
         }
-        opt_3.setOnClickListener {
+        opt3.setOnClickListener {
 
-            selectedOptionStyle(opt_3, 3)
+            selectedOptionStyle(opt3, 3)
         }
-        opt_4.setOnClickListener {
+        opt4.setOnClickListener {
 
-            selectedOptionStyle(opt_4, 4)
+            selectedOptionStyle(opt4, 4)
         }
         val submit: Button = view.findViewById(R.id.submit)
         submit.setOnClickListener {
@@ -168,7 +167,7 @@ class QuizFragment: Fragment() {
         val opt_3: Button = view.findViewById(R.id.opt_3)
         val opt_4: Button = view.findViewById(R.id.opt_4)
 
-        var optionList: ArrayList<TextView> = arrayListOf()
+        val optionList: ArrayList<TextView> = arrayListOf()
         if (opt_1 != null) {
             optionList.add(0, opt_1)
         }

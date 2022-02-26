@@ -126,4 +126,9 @@
         android:name="com.example.quizzitch.ui.collab.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@+id/result1Fragment"
+        android:name="com.example.quizzitch.Result1Fragment"
+        android:label="fragment_result1"
+        tools:layout="@layout/fragment_result1" />
 </navigation>
