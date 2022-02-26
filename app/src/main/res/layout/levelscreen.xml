@@ -189,6 +189,7 @@
                     app:layout_constraintVertical_bias="0.137">
 
                     <RadioButton
+                        android:id="@+id/easy"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="20dp"
@@ -198,6 +199,7 @@
                         android:textStyle="bold" />
 
                     <RadioButton
+                        android:id="@+id/avg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="20dp"
@@ -207,6 +209,7 @@
                         android:textStyle="bold" />
 
                     <RadioButton
+                        android:id="@+id/hard"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingStart="20dp"

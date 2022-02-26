@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.RadioButton
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
@@ -32,7 +33,7 @@ class LevelScreen: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val bundle = Bundle()
 
-        val easy: Button = view.findViewById(R.id.easy)
+        val easy: RadioButton = view.findViewById(R.id.easy)
         easy.setOnClickListener {
                 val level = "easy"
             bundle.putString("data", level)
@@ -50,7 +51,7 @@ class LevelScreen: Fragment() {
 
 
 
-        val average: Button = view.findViewById(R.id.avg)
+        val average: RadioButton = view.findViewById(R.id.avg)
         average.setOnClickListener {
             val level = "avg"
             bundle.putString("data", level)
@@ -68,7 +69,7 @@ class LevelScreen: Fragment() {
 
 
 
-        val diff: Button = view.findViewById(R.id.hard)
+        val diff: RadioButton = view.findViewById(R.id.hard)
         diff.setOnClickListener {
             val level = "diff"
             bundle.putString("data", level)
