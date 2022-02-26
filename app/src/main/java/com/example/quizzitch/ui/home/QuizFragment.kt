@@ -100,7 +100,7 @@ class QuizFragment: Fragment() {
                     }
                     else->{
                         val fragment: Fragment = Result()
-                        bundle.putString("data", topic)
+                        bundle.putInt("score", score)
                         fragment.arguments = bundle
                         val cons: ConstraintLayout = view.findViewById(R.id.quizr)
                         cons.visibility = View.GONE
