@@ -4,163 +4,172 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.QuizFragment">
+    tools:context=".ui.home.QuizFragment"
+    android:background="@drawable/bluegradient">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/quizR"
+        android:id="@+id/quizr"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
-            android:id="@+id/quiz"
-            android:layout_width="269dp"
-            android:layout_height="37dp"
-            android:text="@string/quiz"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.129" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/quizR"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-    <ProgressBar
-        android:id="@+id/timeBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="216dp"
-        android:layout_height="27dp"
-        android:layout_marginTop="16dp"
-        android:progress="0"
-        android:max="10"
-        android:outlineAmbientShadowColor="@color/blue_light"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
+                android:layout_width="395dp"
+                android:layout_height="172dp"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.161"
+                tools:layout_editor_absoluteX="8dp">
+                <ScrollView
+                    android:id="@+id/scroll"
+                    android:layout_width="402dp"
+                    android:layout_height="149dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.158">
+
+                    <TextView
+                        android:id="@+id/quiz"
+                        android:layout_width="269dp"
+                        android:layout_height="37dp"
+                        android:padding="10dp"
+                        android:text="@string/quiz"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.169"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.233" />
+                </ScrollView>
+            </androidx.cardview.widget.CardView>
+
+                <!--    <RadioGroup-->
+                <!--        android:id="@+id/radio"-->
+                <!--        android:layout_width="wrap_content"-->
+                <!--        android:layout_height="wrap_content"-->
+                <!--        android:clickable="true"-->
+                <!--        app:layout_constraintTop_toTopOf="parent"-->
+                <!--        app:layout_constraintRight_toLeftOf="@id/guideline2"-->
+                <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--        app:layout_constraintBottom_toBottomOf="parent">-->
+
+                <!--        <RadioButton-->
+                <!--            android:id="@+id/option1"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:text="@string/option_1"-->
+                <!--            app:layout_constraintTop_toTopOf="parent"-->
+                <!--            app:layout_constraintRight_toLeftOf="parent"-->
+                <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+                <!--        <RadioButton-->
+                <!--            android:id="@+id/option2"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:text="@string/option_2"-->
+                <!--            app:layout_constraintTop_toTopOf="parent"-->
+                <!--            app:layout_constraintRight_toRightOf="parent"-->
+                <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+                <!--        <RadioButton-->
+                <!--            android:id="@+id/option3"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:text="@string/option_3"-->
+                <!--            app:layout_constraintTop_toTopOf="parent"-->
+                <!--            app:layout_constraintRight_toRightOf="parent"-->
+                <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+                <!--        <RadioButton-->
+                <!--            android:id="@+id/option4"-->
+                <!--            android:layout_width="wrap_content"-->
+                <!--            android:layout_height="wrap_content"-->
+                <!--            android:text="@string/option_4"-->
+                <!--            app:layout_constraintTop_toTopOf="parent"-->
+                <!--            app:layout_constraintRight_toRightOf="parent"-->
+                <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+                <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+                <!--    </RadioGroup>-->
 
 
-    <!--    <RadioGroup-->
-<!--        android:id="@+id/radio"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:clickable="true"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintRight_toLeftOf="@id/guideline2"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent">-->
+                <TextView
+                    android:id="@+id/opt_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="288dp"
+                    android:text="This is option 1"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintHorizontal_bias="0.174"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-<!--        <RadioButton-->
-<!--            android:id="@+id/option1"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/option_1"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintRight_toLeftOf="parent"-->
-<!--            app:layout_constraintLeft_toLeftOf="parent"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
-
-<!--        <RadioButton-->
-<!--            android:id="@+id/option2"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/option_2"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintRight_toRightOf="parent"-->
-<!--            app:layout_constraintLeft_toLeftOf="parent"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
-
-<!--        <RadioButton-->
-<!--            android:id="@+id/option3"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/option_3"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintRight_toRightOf="parent"-->
-<!--            app:layout_constraintLeft_toLeftOf="parent"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
-
-<!--        <RadioButton-->
-<!--            android:id="@+id/option4"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="@string/option_4"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintRight_toRightOf="parent"-->
-<!--            app:layout_constraintLeft_toLeftOf="parent"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
-
-<!--    </RadioGroup>-->
+                <TextView
+                    android:id="@+id/opt_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="332dp"
+                    android:text="This is option 2"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintHorizontal_bias="0.174"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/progress_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="24dp"
-        android:text="1/10"
-        app:layout_constraintLeft_toRightOf="@id/timeBar"
-        app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/opt_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="288dp"
-            android:text="This is option 1"
-            app:layout_constraintHorizontal_bias="0.174"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/opt_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="332dp"
-            android:text="This is option 2"
-            app:layout_constraintHorizontal_bias="0.174"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/opt_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="376dp"
+                    android:text="This is option 3"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintHorizontal_bias="0.174"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-        <TextView
-            android:id="@+id/opt_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="376dp"
-            android:text="This is option 3"
-            app:layout_constraintHorizontal_bias="0.174"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/opt_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="420dp"
+                    android:text="This is option 4"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    app:layout_constraintHorizontal_bias="0.174"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <!--    <Button-->
-<!--        android:id="@+id/previous"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/previous"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.494"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toLeftOf="@id/guideline2"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/quiz"-->
-<!--        app:layout_constraintVertical_bias="0.801" />-->
 
-        <TextView
-            android:id="@+id/opt_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="420dp"
-            android:text="This is option 4"
-            app:layout_constraintHorizontal_bias="0.174"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
         <Button
         android:id="@+id/submit"
@@ -170,11 +179,37 @@
         android:layout_marginTop="248dp"
         android:text="@string/submit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/quiz"
+        app:layout_constraintTop_toBottomOf="@id/card"
         app:layout_constraintVertical_bias="0.782"
         tools:layout_editor_absoluteX="48dp" />
 
-    <ProgressBar
+        <ProgressBar
+            android:id="@+id/timeBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="216dp"
+            android:layout_height="27dp"
+            android:layout_marginTop="16dp"
+            android:progress="0"
+            android:max="10"
+            android:outlineAmbientShadowColor="@color/white"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/progress_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="24dp"
+            android:text="1/10"
+            app:layout_constraintLeft_toRightOf="@id/timeBar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ProgressBar
         android:id="@+id/progressBar1"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
@@ -186,8 +221,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.303" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -195,6 +228,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="205dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

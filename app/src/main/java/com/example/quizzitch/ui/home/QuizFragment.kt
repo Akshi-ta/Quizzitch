@@ -100,7 +100,7 @@ class QuizFragment: Fragment() {
                         val fragment: Fragment = Result()
                         bundle.putString("data", topic)
                         fragment.arguments = bundle
-                        val cons: ConstraintLayout = view.findViewById(R.id.quizR)
+                        val cons: ConstraintLayout = view.findViewById(R.id.quizr)
                         cons.visibility = View.GONE
                         val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                         transaction.replace(R.id.quizR, fragment)
