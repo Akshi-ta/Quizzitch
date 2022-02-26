@@ -131,7 +131,7 @@
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:background="@drawable/bluegradient"
-                    android:text="Save changes"
+                    android:text="Save Changes"
                     android:textSize="20dp"
                     android:gravity="center"/>
 
