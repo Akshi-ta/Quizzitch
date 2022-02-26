@@ -47,4 +47,6 @@
     <string name="this_is_option_2">This is option 2</string>
     <string name="this_is_option_3">This is option 3</string>
     <string name="this_is_option_4">This is option 4</string>
+    <string name="choose_difficulty">CHOOSE DIFFICULTY</string>
+    <string name="level2">LEVEL!!</string>
 </resources>
