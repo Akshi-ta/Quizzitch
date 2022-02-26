@@ -75,7 +75,7 @@ class PlayersFragment : Fragment() {
                     {
                         if(gameData["started"].toString()=="1")
                         {
-                            val questions: HashMap<String, Any> = it["questions"] as HashMap<String, Any>
+                            val questions: HashMap<String, Any> = gameData["questions"] as HashMap<String, Any>
                             val diff: String = questions["diff"].toString()
                             val totalQ: Int = questions["totalQ"].toString().toInt()
                             val fragment: Fragment = CollabGameFragment()
@@ -83,8 +83,8 @@ class PlayersFragment : Fragment() {
                             bundle.putString("diff", diff)
                             bundle.putString("ques", totalQ.toString())
                             bundle.putString("category", questions["category"].toString())
-                            bundle.putString("roomcode", requireArguments().getString("roomcode"))
-                            bundle.putString("hostuid", requireArguments().getString("hostuid"))
+                            bundle.putString("roomcode", roomcode)
+                            bundle.putString("hostuid", hostUid)
                             fragment.arguments = bundle
                             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                             transaction.replace(R.id.player, fragment)

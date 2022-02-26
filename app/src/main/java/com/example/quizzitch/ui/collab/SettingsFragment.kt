@@ -99,7 +99,7 @@ class SettingsFragment : Fragment() {
                         oneQues["incorrect_answers"] = arr
                         questions[i.toString()] = oneQues
                     }
-
+                    questions["started"] = "1"
                     questions["totalQ"] = ques
                     questions["diff"] = diff
                     questions["category"] = requireArguments().getString("category")!!
