@@ -87,20 +87,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/imgbutton"
-                android:layout_width="27dp"
-                android:layout_height="30dp"
-                android:background="@null"
-                android:scaleType="fitCenter"
-                android:src="@drawable/pencil"
-                app:layout_constraintBottom_toTopOf="@+id/textView39"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.679"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tableLayout2"
-                app:layout_constraintVertical_bias="0.741" />
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/button2"
                 android:layout_width="185dp"
@@ -188,13 +174,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="107dp"
-                android:layout_marginEnd="1dp"
                 android:layout_marginBottom="12dp"
                 android:text="USER INFO"
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toTopOf="@+id/textView35"
-                app:layout_constraintEnd_toStartOf="@+id/imgbutton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.945" />
