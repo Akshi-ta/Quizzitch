@@ -65,7 +65,7 @@ class ProfilePage : Fragment() {
                 map["gameplayed"] = 0
             }
             val gameplayed: TextView = view.findViewById(R.id.textView45)
-
+            gameplayed.text = map["gameplayed"].toString()
 
             if(it["quizdone"]==null){
                 map["quizdone"] = 0
