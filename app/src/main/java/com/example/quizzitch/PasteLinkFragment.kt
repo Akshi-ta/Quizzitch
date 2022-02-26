@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.fragment_paste_link.view.*
 import java.sql.Time
 
 class PasteLinkFragment : Fragment() {

@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
-import kotlinx.android.synthetic.main.take_quiz.*
+import com.google.android.material.badge.BadgeUtils
 
 class QuizFragment: Fragment() {
 
@@ -57,9 +57,12 @@ class QuizFragment: Fragment() {
 
         questionList = setData.getQuestion()
 
-        setQuestion()
+        setQuestion(view)
 
-
+        val opt_1: Button = view.findViewById(R.id.opt_1)
+        val opt_2: Button = view.findViewById(R.id.opt_2)
+        val opt_3: Button = view.findViewById(R.id.opt_3)
+        val opt_4: Button = view.findViewById(R.id.opt_4)
         opt_1.setOnClickListener {
 
             selectedOptionStyle(opt_1, 1)
@@ -76,16 +79,16 @@ class QuizFragment: Fragment() {
 
             selectedOptionStyle(opt_4, 4)
         }
-
+        val submit: Button = view.findViewById(R.id.submit)
         submit.setOnClickListener {
             if (selectedOption != 0) {
                 val question = questionList!![currentPosition - 1]
                 if (selectedOption != question.correct_ans) {
-                    setColor(selectedOption, R.drawable.wrong_question_option)
+                    setColor(selectedOption, R.drawable.wrong_question_option, view)
                 }else{
                     score++
                 }
-                setColor(question.correct_ans,R.drawable.correct_question_option)
+                setColor(question.correct_ans,R.drawable.correct_question_option, view)
                 if(currentPosition==questionList!!.size)
                    submit.text= "FINISH"
                 else
@@ -94,7 +97,7 @@ class QuizFragment: Fragment() {
                 currentPosition++
                 when{
                     currentPosition<=questionList!!.size->{
-                        setQuestion()
+                        setQuestion(view)
                     }
                     else->{
                         val fragment: Fragment = Result()
@@ -113,18 +116,22 @@ class QuizFragment: Fragment() {
         }
     }
 
-        fun setColor(opt: Int, color: Int) {
+        fun setColor(opt: Int, color: Int, view: View) {
             when (opt) {
                 1 -> {
+                    val opt_1: Button = view.findViewById(R.id.opt_1)
                     opt_1.background = ContextCompat.getDrawable(requireContext(), color)
                 }
                 2 -> {
+                    val opt_2: Button = view.findViewById(R.id.opt_2)
                     opt_2.background = ContextCompat.getDrawable(requireContext(), color)
                 }
                 3 -> {
+                    val opt_3: Button = view.findViewById(R.id.opt_3)
                     opt_3.background = ContextCompat.getDrawable(requireContext(), color)
                 }
                 4 -> {
+                    val opt_4: Button = view.findViewById(R.id.opt_4)
                     opt_4.background = ContextCompat.getDrawable(requireContext(), color)
                 }
             }
@@ -133,10 +140,17 @@ class QuizFragment: Fragment() {
 
 
 
-    fun setQuestion() {
+    fun setQuestion(view: View) {
         val question = questionList!![currentPosition - 1]
 
-        setOptionStyle()
+        setOptionStyle(view)
+        val opt_1: Button = view.findViewById(R.id.opt_1)
+        val opt_2: Button = view.findViewById(R.id.opt_2)
+        val opt_3: Button = view.findViewById(R.id.opt_3)
+        val opt_4: Button = view.findViewById(R.id.opt_4)
+        val timeBar: ProgressBar = view.findViewById(R.id.timeBar)
+        val progress_text: TextView = view.findViewById(R.id.progress_text)
+        val quiz: TextView = view.findViewById(R.id.quiz)
 
         timeBar.progress = currentPosition
         timeBar.max = questionList!!.size
@@ -148,7 +162,11 @@ class QuizFragment: Fragment() {
         opt_4.text = question.option_four
     }
 
-    fun setOptionStyle() {
+    fun setOptionStyle(view: View) {
+        val opt_1: Button = view.findViewById(R.id.opt_1)
+        val opt_2: Button = view.findViewById(R.id.opt_2)
+        val opt_3: Button = view.findViewById(R.id.opt_3)
+        val opt_4: Button = view.findViewById(R.id.opt_4)
 
         var optionList: ArrayList<TextView> = arrayListOf()
         if (opt_1 != null) {
@@ -173,7 +191,7 @@ class QuizFragment: Fragment() {
 
     private fun selectedOptionStyle(view: TextView, opt: Int) {
 
-        setOptionStyle()
+        setOptionStyle(view)
         selectedOption = opt
         view.background = ContextCompat.getDrawable(requireContext(), R.drawable.selected_question_option)
         view.typeface = Typeface.DEFAULT_BOLD

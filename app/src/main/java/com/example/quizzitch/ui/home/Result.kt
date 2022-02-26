@@ -11,8 +11,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
 import com.example.quizzitch.R
-import com.example.quizzitch.ui.home.setData.score
-import kotlinx.android.synthetic.main.activity_result.*
 
 class Result : Fragment() {
     override fun onCreateView(

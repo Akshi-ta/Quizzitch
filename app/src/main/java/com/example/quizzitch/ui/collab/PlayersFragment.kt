@@ -77,15 +77,43 @@ class PlayersFragment : Fragment() {
         startBt.setOnClickListener{
             val cons: ConstraintLayout = view.findViewById(R.id.sparePlayer)
             cons.visibility = View.GONE
-            val fragment: Fragment = Category1Fragment()
             val bundle = Bundle()
             bundle.putString("roomcode", requireArguments().getString("roomcode"))
             bundle.putString("hostuid", requireArguments().getString("hostuid"))
-            fragment.arguments = bundle
-            val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.player, fragment)
-            transaction.addToBackStack("category")
-            transaction.commit()
+
+
+            store.collection("games").document(hostUid!!).get().addOnSuccessListener {
+                if((it[roomcode!!] as HashMap<String, Any>)["questions"]!=null)
+                {
+                    Toast.makeText(requireContext(), "Game already in progress", Toast.LENGTH_LONG).show()
+                    val ques: String = ((it[roomcode] as HashMap<String, Any>)["questions"] as HashMap<String,Any>)["totalQ"].toString()
+                    val diff: String = ((it[roomcode] as HashMap<String, Any>)["questions"] as HashMap<String,Any>)["diff"].toString()
+                    val category: String = ((it[roomcode] as HashMap<String, Any>)["questions"] as HashMap<String,Any>)["category"].toString()
+                    val fragment: Fragment = CollabGameFragment()
+                    bundle.putString("ques",ques)
+                    bundle.putString("diff", diff)
+                    bundle.putString("category", category)
+                    fragment.arguments = bundle
+                    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.player, fragment)
+                    transaction.addToBackStack("game")
+                    transaction.commit()
+                }else
+                {
+                    val fragment: Fragment = Category1Fragment()
+                    fragment.arguments = bundle
+                    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.player, fragment)
+                    transaction.addToBackStack("category")
+                    transaction.commit()
+                }
+            }
+
+//            fragment.arguments = bundle
+//            val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+//            transaction.replace(R.id.player, fragment)
+//            transaction.addToBackStack("category")
+//            transaction.commit()
         }
     }
 }
