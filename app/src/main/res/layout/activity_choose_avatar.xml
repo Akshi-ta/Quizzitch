@@ -10,13 +10,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/avatarr">
+        android:id="@+id/avatarR">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/avatarR">
+        android:id="@+id/avatarr">
 
 
     <androidx.cardview.widget.CardView
@@ -167,9 +167,9 @@
             android:textAlignment="center"
             tools:layout_editor_absoluteX="162dp"
             tools:layout_editor_absoluteY="643dp"
-            app:layout_constraintLeft_toLeftOf="@id/avatarR"
-            app:layout_constraintRight_toRightOf="@id/avatarR"
-            app:layout_constraintBottom_toBottomOf="@id/avatarR"/>
+            app:layout_constraintLeft_toLeftOf="@id/avatarr"
+            app:layout_constraintRight_toRightOf="@id/avatarr"
+            app:layout_constraintBottom_toBottomOf="@id/avatarr"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,14 +8,14 @@
     android:background="@drawable/bluegradient">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/quizr"
+        android:id="@+id/quizR"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/quizR"
+            android:id="@+id/quizr"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
