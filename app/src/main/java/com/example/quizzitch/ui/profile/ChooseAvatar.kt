@@ -42,6 +42,23 @@ class ChooseAvatar : Fragment() {
         ).show()
 
         val blackWidow: Button = view.findViewById(R.id.blackWidow)
+        val blackPanther: Button = view.findViewById(R.id.blackPanther)
+        val hawkeye: Button = view.findViewById(R.id.hawkeye)
+        val falcon: Button = view.findViewById(R.id.falcon)
+        val bucky: Button = view.findViewById(R.id.bucky)
+        val captainMarvel: Button = view.findViewById(R.id.captainMarvel)
+        val scarletWitch: Button = view.findViewById(R.id.scarletWitch)
+        val thor: Button = view.findViewById(R.id.thor)
+        val thanos: Button = view.findViewById(R.id.thanos)
+        val starLord: Button = view.findViewById(R.id.starLord)
+        val ironMan: Button = view.findViewById(R.id.ironMan)
+        val spiderMan: Button = view.findViewById(R.id.spiderMan)
+        val captainAmerica: Button = view.findViewById(R.id.captainAmerica)
+        val drStrange: Button = view.findViewById(R.id.drStrange)
+        val deadpool: Button = view.findViewById(R.id.deadpool)
+        val wolverine: Button = view.findViewById(R.id.wolverine)
+        val hulk: Button = view.findViewById(R.id.hulk)
+
 
         blackWidow.setOnClickListener { operator(view, "black widow") }
         hawkeye.setOnClickListener { operator(view, "hawkeye") }
@@ -109,11 +126,13 @@ class ChooseAvatar : Fragment() {
             view.background =
                 ContextCompat.getDrawable(requireContext(), R.drawable.selected_question_option)
             val storageRef = FirebaseStorage.getInstance().reference.child("images/$name.jpeg")
-            avatarChoosen(name, storageRef)
+            avatarChoosen(view, storageRef)
 
         }
 
-        private fun avatarChoosen(view: String, name: StorageReference) {
+        private fun avatarChoosen(view: View, name: StorageReference) {
+
+            val done: Button = view.findViewById(R.id.done)
             done.setOnClickListener {
 
                 val fragment: Fragment = ProfilePage()
