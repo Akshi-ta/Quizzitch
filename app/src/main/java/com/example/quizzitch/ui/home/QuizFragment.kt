@@ -50,9 +50,9 @@ class QuizFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val tv: TextView = view.findViewById(R.id.quiz)
-        tv.visibility = View.GONE
+        tv.visibility = View.VISIBLE
         val pgbar: ProgressBar = view.findViewById(R.id.progressBar1)
-        pgbar.visibility = View.VISIBLE
+        pgbar.visibility = View.GONE
         val bundle = Bundle()
 
         questionList = setData.getQuestion()
@@ -100,7 +100,7 @@ class QuizFragment: Fragment() {
                         val fragment: Fragment = Result()
                         bundle.putString("data", topic)
                         fragment.arguments = bundle
-                        val cons: ConstraintLayout = view.findViewById(R.id.quizR)
+                        val cons: ConstraintLayout = view.findViewById(R.id.quizr)
                         cons.visibility = View.GONE
                         val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                         transaction.replace(R.id.quizR, fragment)

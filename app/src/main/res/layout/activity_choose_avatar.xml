@@ -10,6 +10,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/avatarr">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/avatarR">
 
 
@@ -165,6 +171,7 @@
             app:layout_constraintRight_toRightOf="@id/avatarR"
             app:layout_constraintBottom_toBottomOf="@id/avatarR"/>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

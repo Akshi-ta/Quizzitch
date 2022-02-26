@@ -58,40 +58,43 @@ class ChooseAvatar : Fragment() {
         wolverine.setOnClickListener { operator(view, "wolverine") }
         hulk.setOnClickListener { operator(view, "hulk") }
 
+        val cons: ConstraintLayout = view.findViewById(R.id.avatarr)
+        cons.visibility = View.GONE
+
+
     }
 
+        val avatarMap: HashMap<Int, Int> = hashMapOf<Int, Int>(
+            1 to R.drawable.blackwidow,
+            2 to R.drawable.hawkeye,
+            3 to R.drawable.blackpanther,
+            4 to R.drawable.falcon,
+            5 to R.drawable.bucky,
+            6 to R.drawable.captainmarvel,
+            7 to R.drawable.scarletwitch,
+            8 to R.drawable.thor,
+            9 to R.drawable.thanos,
+            10 to R.drawable.starlord,
+            11 to R.drawable.ironman,
+            12 to R.drawable.spiderman
+        )
+        val mauth = FirebaseAuth.getInstance()
+        val avatarMapInv: HashMap<Int, Int> = hashMapOf<Int, Int>(
+            R.drawable.blackwidow to 1,
+            R.drawable.hawkeye to 2,
+            R.drawable.blackpanther to 3,
+            R.drawable.falcon to 4,
+            R.drawable.bucky to 5,
+            R.drawable.captainmarvel to 6,
+            R.drawable.scarletwitch to 7,
+            R.drawable.thor to 8,
+            R.drawable.thanos to 9,
+            R.drawable.starlord to 10,
+            R.drawable.ironman to 11,
+            R.drawable.spiderman to 12
+        )
 
-    val avatarMap: HashMap<Int, Int> = hashMapOf<Int, Int>(
-        1 to R.drawable.blackwidow,
-        2 to R.drawable.hawkeye,
-        3 to R.drawable.blackpanther,
-        4 to R.drawable.falcon,
-        5 to R.drawable.bucky,
-        6 to R.drawable.captainmarvel,
-        7 to R.drawable.scarletwitch,
-        8 to R.drawable.thor,
-        9 to R.drawable.thanos,
-        10 to R.drawable.starlord,
-        11 to R.drawable.ironman,
-        12 to R.drawable.spiderman
-    )
-    val mauth = FirebaseAuth.getInstance()
-    val avatarMapInv: HashMap<Int, Int> = hashMapOf<Int, Int>(
-        R.drawable.blackwidow to 1,
-        R.drawable.hawkeye to 2,
-        R.drawable.blackpanther to 3,
-        R.drawable.falcon to 4,
-        R.drawable.bucky to 5,
-        R.drawable.captainmarvel to 6,
-        R.drawable.scarletwitch to 7,
-        R.drawable.thor to 8,
-        R.drawable.thanos to 9,
-        R.drawable.starlord to 10,
-        R.drawable.ironman to 11,
-        R.drawable.spiderman to 12
-    )
-
-    val db = FirebaseFirestore.getInstance()
+        val db = FirebaseFirestore.getInstance()
 
 //        db.collection("desc").document(mauth.uid.toString()).update(avatarMap)
 //            .addOnSuccessListener {
@@ -99,34 +102,32 @@ class ChooseAvatar : Fragment() {
 //            }
 
 
-    private fun operator(view: View, name: String) {
-        view.background =
-            ContextCompat.getDrawable(requireContext(), R.drawable.selected_question_option)
-        val storageRef = FirebaseStorage.getInstance().reference.child("images/$name.jpeg")
-        avatarChoosen(name, storageRef)
-
-    }
-
-    private fun avatarChoosen(view: String, name: StorageReference) {
-        done.setOnClickListener {
-
-            val fragment: Fragment = ProfilePage()
-            val bundle = Bundle()
-            bundle.putString("avatar", name.toString())
-            fragment.arguments = bundle
-//            val cons: ConstraintLayout = view.findViewById(R.id.avatarR)
-//            cons.visibility = View.GONE
-            val transaction: FragmentTransaction =
-                requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.avatarR, fragment)
-            transaction.addToBackStack("pic")
-            transaction.commit()
+        private fun operator(view: View, name: String) {
+            view.background =
+                ContextCompat.getDrawable(requireContext(), R.drawable.selected_question_option)
+            val storageRef = FirebaseStorage.getInstance().reference.child("images/$name.jpeg")
+            avatarChoosen(name, storageRef)
 
         }
 
+        private fun avatarChoosen(view: String, name: StorageReference) {
+            done.setOnClickListener {
 
+                val fragment: Fragment = ProfilePage()
+                val bundle = Bundle()
+                bundle.putString("avatar", name.toString())
+                fragment.arguments = bundle
+                val transaction: FragmentTransaction =
+                    requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.avatarR, fragment)
+                transaction.addToBackStack("pic")
+                transaction.commit()
+
+            }
+
+
+        }
     }
-}
 
 
 

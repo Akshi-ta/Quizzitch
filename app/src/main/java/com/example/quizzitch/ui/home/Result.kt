@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.setFragmentResultListener
 import com.example.quizzitch.R
@@ -31,6 +32,8 @@ class Result : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
+
+        Toast.makeText(requireContext(), "Check your Result", Toast.LENGTH_SHORT).show()
 
       //  val score=intent.getStringExtra(setData.score)
       //  val totalQuestion=intent.getStringExtra("total size")
