@@ -177,7 +177,7 @@ class CollabGameFragment : Fragment() {
             .addOnCompleteListener{
                 val map: HashMap<String, Any> = it.result.data as HashMap<String, Any>
 
-                val questionsData: HashMap<String, Any> = (map["44"]as HashMap<String, Any>)["questions"] as HashMap<String, Any>
+                val questionsData: HashMap<String, Any> = (map[roomcode]as HashMap<String, Any>)["questions"] as HashMap<String, Any>
                 questionTV.text = (iterator+1).toString() + ". " + (questionsData[iterator.toString()] as HashMap<String, Any>)["ques"].toString()
                 val incorrect: ArrayList<String> = (questionsData[iterator.toString()] as HashMap<String, Any>)["incorrect_answers"]as ArrayList<String>
                 options1.text =  incorrect[0]
