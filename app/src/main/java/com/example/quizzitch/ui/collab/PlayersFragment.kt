@@ -75,6 +75,7 @@ class PlayersFragment : Fragment() {
                     {
                         if(gameData["started"].toString()=="1")
                         {
+                            //Toast.makeText(requireContext(), "game in progress already", Toast.LENGTH_SHORT).show()
                             val questions: HashMap<String, Any> = gameData["questions"] as HashMap<String, Any>
                             val diff: String = questions["diff"].toString()
                             val totalQ: Int = questions["totalQ"].toString().toInt()
@@ -90,6 +91,8 @@ class PlayersFragment : Fragment() {
                             transaction.replace(R.id.player, fragment)
                             transaction.addToBackStack("game")
                             transaction.commit()
+
+                            return@addSnapshotListener
                         }
                     }
                 }

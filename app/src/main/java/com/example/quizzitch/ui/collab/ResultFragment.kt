@@ -1,6 +1,8 @@
 package com.example.quizzitch.ui.collab
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -38,25 +40,52 @@ class ResultFragment : Fragment() {
         val player2score: TextView = view.findViewById(R.id.player2score)
         val player3score: TextView = view.findViewById(R.id.player3score)
         val player4score: TextView = view.findViewById(R.id.player4score)
+        val score: HashMap<String, Any> = hashMapOf()
+        score["player1name"] = player1score; score["player2name"] = player2score
+        score["player3name"] = player3score; score["player4name"] = player4score
+        val hostUid: String = requireArguments().getString("hostuid")!!
+        val totalScore: TextView = view.findViewById(R.id.totalscore)
 
-        store.collection("games").document(uid).addSnapshotListener{it, e->
+
+        store.collection("games").document(hostUid).addSnapshotListener{it, e->
             e?.let {
                 Toast.makeText(requireContext(), "An Error Occured", Toast.LENGTH_SHORT).show()
             }
             it?.let {
                 val map:HashMap<String, Any> = it.data as HashMap<String, Any>
-                val quesions: HashMap<String, Any> = (map[roomcode.toString()]as HashMap<String, Any>)["questions"] as HashMap<String, Any>
+                val questions: HashMap<String, Any> = (map[roomcode.toString()]as HashMap<String, Any>)["questions"] as HashMap<String, Any>
                 val responses: HashMap<String, Any> = (map[roomcode.toString()]as HashMap<String, Any>)["responses"] as HashMap<String, Any>
+                Log.e(TAG, responses.toString())
+                totalScore.text = questions["totalQ"].toString()
                 var iterator = 1
                 for(i in responses)
                 {
                     store.collection("desc").document(i.key).get().addOnSuccessListener {
                         (players["player"+iterator.toString()+"name"]as TextView).text = it["displayName"].toString()
+                        (score["player"+iterator.toString()+"name"]as TextView).text = scoreCal(i.value as HashMap<String, Any>, questions).toString()
+                        if(i.key==uid)
+                        {
+                            val scored: TextView = view.findViewById(R.id.scored)
+                            scored.text = scoreCal(i.value as HashMap<String, Any>, questions).toString()
+                        }
                         iterator++
-
                     }
                 }
             }
         }
+    }
+
+    fun scoreCal(responses:HashMap<String, Any>, questions:HashMap<String, Any>):Int {
+        var ans = 0
+
+        for(i in responses)
+        {
+            if((questions[i.key]as HashMap<String, Any>)["correct_answer"].toString()==i.value.toString())
+            {
+                ans++
+            }
+        }
+
+        return ans
     }
 }

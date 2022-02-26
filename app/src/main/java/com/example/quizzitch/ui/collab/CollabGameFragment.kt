@@ -83,7 +83,7 @@ class CollabGameFragment : Fragment() {
                 responses[uid] = answers
                 gameData["responses"] = responses
                 map[roomcode!!] = gameData
-                store.collection("games").document(uid).update(map).addOnSuccessListener {
+                store.collection("games").document(requireArguments().getString("hostuid")!!).update(map).addOnSuccessListener {
                     Toast.makeText(requireContext(), "response recorded", Toast.LENGTH_LONG).show()
                     val fragment: Fragment = ResultFragment()
                     val bundle = Bundle()
@@ -123,7 +123,7 @@ class CollabGameFragment : Fragment() {
             options3.background = ContextCompat.getDrawable(requireActivity(), R.drawable.bluegradient)
             options3.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
             options4.background = null
-            answers[iterator.toString()] =  options1.text
+            answers[iterator.toString()] =  options3.text
         }
         options4.setOnClickListener{
             options1.background = null
@@ -131,7 +131,7 @@ class CollabGameFragment : Fragment() {
             options3.background = null
             options4.background = ContextCompat.getDrawable(requireActivity(), R.drawable.bluegradient)
             options4.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
-            answers[iterator.toString()] =  options1.text
+            answers[iterator.toString()] =  options4.text
         }
 
     }
