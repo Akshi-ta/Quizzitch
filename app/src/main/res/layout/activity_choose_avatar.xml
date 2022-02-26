@@ -10,6 +10,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/avatarr">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/avatarR">
 
 
@@ -74,7 +80,7 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:clickable="true"
-                        android:src="@drawable/captainmarvel"/>
+                        android:src="@drawable/marvel"/>
                     <ImageView
                         android:id="@+id/scarletWitch"
                         android:layout_height="wrap_content"
@@ -85,13 +91,13 @@
                         android:id="@+id/thor"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/thor"/>
+                        android:src="@drawable/thor1"/>
                     <ImageView
                         android:id="@+id/thanos"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:clickable="true"
-                        android:src="@drawable/thanos"/>
+                        android:src="@drawable/thonas1"/>
                     <ImageView
                         android:id="@+id/starLord"
                         android:layout_height="wrap_content"
@@ -116,14 +122,14 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:clickable="true"
-                    android:src="@drawable/captainamerica"/>
+                    android:src="@drawable/captainamerica1"/>
 
                 <ImageView
                     android:id="@+id/drStrange"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:clickable="true"
-                    android:src="@drawable/drstrange"/>
+                    android:src="@drawable/drstrange1"/>
 
                 <ImageView
                     android:id="@+id/deadpool"
@@ -137,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:clickable="true"
-                    android:src="@drawable/wolverine"/>
+                    android:src="@drawable/yellow2"/>
 
                 <ImageView
                     android:id="@+id/hulk"
@@ -165,6 +171,7 @@
             app:layout_constraintRight_toRightOf="@id/avatarR"
             app:layout_constraintBottom_toBottomOf="@id/avatarR"/>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

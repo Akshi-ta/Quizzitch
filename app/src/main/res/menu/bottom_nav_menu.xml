@@ -2,25 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/title_home" />
+        android:id="@+id/navigation_home" android:icon="@drawable/practice"
+        android:title="Practice" />
     <item
         android:id="@+id/buzzerRoundFragment"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/collab"
         android:title="Collab"/>
     <item
         android:id="@+id/leaderBoardActivity"
-        android:icon="@drawable/blue"
-        android:title="leaderboard"/>
+        android:icon="@drawable/ldrbrd"
+        android:title="Leaderboard"/>
+
+    <item
+        android:id="@+id/pasteLinkFragment"
+        android:icon="@drawable/quizz"
+        android:title="Quiz"/>
+
     <item
         android:id="@+id/profilePage"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Profile"/>
-    <item
-        android:id="@+id/pasteLinkFragment"
-        android:icon="@drawable/bluegradient"
-        android:title="Pastelink"/>
+
 
 
 
