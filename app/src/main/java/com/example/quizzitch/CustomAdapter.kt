@@ -44,6 +44,7 @@ class CustomAdaptor(userInp: ArrayList<User>) :
         userArr.add(user)
         notifyItemInserted(userArr.size - 1)
         Log.d(TAG, "Adding user " + user.displayName)
+
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

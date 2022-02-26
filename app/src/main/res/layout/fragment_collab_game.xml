@@ -195,8 +195,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView9"
             app:layout_constraintVertical_bias="0.701">
-
         </Button>
+
+        <CheckBox
+            android:id="@+id/favouriteQue"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/selector_favourite_que"
+            android:button="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView59"
@@ -216,8 +226,8 @@
 
         <Button
             android:id="@+id/button10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="159dp"
+            android:layout_height="252dp"
             android:text="Submit"
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/nextButton"
