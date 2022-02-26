@@ -14,6 +14,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
+import com.example.quizzitch.Result1Fragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.collection.LLRBNode
 import com.google.firebase.firestore.FirebaseFirestore
@@ -91,7 +92,7 @@ class CollabGameFragment : Fragment() {
                     bundle.putString("hostuid", requireArguments().getString("hostuid"))
                     fragment.arguments = bundle
                     val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.result, fragment)
+                    transaction.replace(R.id.game, fragment)
                     transaction.addToBackStack("result")
                     transaction.commit()
                 }
