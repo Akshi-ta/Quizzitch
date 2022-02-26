@@ -8,14 +8,14 @@
     android:background="@drawable/bluegradient">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/quizr"
+        android:id="@+id/quizR"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/quizR"
+            android:id="@+id/quizr"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -119,7 +119,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="288dp"
-                    android:text="This is option 1"
+                    android:text="@string/this_is_option_1"
                     android:padding="10dp"
                     android:textColor="@color/white"
                     app:layout_constraintHorizontal_bias="0.174"
@@ -132,7 +132,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="332dp"
-                    android:text="This is option 2"
+                    android:text="@string/this_is_option_2"
                     android:padding="10dp"
                     android:textColor="@color/white"
                     app:layout_constraintHorizontal_bias="0.174"
@@ -146,7 +146,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="376dp"
-                    android:text="This is option 3"
+                    android:text="@string/this_is_option_3"
                     android:padding="10dp"
                     android:textColor="@color/white"
                     app:layout_constraintHorizontal_bias="0.174"
@@ -160,7 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="420dp"
-                    android:text="This is option 4"
+                    android:text="@string/this_is_option_4"
                     android:padding="10dp"
                     android:textColor="@color/white"
                     app:layout_constraintHorizontal_bias="0.174"

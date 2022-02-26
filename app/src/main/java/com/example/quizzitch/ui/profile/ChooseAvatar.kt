@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
-import com.example.quizzitch.databinding.ActivityChooseAvatarBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -20,7 +20,6 @@ import com.google.firebase.storage.StorageReference
 
 class ChooseAvatar : Fragment() {
 
-    lateinit var binding: ActivityChooseAvatarBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,23 +40,23 @@ class ChooseAvatar : Fragment() {
             Toast.LENGTH_LONG
         ).show()
 
-        val blackWidow: Button = view.findViewById(R.id.blackWidow)
-        val blackPanther: Button = view.findViewById(R.id.blackPanther)
-        val hawkeye: Button = view.findViewById(R.id.hawkeye)
-        val falcon: Button = view.findViewById(R.id.falcon)
-        val bucky: Button = view.findViewById(R.id.bucky)
-        val captainMarvel: Button = view.findViewById(R.id.captainMarvel)
-        val scarletWitch: Button = view.findViewById(R.id.scarletWitch)
-        val thor: Button = view.findViewById(R.id.thor)
-        val thanos: Button = view.findViewById(R.id.thanos)
-        val starLord: Button = view.findViewById(R.id.starLord)
-        val ironMan: Button = view.findViewById(R.id.ironMan)
-        val spiderMan: Button = view.findViewById(R.id.spiderMan)
-        val captainAmerica: Button = view.findViewById(R.id.captainAmerica)
-        val drStrange: Button = view.findViewById(R.id.drStrange)
-        val deadpool: Button = view.findViewById(R.id.deadpool)
-        val wolverine: Button = view.findViewById(R.id.wolverine)
-        val hulk: Button = view.findViewById(R.id.hulk)
+        val blackWidow: ImageView = view.findViewById(R.id.blackWidow)
+        val blackPanther: ImageView = view.findViewById(R.id.blackPanther)
+        val hawkeye: ImageView = view.findViewById(R.id.hawkeye)
+        val falcon: ImageView = view.findViewById(R.id.falcon)
+        val bucky: ImageView = view.findViewById(R.id.bucky)
+        val captainMarvel: ImageView = view.findViewById(R.id.captainMarvel)
+        val scarletWitch: ImageView = view.findViewById(R.id.scarletWitch)
+        val thor: ImageView = view.findViewById(R.id.thor)
+        val thanos: ImageView = view.findViewById(R.id.thanos)
+        val starLord: ImageView = view.findViewById(R.id.starLord)
+        val ironMan: ImageView = view.findViewById(R.id.ironMan)
+        val spiderMan: ImageView = view.findViewById(R.id.spiderMan)
+        val captainAmerica: ImageView = view.findViewById(R.id.captainAmerica)
+        val drStrange: ImageView = view.findViewById(R.id.drStrange)
+        val deadpool: ImageView = view.findViewById(R.id.deadpool)
+        val wolverine: ImageView = view.findViewById(R.id.wolverine)
+        val hulk: ImageView = view.findViewById(R.id.hulk)
 
 
         blackWidow.setOnClickListener { operator(view, "black widow") }
@@ -77,9 +76,6 @@ class ChooseAvatar : Fragment() {
         deadpool.setOnClickListener { operator(view, "deadpool") }
         wolverine.setOnClickListener { operator(view, "wolverine") }
         hulk.setOnClickListener { operator(view, "hulk") }
-
-        val cons: ConstraintLayout = view.findViewById(R.id.avatarr)
-        cons.visibility = View.GONE
 
 
     }
@@ -134,7 +130,8 @@ class ChooseAvatar : Fragment() {
 
             val done: Button = view.findViewById(R.id.done)
             done.setOnClickListener {
-
+                val cons: ConstraintLayout = view.findViewById(R.id.avatarr)
+                cons.visibility = View.GONE
                 val fragment: Fragment = ProfilePage()
                 val bundle = Bundle()
                 bundle.putString("avatar", name.toString())
