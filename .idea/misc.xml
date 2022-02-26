@@ -42,7 +42,8 @@
         <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/signin.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/JIYA/AndroidStudioProjects/Quizzitch/app/src/main/res/layout/splashscreen.xml" value="0.25416666666666665" />
         <entry key="app/src/main/res/drawable/round_40.xml" value="0.2245" />
-        <entry key="app/src/main/res/layout/activity_dash.xml" value="0.2953125" />
+        <entry key="app/src/main/res/layout/activity_choose_avatar.xml" value="0.18342391304347827" />
+        <entry key="app/src/main/res/layout/activity_dash.xml" value="0.1517974853515625" />
         <entry key="app/src/main/res/layout/activity_leader_board.xml" value="0.3146067415730337" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2953125" />
         <entry key="app/src/main/res/layout/board_layout.xml" value="0.6744753193651509" />
