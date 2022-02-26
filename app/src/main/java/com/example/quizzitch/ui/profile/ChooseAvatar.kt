@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -15,7 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import kotlinx.android.synthetic.main.activity_choose_avatar.*
+
 
 class ChooseAvatar : Fragment() {
 
@@ -39,6 +40,8 @@ class ChooseAvatar : Fragment() {
             "Please select your favourite avatar and then click on done",
             Toast.LENGTH_LONG
         ).show()
+
+        val blackWidow: Button = view.findViewById(R.id.blackWidow)
 
         blackWidow.setOnClickListener { operator(view, "black widow") }
         hawkeye.setOnClickListener { operator(view, "hawkeye") }

@@ -11,15 +11,15 @@ import com.example.quizzitch.databinding.ActivityDashBinding
 
 class Dash : AppCompatActivity() {
 
-    private lateinit var binding: ActivityDashBinding
+    //private lateinit var binding: ActivityDashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityDashBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        //binding = ActivityDashBinding.inflate(layoutInflater)
+        setContentView(R.layout.activity_dash)
 
-        val navView: BottomNavigationView = binding.navView
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment_activity_dash)
         // Passing each menu ID as a set of Ids because each

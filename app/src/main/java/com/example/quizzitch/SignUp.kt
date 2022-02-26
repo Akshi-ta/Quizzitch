@@ -22,7 +22,6 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
-import kotlinx.android.synthetic.main.signup.*
 
 class SignUp: AppCompatActivity() {
 //    private lateinit var binding: ActivityDashBinding
@@ -127,10 +126,12 @@ class SignUp: AppCompatActivity() {
             try {
                 val account = accountTask.getResult(ApiException::class.java)
                 firebaseAuthWithGoogleAccount(account)
+                val googleSignInBtn: SignInButton = findViewById(R.id.googleSignInBtn)
                 googleSignInBtn.visibility = View.GONE
             }
             catch (e:Exception){
                 Log.d(TAG, "onActivityResult: ${e.message}")
+                val googleSignInBtn: SignInButton = findViewById(R.id.googleSignInBtn)
                 googleSignInBtn.visibility = View.VISIBLE
             }
         }
