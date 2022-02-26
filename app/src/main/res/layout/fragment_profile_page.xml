@@ -205,7 +205,7 @@
                         android:layout_width="126dp"
                         android:layout_height="49dp"
                         android:layout_marginStart="11dp"
-                        android:text="NO. OF QUIZES DONE"
+                        android:text="NO. OF QUIZZES DONE"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="16sp"
