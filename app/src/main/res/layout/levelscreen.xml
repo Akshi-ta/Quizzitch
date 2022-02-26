@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#352451"
+    android:background="@drawable/bluegradient"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,111 +20,206 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView22"
-        android:layout_width="332dp"
-        android:layout_height="401dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078"
-        app:srcCompat="@drawable/castle" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView22"-->
+<!--        android:layout_width="332dp"-->
+<!--        android:layout_height="401dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.493"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.078"-->
+<!--        app:srcCompat="@drawable/castle" />-->
 
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/script"
-        android:text="@string/fantasy"
-        android:textColor="#F1DEDE"
-        android:textSize="48dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.069" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView30"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:fontFamily="@font/script"-->
+<!--        android:text="@string/fantasy"-->
+<!--        android:textColor="#F1DEDE"-->
+<!--        android:textSize="48dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.481"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.069" />-->
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="117dp"
-        android:layout_height="40dp"
-        android:fontFamily="@font/script"
-        android:text="@string/choose_your"
-        android:textColor="#F1DEDE"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30"
-        app:layout_constraintVertical_bias="0.449" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView31"-->
+<!--        android:layout_width="117dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:fontFamily="@font/script"-->
+<!--        android:text="@string/choose_your"-->
+<!--        android:textColor="#F1DEDE"-->
+<!--        android:textSize="24dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView30"-->
+<!--        app:layout_constraintVertical_bias="0.449" />-->
 
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/script"
-        android:text="@string/level"
-        android:textColor="#F1DEDE"
-        android:textSize="36dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30"
-        app:layout_constraintVertical_bias="0.498" />
+<!--    <TextView-->
+<!--        android:id="@+id/textView32"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:fontFamily="@font/script"-->
+<!--        android:text="@string/level"-->
+<!--        android:textColor="#F1DEDE"-->
+<!--        android:textSize="36dp"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.476"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView30"-->
+<!--        app:layout_constraintVertical_bias="0.498" />-->
 
-    <Button
-        android:id="@+id/easy"
-        android:layout_width="220dp"
-        android:layout_height="45dp"
-        android:background="@drawable/roundoval"
-        android:backgroundTint="#932E9C"
-        android:text="@string/easy_peasy"
-        android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/avg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView32"
-        app:layout_constraintVertical_bias="0.8" />
+<!--    <Button-->
+<!--        android:id="@+id/easy"-->
+<!--        android:layout_width="220dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:background="@drawable/roundoval"-->
+<!--        android:backgroundTint="#932E9C"-->
+<!--        android:text="@string/easy_peasy"-->
+<!--        android:clickable="true"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/avg"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.49"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView32"-->
+<!--        app:layout_constraintVertical_bias="0.8" />-->
 
-    <Button
-        android:id="@+id/avg"
-        android:layout_width="220dp"
-        android:layout_height="45dp"
-        android:background="@drawable/roundoval"
-        android:backgroundTint="#932E9C"
-        android:text="@string/average"
-        android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/hard"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView32"
-        app:layout_constraintVertical_bias="0.908" />
+<!--    <Button-->
+<!--        android:id="@+id/avg"-->
+<!--        android:layout_width="220dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:background="@drawable/roundoval"-->
+<!--        android:backgroundTint="#932E9C"-->
+<!--        android:text="@string/average"-->
+<!--        android:clickable="true"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/hard"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.49"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView32"-->
+<!--        app:layout_constraintVertical_bias="0.908" />-->
 
-    <Button
-        android:id="@+id/hard"
-        android:layout_width="220dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="88dp"
-        android:background="@drawable/roundoval"
-        android:backgroundTint="#932E9C"
-        android:text="@string/hard"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView32"
-        app:layout_constraintVertical_bias="1.0" />
+<!--    <Button-->
+<!--        android:id="@+id/hard"-->
+<!--        android:layout_width="220dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:layout_marginBottom="88dp"-->
+<!--        android:background="@drawable/roundoval"-->
+<!--        android:backgroundTint="#932E9C"-->
+<!--        android:text="@string/hard"-->
+<!--        android:clickable="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.49"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/textView32"-->
+<!--        app:layout_constraintVertical_bias="1.0" />-->
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/level"
+            android:layout_width="283dp"
+            android:layout_height="289dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.472">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/chooseDifficulty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/choose_difficulty"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.494"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.061" />
+
+                <TextView
+                    android:id="@+id/Level"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/level2"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chooseDifficulty"
+                    app:layout_constraintVertical_bias="0.039" />
+
+                <RadioGroup
+                    android:id="@+id/radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.173"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/Level"
+                    app:layout_constraintVertical_bias="0.137">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:text="EASY-PEASY"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:text="AVERAGE"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="20dp"
+                        android:text="HARD"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+                </RadioGroup>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
