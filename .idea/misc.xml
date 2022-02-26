@@ -26,6 +26,7 @@
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/activity_dash.xml" value="0.175" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/activity_leader_board.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/activity_result.xml" value="0.175" />
+        <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/appbar.xml" value="0.19479166666666667" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/board_layout.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/details.xml" value="0.175" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/fragment_buzzer_round.xml" value="0.25416666666666665" />
@@ -39,15 +40,21 @@
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/fragment_host_game.xml" value="0.175" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/fragment_join_room.xml" value="0.175" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/fragment_notifications.xml" value="0.175" />
+        <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/fragment_paste_link.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/fragment_players.xml" value="0.175" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/fragment_profile_page.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/fragment_result.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/getstarted1.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/levelscreen.xml" value="0.175" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/signin.xml" value="0.175" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/signup.xml" value="0.175" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/splashscreen.xml" value="0.175" />
+        <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/layout/take_quiz.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/menu/levelscreen.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/menu/popup_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/menu/side_toolbar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.187" />
         <entry key="..\:/Users/gkcha/Quizzitch1/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.187" />
         <entry key="app/src/main/res/drawable/round_40.xml" value="0.2245" />

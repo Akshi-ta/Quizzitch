@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Quizzitch">
+        android:theme="@style/Theme.Quizzitch" >
 
         <activity
             android:name=".LeaderBoardActivity"
