@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -30,7 +29,7 @@ class ProfilePage : Fragment() {
     private var isclick: Boolean = false
     private var storage: FirebaseStorage = FirebaseStorage.getInstance()
     private var storageReference = storage.getReference()
-  //error  private var _binding: FragmentProfilePageBinding? = null
+    private var _binding: FragmentProfilePageBinding? = null
     private lateinit var profilePageFragmentViewModel: ProfilePageFragmentViewModel
 
     override fun onCreateView(
@@ -44,20 +43,26 @@ class ProfilePage : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //val dp: ImageView = view.findViewById(R.id.imageView5)
+//        fun newInstance(name: String): ProfilePage{
+//
+//        }
+
+        val name: String = requireArguments().getString("avatar").toString()
+
+        val dp: ImageView = view.findViewById(R.id.imageView5)
         val mauth: FirebaseAuth = FirebaseAuth.getInstance()
         val uid = mauth.currentUser!!.uid.toString()
         val store: FirebaseFirestore = FirebaseFirestore.getInstance()
-        //val dpLocation = mauth.currentUser!!.uid
-        //val url = "images/$dpLocation/profile_pic"
-        //val max_bytes:Long = 1024*1024
-        //val imgRef = storageReference.child(url)
-//        imgRef.getBytes(max_bytes).addOnSuccessListener {
-//            val bitmap = BitmapFactory.decodeByteArray(it,0,it.size)
-//            dp.setImageBitmap(bitmap)
-//        }.addOnFailureListener{
-//            dp.setImageResource(R.drawable.profilenew)
-//        }
+        val dpLocation = mauth.currentUser!!.uid
+        val url = "images/$name.jpeg"
+        val max_bytes:Long = 1024*1024
+        val imgRef = storageReference.child(url)
+       imgRef.getBytes(max_bytes).addOnSuccessListener {
+            val bitmap = BitmapFactory.decodeByteArray(it,0,it.size)
+            dp.setImageBitmap(bitmap)
+        }.addOnFailureListener{
+            dp.setImageResource(R.drawable.blackpanther)
+        }
         store.collection("desc").document(uid).get().addOnSuccessListener {
             val map: HashMap<String,Any> = it.data as HashMap<String,Any>
 
@@ -114,8 +119,9 @@ class ProfilePage : Fragment() {
 
         val save: TextView = view.findViewById(R.id.saveChanges)
         save.setOnClickListener {
+            val name = requireArguments().getString("avatar")
             if (isclick)
-                UploadImage()
+                UploadImage(view, name)
             else
                 Snackbar.make(view, "No changes to save,...", Snackbar.LENGTH_SHORT)
                     .setAction("action", null).show()
@@ -147,11 +153,11 @@ class ProfilePage : Fragment() {
 
     }
 
-    private fun UploadImage() {
+    private fun UploadImage(view: View, name: String?) {
 
         if (imageUri != null) {
             val id = FirebaseAuth.getInstance().currentUser?.uid
-            val ref: StorageReference = FirebaseStorage.getInstance().getReference("images/$id/profile_pic")
+            val ref: StorageReference = FirebaseStorage.getInstance().getReference("images/$name.jpeg")
             ref.putFile(imageUri)
                 .addOnSuccessListener {
                     Toast.makeText(activity, "Profile photo changed", Toast.LENGTH_SHORT).show()
@@ -159,7 +165,7 @@ class ProfilePage : Fragment() {
                 }
                 .addOnFailureListener {
                     OnFailureListener() {
-                        Toast.makeText(activity, "Upload Failed ${it}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "Upload Failed ${it.toString()}", Toast.LENGTH_SHORT).show()
                     }
                 }
                 .addOnProgressListener {

@@ -136,8 +136,7 @@ class ChooseAvatar : Fragment() {
                 val bundle = Bundle()
                 bundle.putString("avatar", name.toString())
                 fragment.arguments = bundle
-                val transaction: FragmentTransaction =
-                    requireActivity().supportFragmentManager.beginTransaction()
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.avatarR, fragment)
                 transaction.addToBackStack("pic")
                 transaction.commit()
