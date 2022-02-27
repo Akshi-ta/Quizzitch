@@ -54,7 +54,7 @@ class QuizFragment: Fragment() {
         pgbar.visibility = View.GONE
         val bundle = Bundle()
 
-        questionList = setData.getQuestion()
+        questionList = setData.eHistory()
 
         setQuestion(view)
 
