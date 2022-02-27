@@ -25,6 +25,9 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
 class ProfilePage : Fragment() {
+    val mauth: FirebaseAuth = FirebaseAuth.getInstance()
+    val uid = mauth.currentUser!!.uid.toString()
+    val store: FirebaseFirestore = FirebaseFirestore.getInstance()
     private lateinit var imageUri: Uri
     private var isclick: Boolean = false
     private var storage: FirebaseStorage = FirebaseStorage.getInstance()
@@ -46,22 +49,35 @@ class ProfilePage : Fragment() {
 //        fun newInstance(name: String): ProfilePage{
 //
 //        }
-
-        val name: String = requireArguments().getString("avatar").toString()
+        var name = ""
+        if(arguments!=null)
+        {
+            name = requireArguments().getString("avatar").toString()
+        }
 
         val dp: ImageView = view.findViewById(R.id.imageView5)
-        val mauth: FirebaseAuth = FirebaseAuth.getInstance()
-        val uid = mauth.currentUser!!.uid.toString()
-        val store: FirebaseFirestore = FirebaseFirestore.getInstance()
-        val dpLocation = mauth.currentUser!!.uid
         val url = "images/$name.jpeg"
         val max_bytes:Long = 1024*1024
-        val imgRef = storageReference.child(url)
-       imgRef.getBytes(max_bytes).addOnSuccessListener {
-            val bitmap = BitmapFactory.decodeByteArray(it,0,it.size)
-            dp.setImageBitmap(bitmap)
-        }.addOnFailureListener{
-            dp.setImageResource(R.drawable.blackpanther)
+        if(name=="")
+        {
+            store.collection("desc").document(uid).get().addOnSuccessListener {
+                name = "images/${it["avatar"].toString()}.jpeg"
+                val imgRef = storageReference.child(name)
+                imgRef.getBytes(max_bytes).addOnSuccessListener {
+                    val bitmap = BitmapFactory.decodeByteArray(it,0,it.size)
+                    dp.setImageBitmap(bitmap)
+                }.addOnFailureListener{
+                    dp.setImageResource(R.drawable.blackpanther)
+                }
+            }
+        }else {
+            val imgRef = storageReference.child(name)
+            imgRef.getBytes(max_bytes).addOnSuccessListener {
+                val bitmap = BitmapFactory.decodeByteArray(it,0,it.size)
+                dp.setImageBitmap(bitmap)
+            }.addOnFailureListener{
+                dp.setImageResource(R.drawable.blackpanther)
+            }
         }
         store.collection("desc").document(uid).get().addOnSuccessListener {
             val map: HashMap<String,Any> = it.data as HashMap<String,Any>

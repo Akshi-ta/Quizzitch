@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
@@ -23,6 +24,9 @@ class FormFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val form: WebView = view.findViewById(R.id.webView)
         form.webViewClient = WebViewClient()
+        val webSetting: WebSettings = form.settings
+        webSetting.javaScriptEnabled = true
+        form.addJavascriptInterface(WebInterface(requireContext()), "Android")
         form.loadUrl("http://www.google.com")
 
 //        val driver = ChromeDriver()
