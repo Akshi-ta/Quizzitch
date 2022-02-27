@@ -191,11 +191,12 @@ class SignIn : AppCompatActivity() {
                 }
             }
         }
-//        val signup: TextView = findViewById(R.id.signup)
-//        signup.setOnClickListener {
-//            val tlAnim: Animation = AnimationUtils.loadAnimation(this,R.anim.tl_anim)
-//            signupcardview.animation = tlAnim
-//        }
+        val signup: TextView = findViewById(R.id.signupButton)
+        signup.setOnClickListener {
+            val intent = Intent(this, SignUp::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun checkUser() {
@@ -261,4 +262,7 @@ class SignIn : AppCompatActivity() {
             }
 
     }
+
+
+
 }
