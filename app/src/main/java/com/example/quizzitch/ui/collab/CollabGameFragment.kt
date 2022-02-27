@@ -39,6 +39,7 @@ class CollabGameFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val roomcode = requireArguments().getString("roomcode")
+        val hostUid: String = requireArguments().getString("hostuid")!!
         //val previousBt: Button = view.findViewById(R.id.previousButton)
         val totalQ: Int = requireArguments().getString("ques")!!.toInt()
         val nextBt: Button = view.findViewById(R.id.nextButton)
@@ -46,6 +47,25 @@ class CollabGameFragment : Fragment() {
         val options2: TextView = view.findViewById(R.id.options2)
         val options3: TextView = view.findViewById(R.id.options3)
         val options4: TextView = view.findViewById(R.id.options4)
+
+        store.collection("games").document(hostUid).get().addOnSuccessListener {
+            val res: HashMap<String, Any> = (it[roomcode!!]as HashMap<String, Any>)["responses"] as HashMap<String, Any>
+            if(res[uid]!=null)
+            {
+                val fragment: Fragment = ResultFragment()
+                val bundle = Bundle()
+                bundle.putString("diff", requireArguments().getString("diff"))
+                bundle.putString("ques", totalQ.toString())
+                bundle.putString("category", requireArguments().getString("category"))
+                bundle.putString("roomcode", requireArguments().getString("roomcode"))
+                bundle.putString("hostuid", requireArguments().getString("hostuid"))
+                fragment.arguments = bundle
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.game, fragment)
+                transaction.addToBackStack("result")
+                transaction.commit()
+            }
+        }
 
         var iterator = 0
         val answers: HashMap<String, Any> = hashMapOf()
