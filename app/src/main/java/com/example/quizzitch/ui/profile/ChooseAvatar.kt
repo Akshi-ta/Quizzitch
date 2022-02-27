@@ -19,6 +19,9 @@ import com.google.firebase.storage.StorageReference
 
 
 class ChooseAvatar : Fragment() {
+    val store: FirebaseFirestore = FirebaseFirestore.getInstance()
+    val mauth: FirebaseAuth = FirebaseAuth.getInstance()
+    val uid: String = mauth.currentUser!!.uid
 
 
     override fun onCreateView(
@@ -94,7 +97,6 @@ class ChooseAvatar : Fragment() {
             11 to R.drawable.ironman,
             12 to R.drawable.spiderman
         )
-        val mauth = FirebaseAuth.getInstance()
         val avatarMapInv: HashMap<Int, Int> = hashMapOf<Int, Int>(
             R.drawable.blackwidow to 1,
             R.drawable.hawkeye to 2,
@@ -111,8 +113,7 @@ class ChooseAvatar : Fragment() {
         )
 
         val db = FirebaseFirestore.getInstance()
-
-//        db.collection("desc").document(mauth.uid.toString()).update(avatarMap)
+    //       db.collection("desc").document(mauth.uid.toString()).update()
 //            .addOnSuccessListener {
 //                Toast.makeText(requireContext(), "Data Saved!", Toast.LENGTH_SHORT).show()
 //            }
@@ -122,19 +123,24 @@ class ChooseAvatar : Fragment() {
             view.background =
                 ContextCompat.getDrawable(requireContext(), R.drawable.selected_question_option)
             val storageRef = FirebaseStorage.getInstance().reference.child("images/$name.jpeg")
-            avatarChoosen(view, storageRef)
+            avatarChoosen(view, storageRef, name)
 
         }
 
-        private fun avatarChoosen(view: View, name: StorageReference) {
+        private fun avatarChoosen(view: View, storageRef: StorageReference, name: String) {
 
             val done: Button = view.findViewById(R.id.done)
             done.setOnClickListener {
+                store.collection("desc").document(uid).get().addOnSuccessListener {
+                    val map: HashMap<String, Any> = it.data as HashMap<String, Any>
+                    map["avatar"] = name
+                    store.collection("desc").document(uid).update(map)
+                }
                 val cons: ConstraintLayout = view.findViewById(R.id.avatarr)
                 cons.visibility = View.GONE
                 val fragment: Fragment = ProfilePage()
                 val bundle = Bundle()
-                bundle.putString("avatar", name.toString())
+                bundle.putString("avatar", storageRef.toString())
                 fragment.arguments = bundle
                 val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.avatarR, fragment)
