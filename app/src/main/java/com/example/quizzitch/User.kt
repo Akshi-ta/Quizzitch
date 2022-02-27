@@ -1,4 +1,3 @@
 package com.example.quizzitch
 
-data class User(var avatar: String, val displayName:String, val score:Int) {
-}
+data class User(var avatar: String, val displayName:String, val score:Int)

@@ -42,12 +42,12 @@
                     android:textSize="25sp"
                     android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/blackWidow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@drawable/blackwidow"/>
+                <ImageView
+                    android:id="@+id/blackWidow"
+                    android:layout_width="322dp"
+                    android:layout_height="174dp"
+                    android:clickable="true"
+                    android:src="@drawable/blackwidow" />
 
     <ImageView
         android:id="@+id/hawkeye"
@@ -161,7 +161,7 @@
             android:id="@+id/done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#000080"
+            android:background="@drawable/button"
             android:layout_marginBottom="60dp"
             android:text="DONE"
             android:textAlignment="center"
