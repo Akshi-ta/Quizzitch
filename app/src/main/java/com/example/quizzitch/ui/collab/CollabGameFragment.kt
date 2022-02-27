@@ -3,6 +3,7 @@ package com.example.quizzitch.ui.collab
 import android.content.ContentValues.TAG
 import android.graphics.Color
 import android.graphics.Color.blue
+import android.net.wifi.hotspot2.pps.HomeSp
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -18,6 +19,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
 import com.example.quizzitch.Result1Fragment
+import com.example.quizzitch.ui.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.collection.LLRBNode
 import com.google.firebase.firestore.FirebaseFirestore
@@ -55,18 +57,18 @@ class CollabGameFragment : Fragment() {
                 val res: HashMap<String, Any> = (it[roomcode!!]as HashMap<String, Any>)["responses"] as HashMap<String, Any>
                 if(res[uid]!=null)
                 {
-//                    val fragment: Fragment = ResultFragment()
-//                    val bundle = Bundle()
-//                    bundle.putString("diff", requireArguments().getString("diff"))
-//                    bundle.putString("ques", totalQ.toString())
-//                    bundle.putString("category", requireArguments().getString("category"))
-//                    bundle.putString("roomcode", requireArguments().getString("roomcode"))
-//                    bundle.putString("hostuid", requireArguments().getString("hostuid"))
-//                    fragment.arguments = bundle
-//                    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-//                    transaction.replace(R.id.game, fragment)
-//                    transaction.addToBackStack("result")
-//                    transaction.commit()
+                    val fragment: Fragment = HomeFragment()
+                    val bundle = Bundle()
+                    bundle.putString("diff", requireArguments().getString("diff"))
+                    bundle.putString("ques", totalQ.toString())
+                    bundle.putString("category", requireArguments().getString("category"))
+                    bundle.putString("roomcode", requireArguments().getString("roomcode"))
+                    bundle.putString("hostuid", requireArguments().getString("hostuid"))
+                    fragment.arguments = bundle
+                    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.game, fragment)
+                    transaction.addToBackStack("result")
+                    transaction.commit()
                 }
             }
         }
@@ -114,18 +116,18 @@ class CollabGameFragment : Fragment() {
                 map[roomcode!!] = gameData
                 store.collection("games").document(requireArguments().getString("hostuid")!!).update(map).addOnSuccessListener {
                     Toast.makeText(requireContext(), "response recorded", Toast.LENGTH_LONG).show()
-//                    val fragment: Fragment = ResultFragment()
-//                    val bundle = Bundle()
-//                    bundle.putString("diff", requireArguments().getString("diff"))
-//                    bundle.putString("ques", totalQ.toString())
-//                    bundle.putString("category", requireArguments().getString("category"))
-//                    bundle.putString("roomcode", requireArguments().getString("roomcode"))
-//                    bundle.putString("hostuid", requireArguments().getString("hostuid"))
-//                    fragment.arguments = bundle
-//                    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-//                    transaction.replace(R.id.game, fragment)
-//                    transaction.addToBackStack("result")
-//                    transaction.commit()
+                    val fragment: Fragment = HomeFragment()
+                    val bundle = Bundle()
+                    bundle.putString("diff", requireArguments().getString("diff"))
+                    bundle.putString("ques", totalQ.toString())
+                    bundle.putString("category", requireArguments().getString("category"))
+                    bundle.putString("roomcode", requireArguments().getString("roomcode"))
+                    bundle.putString("hostuid", requireArguments().getString("hostuid"))
+                    fragment.arguments = bundle
+                    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                    transaction.replace(R.id.game, fragment)
+                    transaction.addToBackStack("result")
+                    transaction.commit()
                 }
             }
         }
