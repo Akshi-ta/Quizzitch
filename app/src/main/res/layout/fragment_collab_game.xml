@@ -233,9 +233,10 @@
 
         <Button
             android:id="@+id/button10"
-            android:layout_width="159dp"
-            android:layout_height="252dp"
+            android:layout_width="174dp"
+            android:layout_height="58dp"
             android:text="Submit"
+            android:background="@drawable/round_40"
             android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/nextButton"
             app:layout_constraintEnd_toEndOf="parent"

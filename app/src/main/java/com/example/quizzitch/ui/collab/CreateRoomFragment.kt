@@ -71,6 +71,9 @@ class CreateRoomFragment : Fragment() {
                     val otherPlayers:HashMap<String, Any> = hashMapOf()
                     otherPlayers["no"] = 1
                     newGame["otherPlayers"] = otherPlayers
+                    val test: HashMap<String, Any> = hashMapOf()
+                    test["test"] = "test"
+                    newGame["responses"] = test
                     data[roomCode] = newGame
                     data["anyGameActive"] = roomCode.toInt()
                     store.collection("games").document(uid).update(data).addOnSuccessListener {

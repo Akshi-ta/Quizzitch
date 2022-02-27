@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.example.quizzitch.R
 
 class CustomNavFragment : Fragment() {
@@ -19,6 +20,9 @@ class CustomNavFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val generate: TextView = view.findViewById(R.id.generatequiz)
+        generate.setOnClickListener {
 
+        }
     }
 }
