@@ -16,6 +16,7 @@ class CustomAdaptor(userInp: ArrayList<User>) :
 
     override fun getItemCount(): Int {
         return userArr.size
+
     }
 
 
