@@ -113,8 +113,7 @@ class ChooseAvatar : Fragment() {
         )
 
         val db = FirebaseFirestore.getInstance()
-
-//        db.collection("desc").document(mauth.uid.toString()).update(avatarMap)
+    //       db.collection("desc").document(mauth.uid.toString()).update()
 //            .addOnSuccessListener {
 //                Toast.makeText(requireContext(), "Data Saved!", Toast.LENGTH_SHORT).show()
 //            }

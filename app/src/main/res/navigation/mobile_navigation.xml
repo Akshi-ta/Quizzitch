@@ -141,4 +141,9 @@
         android:name="com.example.quizzitch.FormFragment"
         android:label="fragment_form"
         tools:layout="@layout/fragment_form" />
+    <fragment
+        android:id="@+id/leaderBoardFragment"
+        android:name="com.example.quizzitch.LeaderBoardFragment"
+        android:label="fragment_leader_board"
+        tools:layout="@layout/fragment_leader_board" />
 </navigation>

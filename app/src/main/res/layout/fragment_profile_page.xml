@@ -134,12 +134,12 @@
                     android:id="@+id/saveChanges"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
                     android:background="@drawable/bluegradient"
+                    android:gravity="center"
                     android:text="Save Changes"
+                    android:textColor="@color/white"
                     android:textSize="20dp"
-                    android:gravity="center"/>
+                    android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
 

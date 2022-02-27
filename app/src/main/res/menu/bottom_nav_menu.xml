@@ -9,7 +9,7 @@
         android:icon="@drawable/collab"
         android:title="Collab"/>
     <item
-        android:id="@+id/leaderBoardActivity"
+        android:id="@+id/leaderBoardFragment"
         android:icon="@drawable/ldrbrd"
         android:title="Leaderboard"/>
 
