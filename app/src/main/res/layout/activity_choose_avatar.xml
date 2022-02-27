@@ -80,24 +80,24 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:clickable="true"
-                        android:src="@drawable/marvel"/>
+                        android:src="@drawable/captainmarvel"/>
                     <ImageView
                         android:id="@+id/scarletWitch"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:clickable="true"
-                        android:src="@drawable/scarletwitch1"/>
+                        android:src="@drawable/scarletwitch"/>
                     <ImageView
                         android:id="@+id/thor"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:src="@drawable/thor1"/>
+                        android:src="@drawable/thor"/>
                     <ImageView
                         android:id="@+id/thanos"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:clickable="true"
-                        android:src="@drawable/thonas1"/>
+                        android:src="@drawable/thanos"/>
                     <ImageView
                         android:id="@+id/starLord"
                         android:layout_height="wrap_content"
@@ -143,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:clickable="true"
-                    android:src="@drawable/yellow2"/>
+                    android:src="@drawable/wolverine"/>
 
                 <ImageView
                     android:id="@+id/hulk"
