@@ -55,18 +55,18 @@ class CollabGameFragment : Fragment() {
                 val res: HashMap<String, Any> = (it[roomcode!!]as HashMap<String, Any>)["responses"] as HashMap<String, Any>
                 if(res[uid]!=null)
                 {
-                    val fragment: Fragment = ResultFragment()
-                    val bundle = Bundle()
-                    bundle.putString("diff", requireArguments().getString("diff"))
-                    bundle.putString("ques", totalQ.toString())
-                    bundle.putString("category", requireArguments().getString("category"))
-                    bundle.putString("roomcode", requireArguments().getString("roomcode"))
-                    bundle.putString("hostuid", requireArguments().getString("hostuid"))
-                    fragment.arguments = bundle
-                    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.game, fragment)
-                    transaction.addToBackStack("result")
-                    transaction.commit()
+//                    val fragment: Fragment = ResultFragment()
+//                    val bundle = Bundle()
+//                    bundle.putString("diff", requireArguments().getString("diff"))
+//                    bundle.putString("ques", totalQ.toString())
+//                    bundle.putString("category", requireArguments().getString("category"))
+//                    bundle.putString("roomcode", requireArguments().getString("roomcode"))
+//                    bundle.putString("hostuid", requireArguments().getString("hostuid"))
+//                    fragment.arguments = bundle
+//                    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+//                    transaction.replace(R.id.game, fragment)
+//                    transaction.addToBackStack("result")
+//                    transaction.commit()
                 }
             }
         }
