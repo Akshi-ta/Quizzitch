@@ -111,7 +111,7 @@
                 app:layout_constraintVertical_bias="0.528" />
 
             <TextView
-                android:id="@+id/textView34"
+                android:id="@+id/confirmpass"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_marginHorizontal="10dp"
@@ -123,7 +123,7 @@
                 android:textSize="28dp"
                 app:layout_constraintBottom_toTopOf="@+id/editrepPassword"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.02"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editPassword" />
 
@@ -132,16 +132,17 @@
                 android:layout_width="345dp"
                 android:layout_height="45dp"
                 android:layout_marginHorizontal="10dp"
+                android:layout_marginBottom="176dp"
                 android:background="@drawable/bluegradient"
                 android:hint="Confirm Your Password"
                 android:paddingStart="10dp"
                 android:textColor="@color/white"
                 android:textColorHint="#F1DEDE"
-                app:layout_constraintTop_toTopOf="TextView34"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.48"
+                app:layout_constraintHorizontal_bias="0.433"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="412dp" />
+                app:layout_constraintTop_toTopOf="@id/confirmpass" />
 
             <Button
                 android:id="@+id/signupButton"
