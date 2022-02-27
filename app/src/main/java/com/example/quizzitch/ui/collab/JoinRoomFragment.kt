@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
 
 class JoinRoomFragment : Fragment() {
     val mauth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -34,7 +36,11 @@ class JoinRoomFragment : Fragment() {
 
 
         joinBtNew.setOnClickListener{
-            if(roomCode.text.toString().toInt()<0)
+            if(roomCode.text.toString().isEmpty())
+            {
+                Toast.makeText(requireContext(), "Room Code Empty", Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }else if(roomCode.text.toString().toInt()<0)
             {
                 Toast.makeText(requireContext(), "Invalid room Code", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
@@ -42,17 +48,7 @@ class JoinRoomFragment : Fragment() {
 
             store.collection("games").get().addOnSuccessListener {
                 var hostUid: String = ""
-                for(user in it)
-                {
-                    val userData: HashMap<String, Any> = user.data as HashMap<String, Any>
-                    for(q in userData)
-                    {
-                        if(q.key == roomCode.text.toString())
-                        {
-                            hostUid = ((q.value as HashMap<String, Any>)["host"] as HashMap<String, Any>)["uid"].toString()
-                        }
-                    }
-                }
+                hostUid = help(it,roomCode)
 
                 if(hostUid=="")
                 {
@@ -115,7 +111,7 @@ class JoinRoomFragment : Fragment() {
                             fragment.arguments = bundle
                             val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                             transaction.replace(R.id.join, fragment)
-                            transaction.addToBackStack("joins")
+                            transaction.addToBackStack("joinl")
                             transaction.commit()
                         }
                     }
@@ -125,4 +121,20 @@ class JoinRoomFragment : Fragment() {
         }
     }
 
+
+    fun help(it: QuerySnapshot, roomCode: TextView):String{
+        for(user in it)
+        {
+            val userData: HashMap<String, Any> = user.data as HashMap<String, Any>
+            for(q in userData)
+            {
+                if(q.key == roomCode.text.toString())
+                {
+                    Toast.makeText(requireContext(), ((q.value as HashMap<String, Any>)["host"] as HashMap<String, Any>)["uid"].toString() , Toast.LENGTH_SHORT).show()
+                    return ((q.value as HashMap<String, Any>)["host"] as HashMap<String, Any>)["uid"].toString()
+                }
+            }
+        }
+        return ""
+    }
 }

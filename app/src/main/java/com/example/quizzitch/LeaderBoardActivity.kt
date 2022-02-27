@@ -20,7 +20,6 @@ class LeaderBoardActivity : AppCompatActivity() {
         userRecyclerView = findViewById(R.id.recycler_view)
         userRecyclerView.layoutManager = LinearLayoutManager(this)
         userRecyclerView.setHasFixedSize(true)
-
         userArrayList = arrayListOf()
         adapter = CustomAdaptor(userArrayList)
         userRecyclerView.adapter = adapter
@@ -36,7 +35,7 @@ class LeaderBoardActivity : AppCompatActivity() {
                     val data = document.data
                     try {
                         val user = User(
-                            1,
+                            data["avatar"].toString(),
                             data["displayName"].toString(),
                             data["score"].toString().toInt()
                         )
@@ -50,9 +49,6 @@ class LeaderBoardActivity : AppCompatActivity() {
 
 
     }
-
-
-
 
 }
 

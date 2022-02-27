@@ -111,8 +111,7 @@ class ChooseAvatar : Fragment() {
         )
 
         val db = FirebaseFirestore.getInstance()
-
-//        db.collection("desc").document(mauth.uid.toString()).update(avatarMap)
+    //       db.collection("desc").document(mauth.uid.toString()).update()
 //            .addOnSuccessListener {
 //                Toast.makeText(requireContext(), "Data Saved!", Toast.LENGTH_SHORT).show()
 //            }
@@ -136,8 +135,7 @@ class ChooseAvatar : Fragment() {
                 val bundle = Bundle()
                 bundle.putString("avatar", name.toString())
                 fragment.arguments = bundle
-                val transaction: FragmentTransaction =
-                    requireActivity().supportFragmentManager.beginTransaction()
+                val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.avatarR, fragment)
                 transaction.addToBackStack("pic")
                 transaction.commit()

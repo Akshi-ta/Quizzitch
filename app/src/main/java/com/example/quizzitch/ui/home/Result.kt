@@ -27,7 +27,7 @@ class Result : Fragment() {
 
         Toast.makeText(requireContext(), "Check your Result", Toast.LENGTH_SHORT).show()
 
-        val scores= requireArguments().getInt("data")
+        val scores: Int = requireArguments().getInt("data")
 
         val score: TextView = view.findViewById(R.id.Score)
         score.text="$scores / 10"
