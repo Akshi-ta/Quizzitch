@@ -3,13 +3,13 @@ package com.example.quizzitch
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.transition.AutoTransition
+import android.transition.TransitionManager
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import com.example.quizzitch.databinding.ActivityDashBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -37,6 +37,21 @@ class SignUp: AppCompatActivity() {
 //        binding = ActivityDashBinding.inflate(layoutInflater)
 //        setContentView(binding.root)
         setContentView(R.layout.signup)
+        val expandablelayout : LinearLayout = findViewById(R.id.expandablelayout)
+        val signupcardview : CardView = findViewById(R.id.signupcardview)
+
+        val expand : Button = findViewById(R.id.expand)
+        expand.setOnClickListener {
+            if (expandablelayout.visibility == View.GONE){
+                TransitionManager.beginDelayedTransition(signupcardview, AutoTransition())
+                expandablelayout.visibility = View.VISIBLE
+                expand.text = "COLLAPSE"
+            }else{
+                TransitionManager.beginDelayedTransition(signupcardview, AutoTransition())
+                expandablelayout.visibility = View.GONE
+                expand.text = "EXPAND"
+            }
+        }
         val googleSignInBtn: SignInButton = findViewById(R.id.googleSignInBtn)
         val account = GoogleSignIn.getLastSignedInAccount(this)
 

@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bluegradient">
+    android:background="@drawable/bluegradient"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="380dp"
-        android:layout_height="650dp"
+        android:id="@+id/signupcardview"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:cardCornerRadius="40dp"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="22dp"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/CardView.Light">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
+            android:layout_height="120dp"
+            android:background="#fff"
+            android:orientation="vertical">
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="224dp"
@@ -39,6 +44,16 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.08" />
 
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/expandablelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="104dp"
@@ -48,10 +63,10 @@
                 android:textSize="28dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.057"
+                android:layout_marginTop="130dp"
+                android:layout_marginHorizontal="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.237" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/textView8"
@@ -60,8 +75,10 @@
                 android:background="@drawable/bluegradient"
                 android:hint="Enter Your Mail ID"
                 android:paddingStart="10dp"
+                android:layout_marginVertical="10dp"
                 android:textColorHint="#F1DEDE"
-                android:textColor="#F1DEDE"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.457"
@@ -75,28 +92,40 @@
                 android:layout_height="40dp"
                 android:text="Password"
                 android:textColor="@color/black"
+                android:layout_marginVertical="20dp"
                 android:textSize="28dp"
+                android:layout_marginHorizontal="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.067"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.422" />
-
             <EditText
                 android:id="@+id/editPassword"
                 android:layout_width="345dp"
                 android:layout_height="45dp"
+                android:layout_marginHorizontal="10dp"
                 android:background="@drawable/bluegradient"
                 android:hint="Enter Your Password"
                 android:paddingStart="10dp"
+                android:textColor="@color/white"
                 android:textColorHint="#F1DEDE"
-                android:textColor="#F1DEDE"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.457"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="10dp"
+                android:text="Confirm Password"
+                android:layout_marginVertical="20dp"
+                android:textColor="@color/black"
+                android:textSize="28dp" />
+
 
             <EditText
                 android:id="@+id/editrepPassword"
@@ -106,13 +135,13 @@
                 android:hint="Confirm Your Password"
                 android:paddingStart="10dp"
                 android:textColorHint="#F1DEDE"
-                android:textColor="#F1DEDE"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.457"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.685" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/button3"
@@ -121,32 +150,20 @@
                 android:backgroundTint="@color/black"
                 android:text="SignUp"
                 android:textSize="18dp"
+                android:layout_marginHorizontal="100dp"
+                android:layout_marginVertical="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.968" />
 
-            <TextView
-                android:id="@+id/textView34"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:text="Confirm Password"
-                android:textColor="@color/black"
-                android:textSize="28dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.107"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.603" />
-
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/googleSignInBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="11dp"
+
+                android:layout_marginHorizontal="100dp"
                 android:onClick="@{() -> viewModel.onSignInClick()}"
                 app:layout_constraintBottom_toTopOf="@+id/button3"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -154,8 +171,22 @@
                 app:layout_constraintTop_toBottomOf="@+id/editrepPassword">
 
             </com.google.android.gms.common.SignInButton>
+        </LinearLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="341dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/expand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="115dp"
+                android:layout_marginVertical="150dp"
+                android:backgroundTint="@color/black"
+                android:text="expand" />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
