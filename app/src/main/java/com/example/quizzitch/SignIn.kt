@@ -38,20 +38,20 @@ class SignIn : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.signin)
-        val expandablelayout: LinearLayout = findViewById(R.id.expandablelayout)
-        val signupcardview: CardView = findViewById(R.id.signupcardview)
-        val expand: Button = findViewById(R.id.expand)
-        expand.setOnClickListener {
-            if (expandablelayout.visibility == View.GONE) {
-                TransitionManager.beginDelayedTransition(signupcardview , AutoTransition())
-                expandablelayout.visibility = View.VISIBLE
-                expand.text = "COLLAPSE"
-            } else {
-                TransitionManager.beginDelayedTransition(signupcardview , AutoTransition())
-                expandablelayout.visibility = View.GONE
-                expand.text = "EXPAND"
-            }
-        }
+//        val expandablelayout: LinearLayout = findViewById(R.id.expandablelayout)
+//        val signupcardview: CardView = findViewById(R.id.signupcardview)
+//        val expand: Button = findViewById(R.id.expand)
+//        expand.setOnClickListener {
+//            if (expandablelayout.visibility == View.GONE) {
+//                TransitionManager.beginDelayedTransition(signupcardview , AutoTransition())
+//                expandablelayout.visibility = View.VISIBLE
+//                expand.text = "COLLAPSE"
+//            } else {
+//                TransitionManager.beginDelayedTransition(signupcardview , AutoTransition())
+//                expandablelayout.visibility = View.GONE
+//                expand.text = "EXPAND"
+//            }
+//        }
 
         val googleSignInBtn: SignInButton = findViewById(R.id.googleSignInBtn)
         val account = GoogleSignIn.getLastSignedInAccount(this)
@@ -73,56 +73,53 @@ class SignIn : AppCompatActivity() {
 //            Toast.makeText(this,"chlpo pls",Toast.LENGTH_SHORT).show()
         }
 
-        val signupbt: Button = findViewById(R.id.button3)
-        val enterMail = findViewById<EditText>(R.id.textView8)
-        val enterPass: EditText = findViewById(R.id.editPassword)
-        signupbt.setOnClickListener {
-            when {
-                TextUtils.isEmpty(enterMail.text.toString().trim {it <= ' '}) -> {
-                    Toast.makeText(
-                        this ,
-                        "Please enter a password" ,
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                else -> {
-                    val email: String = enterMail.text.toString().trim {it <= ' '}
-                    val password: String = enterPass.text.toString().trim {it <= ' '}
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email , password)
-                        .addOnCompleteListener(
-                            OnCompleteListener<AuthResult> {task ->
-                                if (task.isSuccessful) {
-                                    val firebaseUser: FirebaseUser = task.result!!.user!!
-                                    Toast.makeText(
-                                        this ,
-                                        "You were registered successfully." ,
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-
-                                    val intent = Intent(this , SigninDetails::class.java)
-                                    intent.flags =
-                                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                    intent.putExtra("User_id" , firebaseUser.uid)
-                                    intent.putExtra("email-id" , firebaseUser.email)
-                                    startActivity(intent)
-                                    finish()
-                                } else {
-                                    Toast.makeText(
-                                        this ,
-                                        task.exception!!.message.toString() ,
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            }
-
-
-                        )
-                }
-            }
-        }
-
-
-
+//        val signupbt: Button = findViewById(R.id.button3)
+//        val enterMail = findViewById<EditText>(R.id.textView8)
+//        val enterPass: EditText = findViewById(R.id.editPassword)
+//        signupbt.setOnClickListener {
+//            when {
+//                TextUtils.isEmpty(enterMail.text.toString().trim {it <= ' '}) -> {
+//                    Toast.makeText(
+//                        this ,
+//                        "Please enter a password" ,
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                }
+//                else -> {
+//                    val email: String = enterMail.text.toString().trim {it <= ' '}
+//                    val password: String = enterPass.text.toString().trim {it <= ' '}
+//                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email , password)
+//                        .addOnCompleteListener(
+//                            OnCompleteListener<AuthResult> {task ->
+//                                if (task.isSuccessful) {
+//                                    val firebaseUser: FirebaseUser = task.result!!.user!!
+//                                    Toast.makeText(
+//                                        this ,
+//                                        "You were registered successfully." ,
+//                                        Toast.LENGTH_SHORT
+//                                    ).show()
+//
+//                                    val intent = Intent(this , SigninDetails::class.java)
+//                                    intent.flags =
+//                                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//                                    intent.putExtra("User_id" , firebaseUser.uid)
+//                                    intent.putExtra("email-id" , firebaseUser.email)
+//                                    startActivity(intent)
+//                                    finish()
+//                                } else {
+//                                    Toast.makeText(
+//                                        this ,
+//                                        task.exception!!.message.toString() ,
+//                                        Toast.LENGTH_SHORT
+//                                    ).show()
+//                                }
+//                            }
+//
+//
+//                        )
+//                }
+//            }
+//        }
 
 
         if (intent.getStringArrayExtra("bool").toString() == "true") {
@@ -194,17 +191,12 @@ class SignIn : AppCompatActivity() {
                 }
             }
         }
-        val signup: TextView = findViewById(R.id.signup)
-        signup.setOnClickListener {
-            val tlAnim: Animation = AnimationUtils.loadAnimation(this,R.anim.tl_anim)
-            signupcardview.animation = tlAnim
-        }
-
-
-
-
+//        val signup: TextView = findViewById(R.id.signup)
+//        signup.setOnClickListener {
+//            val tlAnim: Animation = AnimationUtils.loadAnimation(this,R.anim.tl_anim)
+//            signupcardview.animation = tlAnim
+//        }
     }
-
 
     private fun checkUser() {
         val firebaseUser = firebaseAuth.currentUser

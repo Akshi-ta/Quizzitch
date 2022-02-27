@@ -27,10 +27,10 @@ class Result : Fragment() {
 
         Toast.makeText(requireContext(), "Check your Result", Toast.LENGTH_SHORT).show()
 
-        val scores: Int = requireArguments().getInt("data")
+        val scores = requireArguments().getInt("data")
 
         val score: TextView = view.findViewById(R.id.Score)
-        score.text="$scores / 10"
+        score.text = "${scores} / 10"
         val finish: Button = view.findViewById(R.id.finish)
         finish.setOnClickListener {
             val fragment: Fragment = Result()
@@ -40,8 +40,6 @@ class Result : Fragment() {
             transaction.replace(R.id.resultR, fragment)
             transaction.addToBackStack("result")
             transaction.commit()
-          // startActivity(Intent(this,HomeFragment::class.java))
-           // finish()
         }
 
     }

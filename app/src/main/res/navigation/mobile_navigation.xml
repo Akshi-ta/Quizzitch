@@ -146,4 +146,14 @@
         android:name="com.example.quizzitch.LeaderBoardFragment"
         android:label="fragment_leader_board"
         tools:layout="@layout/fragment_leader_board" />
+    <fragment
+        android:id="@+id/customQuizFragment"
+        android:name="com.example.quizzitch.ui.customQuiz.CustomQuizFragment"
+        android:label="fragment_custom_quiz"
+        tools:layout="@layout/fragment_custom_quiz" />
+    <fragment
+        android:id="@+id/customNavFragment"
+        android:name="com.example.quizzitch.CustomNavFragment"
+        android:label="fragment_custom_nav"
+        tools:layout="@layout/fragment_custom_nav" />
 </navigation>
