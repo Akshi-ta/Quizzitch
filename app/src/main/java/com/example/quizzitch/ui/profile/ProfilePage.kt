@@ -44,13 +44,13 @@ class ProfilePage : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val dp: ImageView = view.findViewById(R.id.imageView5)
+        //val dp: ImageView = view.findViewById(R.id.imageView5)
         val mauth: FirebaseAuth = FirebaseAuth.getInstance()
         val uid = mauth.currentUser!!.uid.toString()
         val store: FirebaseFirestore = FirebaseFirestore.getInstance()
-        val dpLocation = mauth.currentUser!!.uid
+        //val dpLocation = mauth.currentUser!!.uid
         //val url = "images/$dpLocation/profile_pic"
-        val max_bytes:Long = 1024*1024
+        //val max_bytes:Long = 1024*1024
         //val imgRef = storageReference.child(url)
 //        imgRef.getBytes(max_bytes).addOnSuccessListener {
 //            val bitmap = BitmapFactory.decodeByteArray(it,0,it.size)
@@ -159,7 +159,7 @@ class ProfilePage : Fragment() {
                 }
                 .addOnFailureListener {
                     OnFailureListener() {
-                        Toast.makeText(activity, "Upload Failed ${it.toString()}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(activity, "Upload Failed ${it}", Toast.LENGTH_SHORT).show()
                     }
                 }
                 .addOnProgressListener {

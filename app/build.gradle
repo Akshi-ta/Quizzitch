@@ -61,4 +61,5 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.1'
+//    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '2.41.0'
 }
