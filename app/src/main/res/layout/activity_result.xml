@@ -10,12 +10,26 @@
     android:gravity="center"
     tools:context=".ui.home.Result">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/resultR">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/resultr">
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="8dp"
         app:cardElevation="5dp"
-        >
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,7 +40,7 @@
                 android:id="@+id/congo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Congratulations Name !!"
+                android:text="@string/congratulations"
                 android:gravity="center"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -36,15 +50,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="Your Score is"
+                android:text="@string/your_score_is"
                 android:gravity="center"
-                android:textSize="14sp"
-                />
+                android:textSize="14sp" />
+
             <TextView
                 android:id="@+id/Score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="4/5"
+                android:text="@string/score"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:textSize="18sp"
@@ -52,13 +66,19 @@
                 android:textColor="@color/black"/>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/finish"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="FINISH"
+                android:text="@string/finish"
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:layout_marginTop="10dp"/>
+
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </LinearLayout>

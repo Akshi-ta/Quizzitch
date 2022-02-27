@@ -1,7 +1,5 @@
 package com.example.quizzitch.ui.home
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResultListener
+import androidx.fragment.app.FragmentTransaction
 import com.example.quizzitch.R
 
 class Result : Fragment() {
@@ -18,11 +17,6 @@ class Result : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        setFragmentResultListener("requestKey") { key, bundle ->
-            // Any type can be passed via to the bundle
-            val result = bundle.getString("key")
-            // Do something with the result...
-        }
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.levelscreen, container, false)
 
@@ -33,14 +27,22 @@ class Result : Fragment() {
 
         Toast.makeText(requireContext(), "Check your Result", Toast.LENGTH_SHORT).show()
 
-      //  val score=intent.getStringExtra(setData.score)
-      //  val totalQuestion=intent.getStringExtra("total size")
+        val scores= requireArguments().getInt("data")
 
-       // Score.text="${score} / ${totalQuestion}"
-//        button.setOnClickListener {
-//           // startActivity(Intent(this,HomeFragment::class.java))
-//           // finish()
-//        }
+        val score: TextView = view.findViewById(R.id.Score)
+        score.text="$scores / 10"
+        val finish: Button = view.findViewById(R.id.finish)
+        finish.setOnClickListener {
+            val fragment: Fragment = Result()
+            val cons: ConstraintLayout = view.findViewById(R.id.resultr)
+            cons.visibility = View.GONE
+            val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.resultR, fragment)
+            transaction.addToBackStack("result")
+            transaction.commit()
+          // startActivity(Intent(this,HomeFragment::class.java))
+           // finish()
+        }
 
     }
 }

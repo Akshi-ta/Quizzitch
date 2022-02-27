@@ -49,4 +49,9 @@
     <string name="this_is_option_4">This is option 4</string>
     <string name="choose_difficulty">CHOOSE DIFFICULTY</string>
     <string name="level2">LEVEL!!</string>
+    <string name="finish">FINISH</string>
+    <string name="_4_5">4/5</string>
+    <string name="your_score_is">Your Score is</string>
+    <string name="congratulations">Congratulations !!</string>
+    <string name="score">score</string>
 </resources>
