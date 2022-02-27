@@ -100,6 +100,5 @@ class CustomAdaptor(userInp: ArrayList<User>) :
         val imgViewName: ImageView = itemView.findViewById(R.id.user_avatar)
         val txtView1: TextView = itemView.findViewById(R.id.username)
         val txtView2: TextView = itemView.findViewById(R.id.user_score)
-        val txtView3: TextView = itemView.findViewById((R.id.user_rank))
     }
 }
