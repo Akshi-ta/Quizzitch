@@ -116,7 +116,7 @@ class QuizFragment: Fragment() {
                         setQuestion(view)
                     }
                     else->{
-                        val fragment: Fragment = Result()
+                        val fragment: Fragment = HomeFragment()
                         bundle.putString("score", score.toString())
                         fragment.arguments = bundle
                         val cons: ConstraintLayout = view.findViewById(R.id.quizr)
