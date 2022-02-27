@@ -14,9 +14,9 @@
         android:title="Leaderboard"/>
 
     <item
-        android:id="@+id/pasteLinkFragment"
-        android:icon="@drawable/quizz"
-        android:title="Quiz"/>
+        android:id="@+id/customNavFragment"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Custom Quiz"/>
 
     <item
         android:id="@+id/profilePage"
