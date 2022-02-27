@@ -14,11 +14,9 @@ import com.example.quizzitch.R
 
 class LevelScreen: Fragment() {
 
-    private val args = this.arguments
-    private val inputData = args?.get("data")
-    private val topic = inputData.toString()
-
-    //var choice: String? = ""
+    //private val args = this.arguments
+    //private val inputData = args?.get("data")
+    //private val topic = inputData.toString()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +30,8 @@ class LevelScreen: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
         val bundle = Bundle()
+
+        val topic = requireArguments().getString("data")
 
         val easy: RadioButton = view.findViewById(R.id.easy)
         easy.setOnClickListener {
@@ -55,7 +55,7 @@ class LevelScreen: Fragment() {
         average.setOnClickListener {
             val level = "avg"
             bundle.putString("data", level)
-            bundle.putString("key", topic)
+//            bundle.putString("key", topic)
             val fragment = QuizFragment()
             fragment.arguments = bundle
             val cons:ConstraintLayout = view.findViewById(R.id.levelr)
@@ -73,7 +73,7 @@ class LevelScreen: Fragment() {
         diff.setOnClickListener {
             val level = "diff"
             bundle.putString("data", level)
-            bundle.putString("key", topic)
+//            bundle.putString("key", topic)
             val fragment = QuizFragment()
             fragment.arguments = bundle
             val cons:ConstraintLayout = view.findViewById(R.id.levelr)

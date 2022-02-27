@@ -15,11 +15,6 @@ import com.example.quizzitch.R
 
 class QuizFragment: Fragment() {
 
-    private val args = this.arguments
-    private val inputData1 = args?.get("data")
-    private val inputData2 = args?.get("key")
-    val level = inputData1.toString()
-    private val topic = inputData2.toString()
 
     private var score: Int = 0
 
@@ -27,19 +22,11 @@ class QuizFragment: Fragment() {
     private var questionList: ArrayList<QuestionData>? = null
     private var selectedOption: Int = 0
 
-    private var choice: String? = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        choice = arguments?.getString("topic")
-
-//        setFragmentResultListener("requestKey") { key, bundle ->
-//            // Any type can be passed via to the bundle
-//            val result = bundle.getString("data")
-//            // Do something with the result...
-//        }
 
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.take_quiz, container, false)
@@ -48,20 +35,46 @@ class QuizFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         val tv: TextView = view.findViewById(R.id.quiz)
         tv.visibility = View.VISIBLE
         val pgbar: ProgressBar = view.findViewById(R.id.progressBar1)
         pgbar.visibility = View.GONE
         val bundle = Bundle()
 
-        questionList = setData.eHistory()
+        val topic = requireArguments().getString("key")
+        val level = requireArguments().getString("data")
+//        val args = this.arguments
+//        val inputData1 = args?.get("data")
+//        val inputData2 = args?.get("key")
+//        val level = inputData1.toString()
 
-        setQuestion(view)
+    when (topic) {
+        "History" -> {
+            when (level) {
+                "easy" -> questionList = setData.eHistory()
+                "avg" -> questionList = setData.aHistory()
+                "diff" -> questionList = setData.hHistory()
+            }
+        }
+        "Politics" -> {
+            when (level) {
+                "easy" -> questionList = setData.ePolitics()
+                "avg" -> questionList = setData.aPolitics()
+                "diff" -> questionList = setData.hPolitics()
+            }
+        }
+    }
+
+
+
+        setQuestion(view, questionList)
 
         val opt1: TextView = view.findViewById(R.id.opt_1)
         val opt2: TextView = view.findViewById(R.id.opt_2)
         val opt3: TextView = view.findViewById(R.id.opt_3)
         val opt4: TextView = view.findViewById(R.id.opt_4)
+
         opt1.setOnClickListener {
 
             selectedOptionStyle(opt1, 1)
@@ -96,7 +109,7 @@ class QuizFragment: Fragment() {
                 currentPosition++
                 when{
                     currentPosition<=questionList!!.size->{
-                        setQuestion(view)
+                        setQuestion(view, questionList)
                     }
                     else->{
                         val fragment: Fragment = Result()
@@ -139,7 +152,8 @@ class QuizFragment: Fragment() {
 
 
 
-    private fun setQuestion(view: View) {
+    private fun setQuestion(view: View, questionList: ArrayList<QuestionData>?) {
+
         val question = questionList!![currentPosition - 1]
 
         setOptionStyle(view)
@@ -152,8 +166,10 @@ class QuizFragment: Fragment() {
         val quiz: TextView = view.findViewById(R.id.quiz)
 
         timeBar.progress = currentPosition
-        timeBar.max = questionList!!.size
+        timeBar.max = questionList.size
         progressText.text = "${currentPosition}" + "/" + "${questionList!!.size}"
+
+
         quiz.text = question.question
         opt1.text = question.option_one
         opt2.text = question.option_tw0
