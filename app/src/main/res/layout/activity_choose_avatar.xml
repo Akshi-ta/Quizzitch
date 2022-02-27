@@ -129,7 +129,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:clickable="true"
-                    android:src="@drawable/drstrange1"/>
+                    android:src="@drawable/drstrange"/>
 
                 <ImageView
                     android:id="@+id/deadpool"
