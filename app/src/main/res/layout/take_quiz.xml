@@ -17,13 +17,14 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/quizr"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp">
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card"
-                android:layout_width="395dp"
+                android:layout_width="350dp"
                 android:layout_height="172dp"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -32,10 +33,11 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.161"
                 tools:layout_editor_absoluteX="8dp">
+
                 <ScrollView
                     android:id="@+id/scroll"
-                    android:layout_width="402dp"
-                    android:layout_height="149dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="132dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -50,8 +52,8 @@
                         android:padding="10dp"
                         android:text="@string/quiz"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
                         android:textSize="20sp"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintHorizontal_bias="0.169"
                         app:layout_constraintLeft_toLeftOf="parent"
@@ -61,176 +63,203 @@
                 </ScrollView>
             </androidx.cardview.widget.CardView>
 
-                <!--    <RadioGroup-->
-                <!--        android:id="@+id/radio"-->
-                <!--        android:layout_width="wrap_content"-->
-                <!--        android:layout_height="wrap_content"-->
-                <!--        android:clickable="true"-->
-                <!--        app:layout_constraintTop_toTopOf="parent"-->
-                <!--        app:layout_constraintRight_toLeftOf="@id/guideline2"-->
-                <!--        app:layout_constraintLeft_toLeftOf="parent"-->
-                <!--        app:layout_constraintBottom_toBottomOf="parent">-->
+            <!--    <RadioGroup-->
+            <!--        android:id="@+id/radio"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:clickable="true"-->
+            <!--        app:layout_constraintTop_toTopOf="parent"-->
+            <!--        app:layout_constraintRight_toLeftOf="@id/guideline2"-->
+            <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--        app:layout_constraintBottom_toBottomOf="parent">-->
 
-                <!--        <RadioButton-->
-                <!--            android:id="@+id/option1"-->
-                <!--            android:layout_width="wrap_content"-->
-                <!--            android:layout_height="wrap_content"-->
-                <!--            android:text="@string/option_1"-->
-                <!--            app:layout_constraintTop_toTopOf="parent"-->
-                <!--            app:layout_constraintRight_toLeftOf="parent"-->
-                <!--            app:layout_constraintLeft_toLeftOf="parent"-->
-                <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+            <!--        <RadioButton-->
+            <!--            android:id="@+id/option1"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="@string/option_1"-->
+            <!--            app:layout_constraintTop_toTopOf="parent"-->
+            <!--            app:layout_constraintRight_toLeftOf="parent"-->
+            <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
 
-                <!--        <RadioButton-->
-                <!--            android:id="@+id/option2"-->
-                <!--            android:layout_width="wrap_content"-->
-                <!--            android:layout_height="wrap_content"-->
-                <!--            android:text="@string/option_2"-->
-                <!--            app:layout_constraintTop_toTopOf="parent"-->
-                <!--            app:layout_constraintRight_toRightOf="parent"-->
-                <!--            app:layout_constraintLeft_toLeftOf="parent"-->
-                <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+            <!--        <RadioButton-->
+            <!--            android:id="@+id/option2"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="@string/option_2"-->
+            <!--            app:layout_constraintTop_toTopOf="parent"-->
+            <!--            app:layout_constraintRight_toRightOf="parent"-->
+            <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
 
-                <!--        <RadioButton-->
-                <!--            android:id="@+id/option3"-->
-                <!--            android:layout_width="wrap_content"-->
-                <!--            android:layout_height="wrap_content"-->
-                <!--            android:text="@string/option_3"-->
-                <!--            app:layout_constraintTop_toTopOf="parent"-->
-                <!--            app:layout_constraintRight_toRightOf="parent"-->
-                <!--            app:layout_constraintLeft_toLeftOf="parent"-->
-                <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+            <!--        <RadioButton-->
+            <!--            android:id="@+id/option3"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="@string/option_3"-->
+            <!--            app:layout_constraintTop_toTopOf="parent"-->
+            <!--            app:layout_constraintRight_toRightOf="parent"-->
+            <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
 
-                <!--        <RadioButton-->
-                <!--            android:id="@+id/option4"-->
-                <!--            android:layout_width="wrap_content"-->
-                <!--            android:layout_height="wrap_content"-->
-                <!--            android:text="@string/option_4"-->
-                <!--            app:layout_constraintTop_toTopOf="parent"-->
-                <!--            app:layout_constraintRight_toRightOf="parent"-->
-                <!--            app:layout_constraintLeft_toLeftOf="parent"-->
-                <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+            <!--        <RadioButton-->
+            <!--            android:id="@+id/option4"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:text="@string/option_4"-->
+            <!--            app:layout_constraintTop_toTopOf="parent"-->
+            <!--            app:layout_constraintRight_toRightOf="parent"-->
+            <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+            <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
 
-                <!--    </RadioGroup>-->
-
-
-                <TextView
-                    android:id="@+id/opt_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="288dp"
-                    android:text="@string/this_is_option_1"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    app:layout_constraintHorizontal_bias="0.174"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/opt_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="332dp"
-                    android:text="@string/this_is_option_2"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    app:layout_constraintHorizontal_bias="0.174"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <!--    </RadioGroup>-->
 
 
-                <TextView
-                    android:id="@+id/opt_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="376dp"
-                    android:text="@string/this_is_option_3"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    app:layout_constraintHorizontal_bias="0.174"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/opt_1"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="292dp"
+                android:layout_marginRight="50dp"
+                android:padding="10dp"
+                android:paddingLeft="10dp"
+                android:text="@string/this_is_option_1"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintHorizontal_bias="0.454"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/opt_2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="50dp"
+                android:padding="10dp"
+                android:text="@string/this_is_option_2"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintHorizontal_bias="0.454"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/opt_1" />
+
+            <TextView
+                android:id="@+id/opt_3"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="50dp"
+                android:padding="10dp"
+                android:text="@string/this_is_option_3"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintHorizontal_bias="0.454"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/opt_2" />
+
+            <TextView
+                android:id="@+id/opt_4"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="50dp"
+                android:padding="10dp"
+                android:text="@string/this_is_option_4"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                app:layout_constraintHorizontal_bias="0.454"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/opt_3" />
 
 
-                <TextView
-                    android:id="@+id/opt_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="420dp"
-                    android:text="@string/this_is_option_4"
-                    android:padding="10dp"
-                    android:textColor="@color/white"
-                    app:layout_constraintHorizontal_bias="0.174"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="248dp"
+                android:text="@string/submit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card"
+                app:layout_constraintVertical_bias="0.546"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <CheckBox
+                android:id="@+id/favouriteQue"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="28dp"
+                android:background="@drawable/selector_favourite_que"
+                android:button="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toEndOf="@+id/progress_text"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ProgressBar
+                android:id="@+id/timeBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="216dp"
+                android:layout_height="27dp"
+                android:max="10"
+                android:outlineAmbientShadowColor="@color/white"
+                android:progress="0"
+                app:layout_constraintBottom_toTopOf="@+id/card"
+                app:layout_constraintHorizontal_bias="0.205"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.507" />
+
+            <TextView
+                android:id="@+id/progress_text"
+                android:layout_width="34dp"
+                android:layout_height="27dp"
+                android:layout_marginLeft="32dp"
+                android:text="1/10"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/card"
+                app:layout_constraintLeft_toRightOf="@id/timeBar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.507" />
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.303" />
 
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="205dp" />
 
 
-        <Button
-        android:id="@+id/submit"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="248dp"
-        android:text="@string/submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card"
-        app:layout_constraintVertical_bias="0.782"
-        tools:layout_editor_absoluteX="48dp" />
-
-        <ProgressBar
-            android:id="@+id/timeBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="216dp"
-            android:layout_height="27dp"
-            android:layout_marginTop="16dp"
-            android:progress="0"
-            android:max="10"
-            android:outlineAmbientShadowColor="@color/white"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/progress_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:layout_marginLeft="36dp"
-            android:layout_marginTop="24dp"
-            android:text="1/10"
-            app:layout_constraintLeft_toRightOf="@id/timeBar"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <ProgressBar
-        android:id="@+id/progressBar1"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.303" />
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="205dp" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
