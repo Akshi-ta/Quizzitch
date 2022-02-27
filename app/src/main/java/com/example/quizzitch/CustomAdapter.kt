@@ -26,38 +26,44 @@ class CustomAdaptor(userInp: ArrayList<User>) :
         if (currentItem.avatar == "hawkeye"){
             holder.imgViewName.setImageResource(R.drawable.hawkeye)
         }
-        if (currentItem.avatar == "blackpanther"){
+        else if (currentItem.avatar == "blackpanther"){
             holder.imgViewName.setImageResource(R.drawable.blackpanther)
         }
-        if (currentItem.avatar == "hulk"){
+        else if (currentItem.avatar == "hulk"){
             holder.imgViewName.setImageResource(R.drawable.hulk)
         }
-        if (currentItem.avatar == "blackwidow"){
+        else if (currentItem.avatar == "blackwidow"){
             holder.imgViewName.setImageResource(R.drawable.blackwidow)
         }
-        if (currentItem.avatar == "thanos"){
+        else if (currentItem.avatar == "thanos"){
             holder.imgViewName.setImageResource(R.drawable.thanos)
         }
-        if (currentItem.avatar == "thor"){
+        else if (currentItem.avatar == "thor"){
             holder.imgViewName.setImageResource(R.drawable.thor1)
         }
-        if (currentItem.avatar == "starlord"){
+        else if (currentItem.avatar == "starlord"){
             holder.imgViewName.setImageResource(R.drawable.starlord)
         }
-        if (currentItem.avatar == "captainamerica"){
+        else if (currentItem.avatar == "captainamerica"){
             holder.imgViewName.setImageResource(R.drawable.captainamerica)
         }
-        if (currentItem.avatar == "captainmarvel"){
-            holder.imgViewName.setImageResource(R.drawable.captainmarvel)
+        else if (currentItem.avatar == "captainmarvel"){
+            holder.imgViewName.setImageResource(R.drawable.marvel)
         }
-        if (currentItem.avatar == "scarletwitch"){
+        else if (currentItem.avatar == "scarletwitch"){
             holder.imgViewName.setImageResource(R.drawable.scarletwitch)
         }
-        if (currentItem.avatar == "drstrange"){
+        else if (currentItem.avatar == "drstrange"){
             holder.imgViewName.setImageResource(R.drawable.drstrange)
         }
-        if (currentItem.avatar == "ironman"){
-            holder.imgViewName.setImageResource(R.drawable.ironman)
+        else if (currentItem.avatar == "bucky"){
+            holder.imgViewName.setImageResource(R.drawable.bucky)
+        }
+        else if (currentItem.avatar == "deadpool"){
+            holder.imgViewName.setImageResource(R.drawable.deadpool)
+        }
+        else if (currentItem.avatar == "falcon"){
+            holder.imgViewName.setImageResource(R.drawable.falcon)
         }
         else{
             holder.imgViewName.setImageResource(R.drawable.profilenew)
