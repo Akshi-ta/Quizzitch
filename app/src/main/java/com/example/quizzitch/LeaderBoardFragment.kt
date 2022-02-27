@@ -57,7 +57,17 @@ class LeaderBoardFragment : Fragment() {
                     Log.d("leaderboard", "${document.id} => ${document.data}")
                 }
             }
+    }
+
+//    private fun count(){
+//        Firebase.firestore.collection("desc")
+//            .get()
+//            .addOnSuccessListener { result ->
+//                for (document in result ){
+//                    val data = userArrayList.size
+//                    }
+//                }
+//            }
 
 
     }
-}
