@@ -14,7 +14,7 @@
         android:title="Leaderboard"/>
 
     <item
-        android:id="@+id/customNavFragment"
+        android:id="@+id/createCustomFragment"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="Custom Quiz"/>
 

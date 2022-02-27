@@ -153,7 +153,17 @@
         tools:layout="@layout/fragment_custom_quiz" />
     <fragment
         android:id="@+id/customNavFragment"
-        android:name="com.example.quizzitch.CustomNavFragment"
+        android:name="com.example.quizzitch.ui.customQuiz.CustomNavFragment"
         android:label="fragment_custom_nav"
         tools:layout="@layout/fragment_custom_nav" />
+    <fragment
+        android:id="@+id/createCustomFragment"
+        android:name="com.example.quizzitch.ui.customQuiz.CreateCustomFragment"
+        android:label="fragment_create_custom"
+        tools:layout="@layout/fragment_create_custom" />
+    <fragment
+        android:id="@+id/joinCustomFragment"
+        android:name="com.example.quizzitch.JoinCustomFragment"
+        android:label="fragment_join_custom"
+        tools:layout="@layout/fragment_join_custom" />
 </navigation>
