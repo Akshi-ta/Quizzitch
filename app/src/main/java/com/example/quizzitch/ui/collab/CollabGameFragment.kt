@@ -114,18 +114,18 @@ class CollabGameFragment : Fragment() {
                 map[roomcode!!] = gameData
                 store.collection("games").document(requireArguments().getString("hostuid")!!).update(map).addOnSuccessListener {
                     Toast.makeText(requireContext(), "response recorded", Toast.LENGTH_LONG).show()
-                    val fragment: Fragment = ResultFragment()
-                    val bundle = Bundle()
-                    bundle.putString("diff", requireArguments().getString("diff"))
-                    bundle.putString("ques", totalQ.toString())
-                    bundle.putString("category", requireArguments().getString("category"))
-                    bundle.putString("roomcode", requireArguments().getString("roomcode"))
-                    bundle.putString("hostuid", requireArguments().getString("hostuid"))
-                    fragment.arguments = bundle
-                    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
-                    transaction.replace(R.id.game, fragment)
-                    transaction.addToBackStack("result")
-                    transaction.commit()
+//                    val fragment: Fragment = ResultFragment()
+//                    val bundle = Bundle()
+//                    bundle.putString("diff", requireArguments().getString("diff"))
+//                    bundle.putString("ques", totalQ.toString())
+//                    bundle.putString("category", requireArguments().getString("category"))
+//                    bundle.putString("roomcode", requireArguments().getString("roomcode"))
+//                    bundle.putString("hostuid", requireArguments().getString("hostuid"))
+//                    fragment.arguments = bundle
+//                    val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+//                    transaction.replace(R.id.game, fragment)
+//                    transaction.addToBackStack("result")
+//                    transaction.commit()
                 }
             }
         }
