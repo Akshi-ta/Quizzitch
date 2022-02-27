@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.FragmentTransaction
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.sql.Time
@@ -53,6 +55,13 @@ class PasteLinkFragment : Fragment() {
                         val m: HashMap<String, Any> = hashMapOf()
                         m["i"] = roomCode.toInt()+1
                         store.collection("quiz").document("code").set(m)
+
+                        val cons: ConstraintLayout = view.findViewById(R.id.sparepaste)
+                        cons.visibility = View.GONE
+                        val transaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                        transaction.replace(R.id.paste, FormFragment())
+                        transaction.addToBackStack("paste")
+                        transaction.commit()
                     }
                 }
             }
