@@ -41,7 +41,7 @@ class CustomAdaptor(userInp: ArrayList<User>) :
             holder.imgViewName.setImageResource(R.drawable.thanos)
         }
         else if (currentItem.avatar == "thor"){
-            holder.imgViewName.setImageResource(R.drawable.thor1)
+            holder.imgViewName.setImageResource(R.drawable.thor)
         }
         else if (currentItem.avatar == "starlord"){
             holder.imgViewName.setImageResource(R.drawable.starlord)
