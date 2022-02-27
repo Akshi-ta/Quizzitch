@@ -32,96 +32,95 @@ class SignUp: AppCompatActivity() {
         private const val TAG = "GOOGLE_SIGN_IN_TAG"
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-//        binding = ActivityDashBinding.inflate(layoutInflater)
-//        setContentView(binding.root)
-        setContentView(R.layout.signup)
-        val expandablelayout : LinearLayout = findViewById(R.id.expandablelayout)
-        val signupcardview : CardView = findViewById(R.id.signupcardview)
-
-        val expand : Button = findViewById(R.id.expand)
-        expand.setOnClickListener {
-            if (expandablelayout.visibility == View.GONE){
-                TransitionManager.beginDelayedTransition(signupcardview, AutoTransition())
-                expandablelayout.visibility = View.VISIBLE
-                expand.text = "COLLAPSE"
-            }else{
-                TransitionManager.beginDelayedTransition(signupcardview, AutoTransition())
-                expandablelayout.visibility = View.GONE
-                expand.text = "EXPAND"
-            }
-        }
-        val googleSignInBtn: SignInButton = findViewById(R.id.googleSignInBtn)
-        val account = GoogleSignIn.getLastSignedInAccount(this)
-
-        googleSignInBtn.visibility = View.VISIBLE
-        googleSignInBtn.setSize(SignInButton.SIZE_WIDE)
-
-        val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
-        googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions)
-        firebaseAuth = FirebaseAuth.getInstance()
-        checkUser()
-
-        googleSignInBtn.setOnClickListener {
-            Log.d(TAG, "onCreate: begin Google SignIn")
-            val intent = googleSignInClient.signInIntent
-            startActivityForResult(intent , RC_SIGN_IN)
-//            Toast.makeText(this,"chlpo pls",Toast.LENGTH_SHORT).show()
-        }
-
-
-        val signupbt: Button = findViewById(R.id.button3)
-        val enterMail : EditText = findViewById(R.id.textView8)
-        val enterPass : EditText = findViewById(R.id.editPassword)
-        signupbt.setOnClickListener {
-            when {
-                TextUtils.isEmpty(enterMail.text.toString().trim { it <= ' '}) -> {
-                    Toast.makeText(
-                        this,
-                        "Please enter a password",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-                else -> {
-                    val email: String = enterMail.text.toString().trim { it<= ' '}
-                    val password: String = enterPass.text.toString().trim { it <= ' ' }
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(
-                            OnCompleteListener<AuthResult> {task ->
-                                if (task.isSuccessful) {
-                                    val firebaseUser: FirebaseUser = task.result!!.user!!
-                                    Toast.makeText(
-                                        this,
-                                        "You were registered successfully.",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-
-                                    val intent = Intent(this, SigninDetails::class.java)
-                                    intent.flags =
-                                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                    intent.putExtra("User_id", firebaseUser.uid)
-                                    intent.putExtra("email-id", firebaseUser.email)
-                                    startActivity(intent)
-                                    finish()
-                                } else {
-                                    Toast.makeText(
-                                        this,
-                                        task.exception!!.message.toString(),
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            }
-
-
-                        )
-                }
-            }
-        }
-    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+////        binding = ActivityDashBinding.inflate(layoutInflater)
+////        setContentView(binding.root)
+//        setContentView(R.layout.signup)
+//        val expandablelayout : LinearLayout = findViewById(R.id.expandablelayout)
+//        val signupcardview : CardView = findViewById(R.id.signupcardview)
+//        val expand : Button = findViewById(R.id.expand)
+//        expand.setOnClickListener {
+//            if (expandablelayout.visibility == View.GONE){
+//                TransitionManager.beginDelayedTransition(signupcardview, AutoTransition())
+//                expandablelayout.visibility = View.VISIBLE
+//                expand.text = "COLLAPSE"
+//            }else{
+//                TransitionManager.beginDelayedTransition(signupcardview, AutoTransition())
+//                expandablelayout.visibility = View.GONE
+//                expand.text = "EXPAND"
+//            }
+//        }
+//        val googleSignInBtn: SignInButton = findViewById(R.id.googleSignInBtn)
+//        val account = GoogleSignIn.getLastSignedInAccount(this)
+//
+//        googleSignInBtn.visibility = View.VISIBLE
+//        googleSignInBtn.setSize(SignInButton.SIZE_WIDE)
+//
+//        val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//            .requestIdToken(getString(R.string.default_web_client_id))
+//            .requestEmail()
+//            .build()
+//        googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions)
+//        firebaseAuth = FirebaseAuth.getInstance()
+//        checkUser()
+//
+//        googleSignInBtn.setOnClickListener {
+//            Log.d(TAG, "onCreate: begin Google SignIn")
+//            val intent = googleSignInClient.signInIntent
+//            startActivityForResult(intent , RC_SIGN_IN)
+////            Toast.makeText(this,"chlpo pls",Toast.LENGTH_SHORT).show()
+//        }
+//
+//
+//        val signupbt: Button = findViewById(R.id.button3)
+//        val enterMail : EditText = findViewById(R.id.textView8)
+//        val enterPass : EditText = findViewById(R.id.editPassword)
+//        signupbt.setOnClickListener {
+//            when {
+//                TextUtils.isEmpty(enterMail.text.toString().trim { it <= ' '}) -> {
+//                    Toast.makeText(
+//                        this,
+//                        "Please enter a password",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                }
+//                else -> {
+//                    val email: String = enterMail.text.toString().trim { it<= ' '}
+//                    val password: String = enterPass.text.toString().trim { it <= ' ' }
+//                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+//                        .addOnCompleteListener(
+//                            OnCompleteListener<AuthResult> {task ->
+//                                if (task.isSuccessful) {
+//                                    val firebaseUser: FirebaseUser = task.result!!.user!!
+//                                    Toast.makeText(
+//                                        this,
+//                                        "You were registered successfully.",
+//                                        Toast.LENGTH_SHORT
+//                                    ).show()
+//
+//                                    val intent = Intent(this, SigninDetails::class.java)
+//                                    intent.flags =
+//                                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+//                                    intent.putExtra("User_id", firebaseUser.uid)
+//                                    intent.putExtra("email-id", firebaseUser.email)
+//                                    startActivity(intent)
+//                                    finish()
+//                                } else {
+//                                    Toast.makeText(
+//                                        this,
+//                                        task.exception!!.message.toString(),
+//                                        Toast.LENGTH_SHORT
+//                                    ).show()
+//                                }
+//                            }
+//
+//
+//                        )
+//                }
+//            }
+//        }
+//    }
 
     private fun checkUser() {
         val firebaseUser = firebaseAuth.currentUser
