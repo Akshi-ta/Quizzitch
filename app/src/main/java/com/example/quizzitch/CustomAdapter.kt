@@ -50,6 +50,9 @@ class CustomAdaptor(userInp: ArrayList<User>) :
         else if (currentItem.avatar == "captainmarvel"){
             holder.imgViewName.setImageResource(R.drawable.marvel)
         }
+        else if (currentItem.avatar == "spiderman"){
+            holder.imgViewName.setImageResource(R.drawable.spiderman)
+        }
         else if (currentItem.avatar == "scarletwitch"){
             holder.imgViewName.setImageResource(R.drawable.scarletwitch)
         }
