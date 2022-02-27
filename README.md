@@ -34,6 +34,9 @@ An AVATAR list of MARVEL characters is also made to allow users to choose among 
 <br>
 https://www.loom.com/share/329f028270a449d89e98fe2913deba97?sharedAppSource=personal_library <br>
 
+<br>
+<img width="559" alt="sampleimages" src = https://github.com/Akshi-ta/Quizzitch/blob/master/img.jpeg >
+
 
 
 
