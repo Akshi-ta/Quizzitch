@@ -73,7 +73,7 @@ class SignUp: AppCompatActivity() {
         }
 
 
-        val signupbt: Button = findViewById(R.id.button3)
+        val signupbt: Button = findViewById(R.id.signupButton)
         val enterMail : EditText = findViewById(R.id.textView8)
         val enterPass : EditText = findViewById(R.id.editPassword)
         signupbt.setOnClickListener {

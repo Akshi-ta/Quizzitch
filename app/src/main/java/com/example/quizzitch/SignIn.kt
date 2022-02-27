@@ -53,7 +53,7 @@ class SignIn : AppCompatActivity() {
 //            }
 //        }
 
-        val googleSignInBtn: SignInButton = findViewById(R.id.googleSignInBtn)
+        val googleSignInBtn: SignInButton = findViewById(R.id.SignInBtn)
         val account = GoogleSignIn.getLastSignedInAccount(this)
 
         googleSignInBtn.visibility = View.VISIBLE
@@ -191,7 +191,7 @@ class SignIn : AppCompatActivity() {
                 }
             }
         }
-        val signup: TextView = findViewById(R.id.signupButton)
+        val signup: TextView = findViewById(R.id.SIGNUPhighlight)
         signup.setOnClickListener {
             val intent = Intent(this, SignUp::class.java)
             startActivity(intent)

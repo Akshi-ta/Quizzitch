@@ -19,9 +19,8 @@ class QuizFragment: Fragment() {
     private var score: Int = 0
 
     private var currentPosition: Int = 1
-    private var questionList: ArrayList<QuestionData>? = null
     private var selectedOption: Int = 0
-
+    var questionList: ArrayList<QuestionData>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -49,26 +48,31 @@ class QuizFragment: Fragment() {
 //        val inputData2 = args?.get("key")
 //        val level = inputData1.toString()
 
-    when (topic) {
-        "History" -> {
-            when (level) {
-                "easy" -> questionList = setData.eHistory()
-                "avg" -> questionList = setData.aHistory()
-                "diff" -> questionList = setData.hHistory()
-            }
-        }
-        "Politics" -> {
-            when (level) {
-                "easy" -> questionList = setData.ePolitics()
-                "avg" -> questionList = setData.aPolitics()
-                "diff" -> questionList = setData.hPolitics()
-            }
-        }
-    }
+//        if(questionList == null) {
+//    when (topic) {
+//        "History" -> {
+//            when (level) {
+//                "easy" -> questionList = setData.eHistory()
+//                "avg" -> questionList = setData.aHistory()
+//                "diff" -> questionList = setData.hHistory()
+//            }
+//        }
+//        "Politics" -> {
+//            when (level) {
+//                "easy" -> questionList = setData.ePolitics()
+//                "avg" -> questionList = setData.aPolitics()
+//                "diff" -> questionList = setData.hPolitics()
+//            }
+//        }
+//    }
+//}else {
+//    Toast.makeText(requireContext(),"question list is empty", Toast.LENGTH_LONG).show()
+//            questionList = setData.eHistory()
+//}
 
+        questionList = setData.eHistory()
 
-
-        setQuestion(view, questionList)
+        setQuestion(view)
 
         val opt1: TextView = view.findViewById(R.id.opt_1)
         val opt2: TextView = view.findViewById(R.id.opt_2)
@@ -109,11 +113,11 @@ class QuizFragment: Fragment() {
                 currentPosition++
                 when{
                     currentPosition<=questionList!!.size->{
-                        setQuestion(view, questionList)
+                        setQuestion(view)
                     }
                     else->{
                         val fragment: Fragment = Result()
-                        bundle.putInt("score", score)
+                        bundle.putString("score", score.toString())
                         fragment.arguments = bundle
                         val cons: ConstraintLayout = view.findViewById(R.id.quizr)
                         cons.visibility = View.GONE
@@ -152,7 +156,7 @@ class QuizFragment: Fragment() {
 
 
 
-    private fun setQuestion(view: View, questionList: ArrayList<QuestionData>?) {
+    private fun setQuestion(view: View) {
 
         val question = questionList!![currentPosition - 1]
 
@@ -166,7 +170,7 @@ class QuizFragment: Fragment() {
         val quiz: TextView = view.findViewById(R.id.quiz)
 
         timeBar.progress = currentPosition
-        timeBar.max = questionList.size
+        timeBar.max = questionList!!.size
         progressText.text = "${currentPosition}" + "/" + "${questionList!!.size}"
 
 

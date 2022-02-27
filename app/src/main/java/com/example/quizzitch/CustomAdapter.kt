@@ -16,6 +16,7 @@ class CustomAdaptor(userInp: ArrayList<User>) :
 
     override fun getItemCount(): Int {
         return userArr.size
+
     }
 
 
@@ -23,6 +24,7 @@ class CustomAdaptor(userInp: ArrayList<User>) :
         val currentItem = userArr[position]
         holder.txtView1.text = currentItem.displayName
         holder.txtView2.text = currentItem.score.toString()
+        holder.txtview3.text = userArr.size.toString()
         if (currentItem.avatar == "hawkeye"){
             holder.imgViewName.setImageResource(R.drawable.hawkeye)
         }
@@ -39,7 +41,7 @@ class CustomAdaptor(userInp: ArrayList<User>) :
             holder.imgViewName.setImageResource(R.drawable.thanos)
         }
         else if (currentItem.avatar == "thor"){
-            holder.imgViewName.setImageResource(R.drawable.thor1)
+            holder.imgViewName.setImageResource(R.drawable.thor)
         }
         else if (currentItem.avatar == "starlord"){
             holder.imgViewName.setImageResource(R.drawable.starlord)
@@ -56,9 +58,9 @@ class CustomAdaptor(userInp: ArrayList<User>) :
         else if (currentItem.avatar == "scarletwitch"){
             holder.imgViewName.setImageResource(R.drawable.scarletwitch)
         }
-        else if (currentItem.avatar == "drstrange"){
-            holder.imgViewName.setImageResource(R.drawable.drstrange)
-        }
+//        else if (currentItem.avatar == "drstrange"){
+//             holder.imgViewName.setImageResource(R.drawable.drstrange1)
+//        }
         else if (currentItem.avatar == "bucky"){
             holder.imgViewName.setImageResource(R.drawable.bucky)
         }
@@ -100,5 +102,6 @@ class CustomAdaptor(userInp: ArrayList<User>) :
         val imgViewName: ImageView = itemView.findViewById(R.id.user_avatar)
         val txtView1: TextView = itemView.findViewById(R.id.username)
         val txtView2: TextView = itemView.findViewById(R.id.user_score)
+        val txtview3: TextView = itemView.findViewById(R.id.user_count)
     }
 }
