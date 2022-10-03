@@ -10,7 +10,7 @@ Lottie files and Json Node<br>
 Team Code- a6f4c20b30<br>
 Team Name- UNRAVEL<br>
 Is Fresher- Yes<br>
-## Descrition of Idea
+## Description of Idea
 ### Problem statement- 
 Sometimes we want to host our own quiz on a session like DSA/etc. but available apps apply certain resisttictions like on the number of users. So a platform which can help ample number of users to take same quiz at the same time was needed.<br>
 Books are sometimes so hectic while preparing for some competitive exams based on general knowledge. A rather fun and effective learning way is needed to be introduced.<br>
